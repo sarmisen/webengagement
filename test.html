@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style type="text/css">
+	/* GENERALES */
+	.contFoto {
+		width: 1000px;
+		height: 707px;
+		border: 1px solid black;
+		overflow: hidden;
+	}
+	.contFoto img {
+		position: relative;
+		
+	}
+	//PRIMER FOTOGRAMA
+	#capa10 {
+		z-index: 1;
+		width: 1000px;
+		height: 707px;
+	}
+	#capa11 {
+		z-index: 2;
+		margin-top:-707px;
+		width: 1474px;
+		height: 737px;
+		margin-left:-474px;
+	}
+	#capa12 {
+		z-index: 3;
+		margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+	}
+	#capa13 {
+		z-index: 4;
+				margin-top:-707px;
+		width: 1474px;
+		height: 737px;
+	}
+	#capa14 {
+		z-index: 5;
+				margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+	}
+	#capa15 {
+		z-index: 6;
+				margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+				width: 1474px;
+		height: 737px;
+		margin-left:-474px;
+	}
+	#capa16 {
+		z-index: 7;
+				margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+	}
+	#capa17 {
+		z-index: 8;
+				margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+	}
+</style>
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+ <script type="text/javascript">
+ $(function() {
+    $(document).on("mousewheel", function() {
+        gestionaAnimacion($(document).scrollTop());
+    });
+	    $(document).on("scroll", function() {
+        gestionaAnimacion($(document).scrollTop());
+    });
+	$("#debugger").css("top",$( window ).height()-25);
+});
+function gestionaAnimacion (elscroll) {
+	$("#debugger").css("top",$( window ).height()-25+elscroll);
+	mensaje = "El Scroll: " + elscroll;
+	mensaje += " | Ancho guerrero: " + $("#capa17").css("width");
+	$("#debugger").html(mensaje);
+	if (elscroll<2000) {
+		$("#fotograma1").css("margin-top",elscroll);
+		$("#capa17").css("width",1000-(elscroll/100))
+		$("#capa17").css("height",707-(elscroll/100))
+		$("#capa17").css("margin-left",0-(elscroll/50))
+		$("#capa13").css("margin-left",0-(elscroll/5))
+		$("#capa11").css("margin-left",-474+(elscroll/20))
+		$("#capa15").css("margin-left",-474+(elscroll/25))
+	}
+}
+ </script>
+</head>
+
+<body>
+<div id="fotograma1" class="contFoto">
+	<img id="capa10" src="imgs/escena1/10_color-fondo.jpg"  />
+    <img id="capa11" src="imgs/escena1/7_nube-fondo.png" />
+    <img id="capa12" src="imgs/escena1/6_4o-plano-castillo.png" />
+    <img id="capa13" src="imgs/escena1/5_NieblaMedia.png" />
+    <img id="capa14" src="imgs/escena1/4_3er-plano.png" />
+    <img id="capa15" src="imgs/escena1/3_Nieblafrente.png" />
+    <img id="capa16" src="imgs/escena1/2_2o-plano.png" />
+    <img id="capa17" src="imgs/escena1/1_1er-plano.png" />
+</div>
+<div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:4; top: 0; left: 0; color: orange;">Scroll</div>
+<div style="width:100px; height: 3000px"></div>
+</body>
+</html>
