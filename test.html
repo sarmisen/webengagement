@@ -3,16 +3,32 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Document</title>
+<link href='http://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
 <style type="text/css">
 	/* GENERALES */
+	body, html {
+		margin: 0px;
+		background-color: black;
+	}
+	#contenedor {
+		width: 1000px;
+		margin: 0 auto;
+	}
+	#cabecera {
+		height: 340px;
+		overflow: hidden;
+	}
 	.contFoto {
 		width: 1000px;
 		height: 707px;
-		border: 1px solid black;
 		overflow: hidden;
 	}
 	.contFoto img {
 		position: relative;
+		/*border: 1px solid red;*/
+		padding:0px;
+		margin:0px;
+		display: block;
 		
 	}
 	//PRIMER FOTOGRAMA
@@ -25,7 +41,7 @@
 		z-index: 2;
 		margin-top:-707px;
 		width: 1474px;
-		height: 737px;
+		height: 707px;
 		margin-left:-474px;
 	}
 	#capa12 {
@@ -38,7 +54,7 @@
 		z-index: 4;
 				margin-top:-707px;
 		width: 1474px;
-		height: 737px;
+		height: 707px;
 	}
 	#capa14 {
 		z-index: 5;
@@ -48,11 +64,9 @@
 	}
 	#capa15 {
 		z-index: 6;
-				margin-top:-707px;
-		width: 1000px;
+		margin-top:-707px;
+		width: 1474px;
 		height: 707px;
-				width: 1474px;
-		height: 737px;
 		margin-left:-474px;
 	}
 	#capa16 {
@@ -63,11 +77,82 @@
 	}
 	#capa17 {
 		z-index: 8;
-				margin-top:-707px;
+		margin-top:-707px;
 		width: 1000px;
 		height: 707px;
 	}
-</style>
+	#capa18 {
+		z-index: 9;
+		margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+	}
+	#primerTexto {
+		width:1000px; 
+		height: 200px; 
+		background-color: white; 
+		background-image:url(imgs/comunes/fondo_friso.png);
+		font-family: 'Arapey', serif;
+		font-size: 16px;
+		margin: 0px;
+	}
+		#primerTexto div {
+		padding: 10px 50px;
+	}
+	// SEGUNDO FOTOGRAMA
+	#capa20 {
+		z-index: 1;
+		width: 1000px;
+		height: 707px;
+	}
+	#capa21 {
+		z-index: 2;
+		margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+	}
+	#capa22 {
+		z-index: 3;
+		margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+	}
+	#capa23 {
+		z-index: 4;
+		margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+	}
+	#capa24 {
+		z-index: 5;
+		margin-top:-707px;
+		width: 1000px;
+		height: 707px;
+	}
+	#capa25 {
+		z-index: 6;
+		margin-top:-707px;
+		width: 1418px;
+		height: 707px;
+		margin-left:-200px;
+	}
+	#capa26 {
+		z-index: 7;
+		margin-top:-707px;
+		width: 1418px;
+		height: 707px;
+		margin-left:-200px;
+	}
+		#primeraOpcion {
+		width:1000px; 
+		height: 200px; 
+		background-color: white; 
+		background-image:url(imgs/comunes/fondo_friso.png);
+		font-family: 'Arapey', serif;
+		font-size: 16px;
+		margin: 0px;
+	}
+		</style>
  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
  <script type="text/javascript">
  $(function() {
@@ -83,23 +168,51 @@ function gestionaAnimacion (elscroll) {
 	$("#debugger").css("top",$( window ).height()-25+elscroll);
 	mensaje = "El Scroll: " + elscroll;
 	mensaje += " | Ancho guerrero: " + $("#capa17").css("width");
-	$("#debugger").html(mensaje);
-	if (elscroll<2000) {
-		$("#fotograma1").css("margin-top",elscroll);
-		$("#capa17").css("width",1000-(elscroll/100))
-		$("#capa17").css("height",707-(elscroll/100))
+	mensaje += " | Alto guerrero: " + $("#capa17").css("height");
+	mensaje += " | Cenefa: " + $("#capa18").css("margin-top");
+	mensaje += " fotograma 2: "  + $("#fotograma2").css("margin-top")
+	if (elscroll<=340) {
+		$("#fotograma1").css("margin-top",0);;
+	}
+	if (elscroll>340 && elscroll<=2340) {
+		$("#fotograma1").css("margin-top",elscroll-340);
+		$("#capa17").css("width",1000+(elscroll/25))
+		$("#capa17").css("height",707+(elscroll/35))
+		$("#capa18").css("margin-top",-707-(elscroll/35))
 		$("#capa17").css("margin-left",0-(elscroll/50))
 		$("#capa13").css("margin-left",0-(elscroll/5))
 		$("#capa11").css("margin-left",-474+(elscroll/20))
 		$("#capa15").css("margin-left",-474+(elscroll/25))
 	}
+		if (elscroll>2340 && elscroll<=3247) {
+		$("#fotograma2").css("margin-top",0);
+	}
+	if (elscroll>3247 && elscroll<=5247) {
+		indice = elscroll % 2;
+		altototal = (340+707+parseInt($("#fotograma1").css("margin-top").replace("px",""))+200)
+		mensaje += altototal;
+		$("#fotograma2").css("margin-top",elscroll-altototal);
+		$("#capa21").css("margin-top",-707+(indice*3));
+		$("#capa22").css("margin-top",-707+(indice*5));
+		$("#capa23").css("margin-top",-707+(indice*9));
+		$("#capa24").css("margin-top",-707+(indice*7));
+		$("#capa25").css("margin-left",-200+((elscroll-altototal)/5))
+		$("#capa26").css("margin-left",-200-((elscroll-altototal)/5))
+		$("#capa25").css("margin-top",-732)
+		$("#capa26").css("margin-top",-732)
+	}
+		$("#debugger").html(mensaje);
 }
  </script>
 </head>
 
 <body>
+<div id="contenedor">
+<div id="cabecera">
+<img src="imgs/comunes/titulo-guia.png" width="1000" height="345" />
+</div>
 <div id="fotograma1" class="contFoto">
-	<img id="capa10" src="imgs/escena1/10_color-fondo.jpg"  />
+	<img id="capa10" src="imgs/escena1/fondo.jpg"  />
     <img id="capa11" src="imgs/escena1/7_nube-fondo.png" />
     <img id="capa12" src="imgs/escena1/6_4o-plano-castillo.png" />
     <img id="capa13" src="imgs/escena1/5_NieblaMedia.png" />
@@ -107,8 +220,27 @@ function gestionaAnimacion (elscroll) {
     <img id="capa15" src="imgs/escena1/3_Nieblafrente.png" />
     <img id="capa16" src="imgs/escena1/2_2o-plano.png" />
     <img id="capa17" src="imgs/escena1/1_1er-plano.png" />
+    <img id="capa18" src="imgs/comunes/cenefa_oblicua.png" />
 </div>
-<div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:4; top: 0; left: 0; color: orange;">Scroll</div>
-<div style="width:100px; height: 3000px"></div>
+<div id="primerTexto">
+ <div>	<p>u misión es conseguir el Engagement, un misterioso amuleto que
+cambia de forma y se encuentra escondido en el fondo de un baúl dentro de
+un castillo inexpugnable. Para hacerte con él tendrás que tomar diferentes
+decisiones: unas te permitirán avanzar y desbloquear textos, otras te harán
+perder tus opciones de conseguir tu objetivo.</p></div>
+</div>
+<div id="fotograma2" class="contFoto">
+	<img id="capa20" src="imgs/escena2/fondo.jpg"  />
+    <img id="capa21" src="imgs/escena2/6_Historias-4.png" />
+    <img id="capa22" src="imgs/escena2/5_Historias-3.png" />
+    <img id="capa23" src="imgs/escena2/4_Historias-2.png" />
+    <img id="capa24" src="imgs/escena2/3_Historias-1.png" />
+    <img id="capa25" src="imgs/escena2/2_luces2.png" />
+    <img id="capa26" src="imgs/escena2/1_luces1.png" />
+</div>
+<div id="primeraOpcion"></div>
+</div>
+<div style="height:2000px;"></div>
+<div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:100; top: 0; left: 0; color: orange;">Scroll</div>
 </body>
 </html>
