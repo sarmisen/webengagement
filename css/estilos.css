@@ -1,0 +1,247 @@
+@charset "utf-8";
+/* CSS Document */
+/* GENERALES */
+html {
+	-webkit-transform: translate3d(0,0,0);
+}
+body, html {
+	background-color: black;
+}
+#contenedor {
+	width: 1132px;
+	margin: 0 auto;
+	background-image:url(../imgs/comunes/fondo_friso.png);;
+	background-repeat:repeat-y;
+	background-size:100% auto;
+	background-color: white;
+}
+#cabecera {
+	height: 340px;
+	overflow: hidden;
+	background-color:#f16f6e;
+}
+#cabecera img {
+	display: block;
+	margin:0 auto;
+}
+.contFoto {
+	width: 1132px;
+	height: 800px;
+	overflow: hidden;
+}
+.contFoto div {
+	position: relative;
+	/*border: 1px solid red;*/
+	padding:0px;
+	margin:0px;
+	display: block;
+}
+/*PRIMER FOTOGRAMA*/
+#fotograma1 {
+	background-color:#f16f6e;
+}
+#capa10 {
+	z-index: 1;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena1/fondo.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa11 {
+	z-index: 2;
+	margin-top:-800px;
+	width: 1600px;
+	height: 800px;
+	margin-left:-400px;
+	background: url(../imgs/escena1/7_nube-fondo.png) no-repeat; 
+		-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa12 {
+	z-index: 3;
+	margin-top:-800px;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena1/6_4o-plano-castillo.png) no-repeat; 
+		-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa13 {
+	z-index: 4;
+	margin-top:-800px;
+	width: 1600px;
+	height: 800px;
+	background: url(../imgs/escena1/5_NieblaMedia.png) no-repeat; 
+		-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa14 {
+	z-index: 5;
+	margin-top:-800px;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena1/4_3er-plano.png) no-repeat; 
+		-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa15 {
+	z-index: 6;
+	margin-top:-800px;
+	width: 1600px;
+	height: 800px;
+	margin-left:-400px;
+	background: url(../imgs/escena1/3_Nieblafrente.png) no-repeat; 
+		-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa16 {
+	z-index: 7;
+	margin-top:-800px;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena1/2_2o-plano.png) no-repeat; 
+		-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa17 {
+	z-index: 8;
+	margin-top:-800px;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena1/1_1er-plano.png) no-repeat; 
+		-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa18 {
+	z-index: 9;
+	margin-top:-800px;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/comunes/cenefa_oblicua.png) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+}
+#primerTexto {
+	height: 200px; 
+}
+.textos {
+	width:100%; 
+	font-family: 'Arapey', serif;
+	font-size: 1em;
+	margin: 0px;
+}
+.textos div {
+	padding: 10px 50px;
+	text-align: center;
+}
+.textos div p img {
+	margin-top: 5px;
+}
+/* SEGUNDO FOTOGRAMA */
+#capa20 {
+	z-index: 1;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena2/fondo.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa205 {
+	z-index: 2;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena2/heroe1.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa21 {
+	z-index: 3;
+	margin-top:-800px;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena2/6_Historias-4.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa22 {
+	z-index: 4;
+	margin-top:-800px;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena2/5_Historias-3.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa23 {
+	z-index: 5;
+	margin-top:-800px;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena2/4_Historias-2.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa24 {
+	z-index: 6;
+	margin-top:-800px;
+	width: 1132px;
+	height: 800px;
+	background: url(../imgs/escena2/3_Historias-1.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa25 {
+	z-index: 7;
+	margin-top:-800px;
+	width: 1600px;
+	height: 800px;
+	margin-left:-200px;
+	background: url(../imgs/escena2/2_luces2.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa26 {
+	z-index: 8;
+	margin-top:-800px;
+	width: 1600px;
+	height: 800px;
+	margin-left:-200px;
+	background: url(../imgs/escena2/1_luces1.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

@@ -3,158 +3,74 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Document</title>
+
 <link href='http://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
-<style type="text/css">
-	/* GENERALES */
-	body, html {
-		margin: 0px;
-		background-color: black;
-	}
-	#contenedor {
-		width: 1000px;
-		margin: 0 auto;
-	}
-	#cabecera {
-		height: 340px;
-		overflow: hidden;
-	}
-	.contFoto {
-		width: 1000px;
-		height: 707px;
-		overflow: hidden;
-	}
-	.contFoto img {
-		position: relative;
-		/*border: 1px solid red;*/
-		padding:0px;
-		margin:0px;
-		display: block;
-		
-	}
-	//PRIMER FOTOGRAMA
-	#capa10 {
-		z-index: 1;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa11 {
-		z-index: 2;
-		margin-top:-707px;
-		width: 1474px;
-		height: 707px;
-		margin-left:-474px;
-	}
-	#capa12 {
-		z-index: 3;
-		margin-top:-707px;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa13 {
-		z-index: 4;
-				margin-top:-707px;
-		width: 1474px;
-		height: 707px;
-	}
-	#capa14 {
-		z-index: 5;
-				margin-top:-707px;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa15 {
-		z-index: 6;
-		margin-top:-707px;
-		width: 1474px;
-		height: 707px;
-		margin-left:-474px;
-	}
-	#capa16 {
-		z-index: 7;
-				margin-top:-707px;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa17 {
-		z-index: 8;
-		margin-top:-707px;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa18 {
-		z-index: 9;
-		margin-top:-707px;
-		width: 1000px;
-		height: 707px;
-	}
-	#primerTexto {
-		width:1000px; 
-		height: 200px; 
-		background-color: white; 
-		background-image:url(imgs/comunes/fondo_friso.png);
-		font-family: 'Arapey', serif;
-		font-size: 16px;
-		margin: 0px;
-	}
-		#primerTexto div {
-		padding: 10px 50px;
-	}
-	// SEGUNDO FOTOGRAMA
-	#capa20 {
-		z-index: 1;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa21 {
-		z-index: 2;
-		margin-top:-707px;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa22 {
-		z-index: 3;
-		margin-top:-707px;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa23 {
-		z-index: 4;
-		margin-top:-707px;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa24 {
-		z-index: 5;
-		margin-top:-707px;
-		width: 1000px;
-		height: 707px;
-	}
-	#capa25 {
-		z-index: 6;
-		margin-top:-707px;
-		width: 1418px;
-		height: 707px;
-		margin-left:-200px;
-	}
-	#capa26 {
-		z-index: 7;
-		margin-top:-707px;
-		width: 1418px;
-		height: 707px;
-		margin-left:-200px;
-	}
-		#primeraOpcion {
-		width:1000px; 
-		height: 200px; 
-		background-color: white; 
-		background-image:url(imgs/comunes/fondo_friso.png);
-		font-family: 'Arapey', serif;
-		font-size: 16px;
-		margin: 0px;
-	}
-		</style>
- <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="contenedor">
+<div id="cabecera">
+<img src="imgs/comunes/titulo-guia.png" width="1000" height="345" />
+</div>
+<div id="fotograma1" class="contFoto">
+    <div id="capa10"></div>
+    <div id="capa11" class="extendido"></div>
+    <div id="capa12"></div>
+    <div id="capa13" class="extendido"></div>
+    <div id="capa14"></div>
+    <div id="capa15" class="extendido"></div>
+    <div id="capa16"></div>
+    <div id="capa17"></div>
+    <div id="capa18"></div>
+</div>
+<div id="primerTexto" class="textos">
+ <div>	<p><img src="imgs/letras/T.png" />u misión es conseguir el Engagement, un misterioso amuleto que
+cambia de forma y se encuentra escondido en el fondo de un baúl dentro de
+un castillo inexpugnable. Para hacerte con él tendrás que tomar diferentes
+decisiones: unas te permitirán avanzar y desbloquear textos, otras te harán
+perder tus opciones de conseguir tu objetivo.</p></div>
+</div>
+<div id="fotograma2" class="contFoto">
+    <div id="capa20"></div>
+    <div id="capa205"></div>
+    <div id="capa21"></div>
+    <div id="capa22"></div>
+    <div id="capa23"></div>
+    <div id="capa24"></div>
+    <div id="capa25" class="extendido"></div>
+    <div id="capa26" class="extendido"></div>
+</div>
+<div id="primeraOpcion" class="textos">
+ <div>	<p><img src="imgs/letras/P.png" />rotegiendo el castillo te encuentras un foso lleno de historias.</p></div>
+</div>
+</div>
+<div style="height:2000px;"></div>
+<div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:100; top: 0; left: 0; color: orange;">Scroll</div>
+</body>
+ <script src="js/jquery-1.10.2.js"></script>
  <script type="text/javascript">
+ var esChrome = false;
+ // please note, that IE11 now returns true for window.chrome
+var isChromium = window.chrome,
+    vendorName = window.navigator.vendor;
+if(isChromium !== null && vendorName === "Google Inc.") {
+   // is Google chrome 
+   esChrome = true;
+}
+ var porcentaje = 1;
+ var altoInicial = 800;
+ var anchoInicial = 1132;
+ var extendidoInicial = 1600;
+ var alto;
+ var ancho;
+ var extendido;
+ var initF1;
+ var initF2;
+ var recorrido = 2000*porcentaje;
+ var altoVentana;
+ var anchoVentana;
+ var remanente = 0;
  $(function() {
     $(document).on("mousewheel", function() {
         gestionaAnimacion($(document).scrollTop());
@@ -162,85 +78,83 @@
 	    $(document).on("scroll", function() {
         gestionaAnimacion($(document).scrollTop());
     });
-	$("#debugger").css("top",$( window ).height()-25);
+	$("#debugger").css("top",$( window ).height()-$("#debugger").height());
+	/// calculamos el alto de la pagina
+	altoVentana = $(window).height();
+	anchoVentana = $(window).width(); 
+	porcentaje = $(window).width()/anchoInicial;
+	//porcentaje = $(window).height()/altoInicial;
+	porcentaje = porcentaje.toFixed(2);
+	if (esChrome) {
+		porcentaje = 1;
+	}
+	alto = Math.round(altoInicial * porcentaje);
+	ancho = Math.round(anchoInicial * porcentaje);
+	if (alto>altoVentana) {
+		remanente = (alto-altoVentana)/2;
+	}
+	extendido = Math.round(extendidoInicial * porcentaje);
+	///definimos los tamaños inciales: contenedores. imágenes,márgenes
+	mensaje = "Porcentaje: " + porcentaje + " | Alto: " + alto + " |Ancho: " + ancho;
+	$("#contenedor").css("width",ancho+"px");
+	$("#cabecera").css("width",ancho+"px");
+	$(".contFoto").css("width",ancho+"px");
+	$(".contFoto").css("height",alto+"px");
+	$("#debugger").html(mensaje);
+	$(".contFoto div").css("width",ancho+"px");
+	$(".contFoto div").css("height",alto+"px");
+	$(".extendido").css("width",extendido+"px");
+	$(".extendido").css("margin-left",0-((extendido-ancho)/2)+"px");
+	$(".contFoto div:not(:first-child)").css("margin-top",0-(alto)+'px');
+	$(".textos").css("font-size",(porcentaje*1.2)+"em");
+/// control de los offsets inciales
+	initF1 = $("#fotograma1").offset().top;
+	initF2 = initF1+recorrido+$("#primerTexto").height();
+	
 });
 function gestionaAnimacion (elscroll) {
 	$("#debugger").css("top",$( window ).height()-25+elscroll);
 	mensaje = "El Scroll: " + elscroll;
-	mensaje += " | Ancho guerrero: " + $("#capa17").css("width");
+	mensaje += " | Scroll 1:" + (initF1-remanente) + " | Margen 1: " + $("#fotograma1").css("margin-top") ;
+	mensaje += " | Scroll 2:" + initF2-(remanente*2) + " | Margen 2: " + $("#fotograma2").css("margin-top") ;
+	/*mensaje += " | Ancho guerrero: " + $("#capa17").css("width");
 	mensaje += " | Alto guerrero: " + $("#capa17").css("height");
 	mensaje += " | Cenefa: " + $("#capa18").css("margin-top");
-	mensaje += " fotograma 2: "  + $("#fotograma2").css("margin-top")
+	mensaje += " fotograma 2: "  + $("#fotograma2").css("margin-top")*/
+	F1Offset = $("#fotograma1").offset().top;
+	initF2 = F1Offset+$("#fotograma1").height()+$("#primerTexto").height();
+	mensaje += " | InitF2: " + initF2;
+ 	//mensaje += " | F1Offset: " + F1Offset + " | Recorrido " + recorrido + " | Texto Height:" + +$("#primerTexto").height() +  " |initF2: " + initF2;
 	if (elscroll<=340) {
-		$("#fotograma1").css("margin-top",0);;
+		$("#fotograma1").css("margin-top",0);
 	}
-	if (elscroll>340 && elscroll<=2340) {
-		$("#fotograma1").css("margin-top",elscroll-340);
-		$("#capa17").css("width",1000+(elscroll/25))
-		$("#capa17").css("height",707+(elscroll/35))
-		$("#capa18").css("margin-top",-707-(elscroll/35))
+	if (elscroll>(initF1+remanente) && elscroll<=initF1+recorrido) {
+		$("#fotograma1").css("margin-top",elscroll-(initF1+remanente));
+		$("#capa17").css("width",ancho+(elscroll/25))
+		$("#capa17").css("height",alto+(elscroll/35))
+		$("#capa18").css("margin-top",0-($("#capa17").height()-3))
 		$("#capa17").css("margin-left",0-(elscroll/50))
 		$("#capa13").css("margin-left",0-(elscroll/5))
-		$("#capa11").css("margin-left",-474+(elscroll/20))
-		$("#capa15").css("margin-left",-474+(elscroll/25))
-	}
-		if (elscroll>2340 && elscroll<=3247) {
+		$("#capa11").css("margin-left",(0-((extendido-ancho)/2)*porcentaje)+(elscroll/20))
+		$("#capa15").css("margin-left",(0-((extendido-ancho)/2)*porcentaje)+(elscroll/25))
+		//$("#capa17").css("opacity",1-(elscroll/2000));
 		$("#fotograma2").css("margin-top",0);
+		
 	}
-	if (elscroll>3247 && elscroll<=5247) {
+	if (elscroll>(initF2+(remanente*2)) && elscroll<=initF2+(remanente*2)+recorrido) {
 		indice = elscroll % 2;
-		altototal = (340+707+parseInt($("#fotograma1").css("margin-top").replace("px",""))+200)
-		mensaje += altototal;
-		$("#fotograma2").css("margin-top",elscroll-altototal);
-		$("#capa21").css("margin-top",-707+(indice*3));
-		$("#capa22").css("margin-top",-707+(indice*5));
-		$("#capa23").css("margin-top",-707+(indice*9));
-		$("#capa24").css("margin-top",-707+(indice*7));
-		$("#capa25").css("margin-left",-200+((elscroll-altototal)/5))
-		$("#capa26").css("margin-left",-200-((elscroll-altototal)/5))
-		$("#capa25").css("margin-top",-732)
-		$("#capa26").css("margin-top",-732)
+		mensaje += "Entramos en el frame 2";
+		$("#fotograma2").css("margin-top",elscroll-(initF2+(remanente*2)));
+		$("#capa21").css("margin-top",0-(alto)+(indice*3));
+		$("#capa22").css("margin-top",0-(alto)+(indice*5));
+		$("#capa23").css("margin-top",0-(alto)+(indice*9));
+		$("#capa24").css("margin-top",0-(alto)+(indice*7));
+		$("#capa25").css("margin-left",(0-((extendido-ancho)/2))+((elscroll-(initF2+(remanente*2)+recorrido))/5))
+		$("#capa26").css("margin-left",(0-((extendido-ancho)/2))-((elscroll-(initF2+(remanente*2)+recorrido))/5))
+		$("#capa25").css("margin-top",0-(alto+(alto*0.05)));
+		$("#capa26").css("margin-top",0-(alto+(alto*0.05)));
 	}
 		$("#debugger").html(mensaje);
 }
  </script>
-</head>
-
-<body>
-<div id="contenedor">
-<div id="cabecera">
-<img src="imgs/comunes/titulo-guia.png" width="1000" height="345" />
-</div>
-<div id="fotograma1" class="contFoto">
-	<img id="capa10" src="imgs/escena1/fondo.jpg"  />
-    <img id="capa11" src="imgs/escena1/7_nube-fondo.png" />
-    <img id="capa12" src="imgs/escena1/6_4o-plano-castillo.png" />
-    <img id="capa13" src="imgs/escena1/5_NieblaMedia.png" />
-    <img id="capa14" src="imgs/escena1/4_3er-plano.png" />
-    <img id="capa15" src="imgs/escena1/3_Nieblafrente.png" />
-    <img id="capa16" src="imgs/escena1/2_2o-plano.png" />
-    <img id="capa17" src="imgs/escena1/1_1er-plano.png" />
-    <img id="capa18" src="imgs/comunes/cenefa_oblicua.png" />
-</div>
-<div id="primerTexto">
- <div>	<p>u misión es conseguir el Engagement, un misterioso amuleto que
-cambia de forma y se encuentra escondido en el fondo de un baúl dentro de
-un castillo inexpugnable. Para hacerte con él tendrás que tomar diferentes
-decisiones: unas te permitirán avanzar y desbloquear textos, otras te harán
-perder tus opciones de conseguir tu objetivo.</p></div>
-</div>
-<div id="fotograma2" class="contFoto">
-	<img id="capa20" src="imgs/escena2/fondo.jpg"  />
-    <img id="capa21" src="imgs/escena2/6_Historias-4.png" />
-    <img id="capa22" src="imgs/escena2/5_Historias-3.png" />
-    <img id="capa23" src="imgs/escena2/4_Historias-2.png" />
-    <img id="capa24" src="imgs/escena2/3_Historias-1.png" />
-    <img id="capa25" src="imgs/escena2/2_luces2.png" />
-    <img id="capa26" src="imgs/escena2/1_luces1.png" />
-</div>
-<div id="primeraOpcion"></div>
-</div>
-<div style="height:2000px;"></div>
-<div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:100; top: 0; left: 0; color: orange;">Scroll</div>
-</body>
 </html>
