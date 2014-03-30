@@ -10,42 +10,63 @@
 </head>
 <body>
 <div id="contenedor">
-<div id="cabecera">
-<img src="imgs/comunes/titulo-guia.png" width="1000" height="345" />
+    <div id="cabecera">
+    	<img src="imgs/comunes/titulo-guia.png" width="1000" height="345" />
+    </div>
+    <div id="fotograma1" class="contFoto">
+        <div id="capa10"></div>
+        <div id="capa11" class="extendido"></div>
+        <div id="capa12"></div>
+        <div id="capa13" class="extendido"></div>
+        <div id="capa14"></div>
+        <div id="capa15" class="extendido"></div>
+        <div id="capa16"></div>
+        <div id="capa17"></div>
+        <div id="capa18"></div>
+    </div>
+    <div id="primerTexto" class="textos">
+     <div class="container">	
+        <p><img src="imgs/letras/T.png" />u misión es conseguir el Engagement, un misterioso amuleto que cambia de forma y se encuentra escondido en el fondo de un baúl dentro de un castillo inexpugnable. Para hacerte con él tendrás que tomar diferentes decisiones: unas te permitirán avanzar y desbloquear textos, otras te harán perder tus opciones de conseguir tu objetivo.</p>
+        </div>
+    </div>
+    <div id="fotograma2" class="contFoto">
+        <div class="capa20"></div>
+        <div class="capa205"></div>
+        <div class="capa21"></div>
+        <div class="capa22"></div>
+        <div class="capa23"></div>
+        <div class="capa24"></div>
+        <div class="capa25 extendido"></div>
+        <div class="capa26 extendido"></div>
+    </div>
+    <div id="primeraOpcion" class="textos">
+         <div class="container">	
+            <p><img src="imgs/letras/P.png" />rotegiendo el castillo te encuentras un foso lleno de historias.</p>
+         </div>
+         <div class="respuestaA">
+            <div class="letra"><img src="imgs/letras/botonA.png"></div>
+            <div class="textos doslineas">Decides lanzarte a él<br>y atravesarlo nadando.</div>
+            <div style="clear: both;"></div>
+         </div>
+         <div class="respuestaB">
+            <div class="letra"><img src="imgs/letras/botonB.png"></div>
+            <div class="textos">Construyes una balsa<br>con tu porpia historia<br>para intentar cruzarlo</div>
+            <div style="clear: both;"></div>
+         </div>
+         <div style="clear: both;"></div>
+	</div>
+    <div id="respuesta1A">
+        <div id="fotograma2" class="contFoto">
+        <div class="capa20"></div>
+        <div class="capa205"></div>
+        <div class="capa21"></div>
+        <div class="capa22"></div>
+        <div class="capa23"></div>
+        <div class="capa24"></div>
+        <div class="capa27"></div>
+    </div>
 </div>
-<div id="fotograma1" class="contFoto">
-    <div id="capa10"></div>
-    <div id="capa11" class="extendido"></div>
-    <div id="capa12"></div>
-    <div id="capa13" class="extendido"></div>
-    <div id="capa14"></div>
-    <div id="capa15" class="extendido"></div>
-    <div id="capa16"></div>
-    <div id="capa17"></div>
-    <div id="capa18"></div>
-</div>
-<div id="primerTexto" class="textos">
- <div>	<p><img src="imgs/letras/T.png" />u misión es conseguir el Engagement, un misterioso amuleto que
-cambia de forma y se encuentra escondido en el fondo de un baúl dentro de
-un castillo inexpugnable. Para hacerte con él tendrás que tomar diferentes
-decisiones: unas te permitirán avanzar y desbloquear textos, otras te harán
-perder tus opciones de conseguir tu objetivo.</p></div>
-</div>
-<div id="fotograma2" class="contFoto">
-    <div id="capa20"></div>
-    <div id="capa205"></div>
-    <div id="capa21"></div>
-    <div id="capa22"></div>
-    <div id="capa23"></div>
-    <div id="capa24"></div>
-    <div id="capa25" class="extendido"></div>
-    <div id="capa26" class="extendido"></div>
-</div>
-<div id="primeraOpcion" class="textos">
- <div>	<p><img src="imgs/letras/P.png" />rotegiendo el castillo te encuentras un foso lleno de historias.</p></div>
-</div>
-</div>
-<div style="height:2000px;"></div>
+<div style="height:2000px;" id="resto"></div>
 <div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:100; top: 0; left: 0; color: orange;">Scroll</div>
 </body>
  <script src="js/jquery-1.10.2.js"></script>
@@ -67,7 +88,7 @@ if(isChromium !== null && vendorName === "Google Inc.") {
  var extendido;
  var initF1;
  var initF2;
- var recorrido = 2000*porcentaje;
+ var recorrido = 2000;
  var altoVentana;
  var anchoVentana;
  var remanente = 0;
@@ -94,6 +115,8 @@ if(isChromium !== null && vendorName === "Google Inc.") {
 		remanente = (alto-altoVentana)/2;
 	}
 	extendido = Math.round(extendidoInicial * porcentaje);
+	recorrido = Math.round(recorrido * porcentaje);
+	$("#resto").height(recorrido);
 	///definimos los tamaños inciales: contenedores. imágenes,márgenes
 	mensaje = "Porcentaje: " + porcentaje + " | Alto: " + alto + " |Ancho: " + ancho;
 	$("#contenedor").css("width",ancho+"px");
@@ -106,7 +129,26 @@ if(isChromium !== null && vendorName === "Google Inc.") {
 	$(".extendido").css("width",extendido+"px");
 	$(".extendido").css("margin-left",0-((extendido-ancho)/2)+"px");
 	$(".contFoto div:not(:first-child)").css("margin-top",0-(alto)+'px');
-	$(".textos").css("font-size",(porcentaje*1.2)+"em");
+	
+	/// contenedroes de textos	
+	$(".textos .container").css("font-size",(porcentaje*1.2)+"em");
+	$(".respuestaA").css("font-size",(porcentaje*1.2)+"em");
+	$(".respuestaB").css("font-size",(porcentaje*1.2)+"em");
+	$(".respuestaA").css("width",$(".textos").width()*0.22);
+	$(".respuestaB").css("margin-left",$(".textos").width()*0.22);
+	$(".respuestaA").css("margin-left",$(".textos").width()*0.25);
+	$(".respuestaB").css("margin-left",$(".textos").width()*0.03);
+	$(".doslineas").css("margin-top",$(".letra").width()*0.20);
+	
+	// click de los textos
+	$("#primeraOpcion .respuestaA").click(function() {
+		$("#respuesta1A").show();
+		$("#respuesta1A .capa27").css("margin-top",0);
+	})
+	$("#primeraOpcion .respuestaB").click(function() {
+		$("#respuesta1B").show();
+	})	
+	
 /// control de los offsets inciales
 	initF1 = $("#fotograma1").offset().top;
 	initF2 = initF1+recorrido+$("#primerTexto").height();
@@ -117,13 +159,12 @@ function gestionaAnimacion (elscroll) {
 	mensaje = "El Scroll: " + elscroll;
 	mensaje += " | Scroll 1:" + (initF1-remanente) + " | Margen 1: " + $("#fotograma1").css("margin-top") ;
 	mensaje += " | Scroll 2:" + initF2-(remanente*2) + " | Margen 2: " + $("#fotograma2").css("margin-top") ;
-	/*mensaje += " | Ancho guerrero: " + $("#capa17").css("width");
-	mensaje += " | Alto guerrero: " + $("#capa17").css("height");
-	mensaje += " | Cenefa: " + $("#capa18").css("margin-top");
-	mensaje += " fotograma 2: "  + $("#fotograma2").css("margin-top")*/
 	F1Offset = $("#fotograma1").offset().top;
 	initF2 = F1Offset+$("#fotograma1").height()+$("#primerTexto").height();
 	mensaje += " | InitF2: " + initF2;
+	if ($("#respuesta1A").is(":visible")) {
+		initRespuesta1 = $("#primeraOpcion").offset().top + $("#primeraOpcion").height() + (remanente*2);
+	}
  	//mensaje += " | F1Offset: " + F1Offset + " | Recorrido " + recorrido + " | Texto Height:" + +$("#primerTexto").height() +  " |initF2: " + initF2;
 	if (elscroll<=340) {
 		$("#fotograma1").css("margin-top",0);
@@ -145,14 +186,35 @@ function gestionaAnimacion (elscroll) {
 		indice = elscroll % 2;
 		mensaje += "Entramos en el frame 2";
 		$("#fotograma2").css("margin-top",elscroll-(initF2+(remanente*2)));
-		$("#capa21").css("margin-top",0-(alto)+(indice*3));
-		$("#capa22").css("margin-top",0-(alto)+(indice*5));
-		$("#capa23").css("margin-top",0-(alto)+(indice*9));
-		$("#capa24").css("margin-top",0-(alto)+(indice*7));
-		$("#capa25").css("margin-left",(0-((extendido-ancho)/2))+((elscroll-(initF2+(remanente*2)+recorrido))/5))
-		$("#capa26").css("margin-left",(0-((extendido-ancho)/2))-((elscroll-(initF2+(remanente*2)+recorrido))/5))
-		$("#capa25").css("margin-top",0-(alto+(alto*0.05)));
-		$("#capa26").css("margin-top",0-(alto+(alto*0.05)));
+		$("#fotograma2 .capa21").css("margin-top",0-(alto)+(indice*3));
+		$("#fotograma2 .capa22").css("margin-top",0-(alto)+(indice*5));
+		$("#fotograma2 .capa23").css("margin-top",0-(alto)+(indice*9));
+		$("#fotograma2 .capa24").css("margin-top",0-(alto)+(indice*7));
+		$("#fotograma2 .capa25").css("margin-left",(0-((extendido-ancho)/2))+((elscroll-(initF2+(remanente*2)+recorrido))/5))
+		$("#fotograma2 .capa26").css("margin-left",(0-((extendido-ancho)/2))-((elscroll-(initF2+(remanente*2)+recorrido))/5))
+		$("#fotograma2 .capa25").css("margin-top",0-(alto+(alto*0.05)));
+		$("#fotograma2 .capa26").css("margin-top",0-(alto+(alto*0.05)));
+	}
+	if ($("#respuesta1A").is(":visible") && (elscroll>initRespuesta1 && elscroll<=(initRespuesta1+recorrido))) {
+		zambullida = (initRespuesta1+recorrido)-initRespuesta1;
+		indice = elscroll % 2;
+		mensaje = "Entrameos en la respuesta 1";
+		mensaje += " | El Scroll: " + elscroll;
+		mensaje += " | Inicio: " + initRespuesta1;
+		mensaje += " | Fin: " + (initRespuesta1+recorrido);
+		foco = elscroll-initRespuesta1;
+		valorHundimiento = Math.round(foco/3);
+		mensaje += " | Foco: " + foco;
+		mensaje += " | Hundimiento: " + (valorHundimiento);
+		mensaje += " | Margen-top: " + (0-((alto*0.85)+valorHundimiento));
+		$("#respuesta1A").css("margin-top",elscroll-(initRespuesta1));
+		$("#respuesta1A .capa21").css("margin-top",0-((alto+valorHundimiento)+(indice*3)));
+		$("#respuesta1A .capa22").css("margin-top",0-(alto)+(indice*5));
+		$("#respuesta1A .capa23").css("margin-top",0-(alto)+(indice*9));
+		$("#respuesta1A .capa24").css("margin-top",0-(alto)+(indice*7));
+		$("#respuesta1A .capa205").css("margin-left",0-(valorHundimiento));
+		$("#respuesta1A .capa205").css("margin-top",0-(alto-(valorHundimiento)));
+		$("#respuesta1A .capa27").css("margin-top",0-((alto*0.15)+valorHundimiento));
 	}
 		$("#debugger").html(mensaje);
 }
