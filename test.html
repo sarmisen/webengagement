@@ -32,8 +32,6 @@
     <div id="fotograma2" class="contFoto">
         <div class="capa20"></div>
         <div class="capa205"></div>
-        <div class="capa21"></div>
-        <div class="capa22"></div>
         <div class="capa23"></div>
         <div class="capa24"></div>
         <div class="capa25 extendido"></div>
@@ -59,8 +57,6 @@
         <div id="fotograma2" class="contFoto">
         <div class="capa20"></div>
         <div class="capa205"></div>
-        <div class="capa21"></div>
-        <div class="capa22"></div>
         <div class="capa23"></div>
         <div class="capa24"></div>
         <div class="capa27"></div>
@@ -80,9 +76,9 @@ if(isChromium !== null && vendorName === "Google Inc.") {
    esChrome = true;
 }
  var porcentaje = 1;
- var altoInicial = 800;
- var anchoInicial = 1132;
- var extendidoInicial = 1600;
+ var altoInicial = 968;
+ var anchoInicial = 1720;
+ var extendidoInicial = 2019;
  var alto;
  var ancho;
  var extendido;
@@ -170,6 +166,7 @@ function gestionaAnimacion (elscroll) {
 		$("#fotograma1").css("margin-top",0);
 	}
 	if (elscroll>(initF1+remanente) && elscroll<=initF1+recorrido) {
+		mensaje = "Porcentaje " + porcentaje + " | Ancho: " + ancho;
 		$("#fotograma1").css("margin-top",elscroll-(initF1+remanente));
 		$("#capa17").css("width",ancho+(elscroll/25))
 		$("#capa17").css("height",alto+(elscroll/35))
@@ -186,8 +183,6 @@ function gestionaAnimacion (elscroll) {
 		indice = elscroll % 2;
 		mensaje += "Entramos en el frame 2";
 		$("#fotograma2").css("margin-top",elscroll-(initF2+(remanente*2)));
-		$("#fotograma2 .capa21").css("margin-top",0-(alto)+(indice*3));
-		$("#fotograma2 .capa22").css("margin-top",0-(alto)+(indice*5));
 		$("#fotograma2 .capa23").css("margin-top",0-(alto)+(indice*9));
 		$("#fotograma2 .capa24").css("margin-top",0-(alto)+(indice*7));
 		$("#fotograma2 .capa25").css("margin-left",(0-((extendido-ancho)/2))+((elscroll-(initF2+(remanente*2)+recorrido))/5))
@@ -208,13 +203,11 @@ function gestionaAnimacion (elscroll) {
 		mensaje += " | Hundimiento: " + (valorHundimiento);
 		mensaje += " | Margen-top: " + (0-((alto*0.85)+valorHundimiento));
 		$("#respuesta1A").css("margin-top",elscroll-(initRespuesta1));
-		$("#respuesta1A .capa21").css("margin-top",0-((alto+valorHundimiento)+(indice*3)));
-		$("#respuesta1A .capa22").css("margin-top",0-(alto)+(indice*5));
-		$("#respuesta1A .capa23").css("margin-top",0-(alto)+(indice*9));
+		$("#respuesta1A .capa23").css("margin-top",0-((alto+valorHundimiento)+(indice*3)));
 		$("#respuesta1A .capa24").css("margin-top",0-(alto)+(indice*7));
 		$("#respuesta1A .capa205").css("margin-left",0-(valorHundimiento));
 		$("#respuesta1A .capa205").css("margin-top",0-(alto-(valorHundimiento)));
-		$("#respuesta1A .capa27").css("margin-top",0-((alto*0.15)+valorHundimiento));
+		$("#respuesta1A .capa27").css("margin-top",0-((alto*0.30)+valorHundimiento));
 	}
 		$("#debugger").html(mensaje);
 }
