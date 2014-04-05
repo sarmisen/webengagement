@@ -5,6 +5,7 @@
 <title>Untitled Document</title>
 
 <link href='http://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 <link href="css/reset.css" rel="stylesheet" type="text/css">
 <link href="css/estilos.css" rel="stylesheet" type="text/css">
 </head>
@@ -80,9 +81,54 @@
                     <div class="capa24"></div>
                     <div class="capa27"></div>
                     <div class="capa28"></div>
+                    <div class="capa29"></div>
+                    <div class="capa30"></div>
+                </div>
+             </div>
+             <div class="textoDesbloqueado">
+             	<div class="conTextoDesbloqueado">
+                	<div><img src="imgs/comunes/textoDesBRow1.png" /></div>
+                    <div>
+                    <div class="tdColIzq">
+                    	<img src="imgs/comunes/textoDesLT.png">
+                    </div>
+                    <div class="tdCentral"><p style="font-size:1.8em"> Todos somos historias… y somos muchos<br /><br /></p>
+<p>Millones de piezas online nos cuentan cada día la historia de una <strong>polución de contenidos</strong> que sobrevuela nuestras cabezas digitales. Todos somos parte de esa enorme máquina de fabricar vídeos, fotografías, textos, memes o audios en que se ha convertido Internet. El tiempo en el que los medios de comunicación (y las marcas que compraban su espacio) eran los únicos autorizados a contarnos las historias oficiales ha quedado atrás y ahora el contenido se ha convertido en una barra libre a la que podemos trasladar nuestra necesidad de narrarnos. Si todos somos, en mayor o menor medida, <strong>productores de contenido</strong> es porque también todos somos historias. El tan celebrado storytelling contemporáneo no es más que la aplicación a los negocios de esa necesidad que reside en nuestro adn emocional: la de perpetuarnos en narrativas más o menos complejas. Lo que ha ocurrido es que, mientras aprendíamos cómo transformarnos en productores de contenido, la propia exposición a ese huracán de historias nos ha ido perfeccionando como consumidores… de narrativas. En esa confluencia entre la sobreabundancia de contenidos y la <strong>especialización en su consumo</strong> es en la que cobra especial importancia  un término que afectará desde entonces a nuestra actitud frente a la nube de historias posibles: <strong>la economía de la atención.</strong></p>
+</div>
+                    <div class="tdColDer">
+                    	<img src="imgs/comunes/textoDesRT.png">
+                    </div>
+                    <div style="clear:both"></div>
+                    </div>
+                    <div><img src="imgs/comunes/textoDesBRow2.png" /></div>
                 </div>
              </div>
         </div>
+    </div>
+    <div id="bloque2" class="bloquesOcultos">
+     <div id="fotograma3" class="contFoto">
+        <div class="capa30"></div>
+        <div class="capa31"><img src="imgs/escena3/2_Entrada-muroLARGA.png"></div>
+        <div class="capa32"></div>
+        <div class="capa33"></div>
+        <div class="capa34"></div>
+    </div>
+    <div id="opcion2" class="textos">
+         <div class="container">	
+            <p><img src="imgs/letras/P.png" />rotegiendo el castillo te encuentras un foso lleno de historias.</p>
+         </div>
+         <div class="respuestaA">
+            <div class="letra"><img src="imgs/letras/botonA.png"></div>
+            <div class="textos doslineas">Decides lanzarte a él<br>y atravesarlo nadando.</div>
+            <div style="clear: both;"></div>
+         </div>
+         <div class="respuestaB">
+            <div class="letra"><img src="imgs/letras/botonB.png"></div>
+            <div class="textos">Construyes una balsa<br>con tu porpia historia<br>para intentar cruzarlo</div>
+            <div style="clear: both;"></div>
+         </div>
+         <div style="clear: both;"></div>
+	</div>   	
     </div>
 </div>
 <div style="height:2000px;" id="resto"></div>
@@ -121,7 +167,7 @@ var finRespuesta2;
 var finRespuesta3;
 var finRespuesta4;
 var finRespuesta5;
-	 
+var initBloque2; 
  $(function() {
     $(document).on("mousewheel", function() {
         gestionaAnimacion($(document).scrollTop());
@@ -171,6 +217,8 @@ var finRespuesta5;
 	$(".doslineas").css("margin-top",$(".letra").width()*0.20);
 	
 	// click de los textos
+	// *****************************************
+	// *****************************************
 	$("#opcion1 .respuestaA").click(function() {
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
 		finRespuesta1 = initRespuesta1+recorrido;
@@ -184,6 +232,14 @@ var finRespuesta5;
 		$("#contRespuesta1").show();
 		$("#contRespuesta1B").show();
 		$("#respuesta1B .capa28").css("opacity",0);
+		$("#respuesta1B .capa29").css("opacity",0);
+		$("#respuesta1B .capa30").css("opacity",0);
+			///RESPUESTAS DESBLOQUEADS
+		$("#contRespuesta1B .tdColIzq").height($("#contRespuesta1B .tdCentral").height()+30);
+		$("#contRespuesta1B .tdColDer").height($("#contRespuesta1B .tdCentral").height()+30);
+		$("#bloque2").show();
+		initBloque2 = $("#bloque2").offset().top;
+
 	})	
 	
 /// control de los offsets inciales
@@ -251,9 +307,12 @@ function gestionaAnimacion (elscroll) {
 	if ($("#contRespuesta1B").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
 		indice = elscroll % 2;
 		foco = elscroll-initRespuesta1;
-		coeficiente = foco/recorrido;
+		coeficiente = foco/(recorrido-$(window).height());
 		porcentajeR = coeficiente*100;
-		mensaje = "Porecentaje: " + porcentajeR;
+		mensaje = 'Porcentaje: ' + porcentajeR;
+		mensaje += ' - Foco: ' + foco;
+		mensaje += ' - Recorrido: ' + (recorrido-$(window).height());
+		initBloque2 = $("#bloque2").offset().top;
 		$("#respuesta1B").css("margin-top",elscroll-(initRespuesta1));
 		$("#respuesta1B .capa23").css("margin-top",0-(alto)+(indice*9));
 		$("#respuesta1B .capa24").css("margin-top",0-(alto)+(indice*7));
@@ -261,19 +320,36 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = porcentajeR/20;
 			$("#respuesta1B .capa205").css("opacity",1-nCoeficiente);
 			$("#respuesta1B .capa28").css("opacity",nCoeficiente);
-			mensaje = "| Coeficiente: " + nCoeficiente;
+			$("#respuesta1B .capa29").css("opacity",0);
+			$("#respuesta1B .capa30").css("opacity",0)
 		}
-		if (porcentajeR>40) {
-			nCoeficiente = (porcentajeR-40)/60;
-			$("#respuesta1B .capa28").css("margin-left",0-(ancho*nCoeficiente));
-			mensaje = "| Coeficiente: " + nCoeficiente + ' |Mover: ' + (0-(ancho*nCoeficiente)) ;
-			if (porcentajeR>80) {
-				sCoeficiente = (porcentajeR-80)/10;
-				$("#respuesta1B .capa28").css("opacity",1-sCoeficiente);
-				mensaje = "Hacemos el fade | Coeficiente: " + sCoeficiente + ' |Mover: ' + (0-(ancho*nCoeficiente)) ;
+		if (porcentajeR>40 && porcentajeR<=80) {
+			nCoeficiente = (porcentajeR-40)/40;
+			$("#respuesta1B .capa205").css("opacity",0);
+			$("#respuesta1B .capa28").css("margin-left",0-((ancho*0.5)*nCoeficiente));
+			$("#respuesta1B .capa28").css("opacity",1);
+			$("#respuesta1B .capa29").css("opacity",0);
+			$("#respuesta1B .capa30").css("opacity",0);
+		}
+		if (porcentajeR>80) {
+			nCoeficiente = (porcentajeR-80)/20;
+			$("#respuesta1B .capa28").css("opacity",0);
+			$("#respuesta1B .capa29").css("opacity",1);
+			$("#respuesta1B .capa30").css("opacity",1);
+			$("#respuesta1B .capa30").css("margin-left",0);
+			$("#respuesta1B .capa30").css("margin-top",0-alto);
+			if (porcentajeR>90) {
+				nCoeficiente = (porcentajeR-90)/10;
+			$("#respuesta1B .capa30").css("margin-left",0-((ancho*0.75)*nCoeficiente));
+			$("#respuesta1B .capa30").css("margin-top",0-(alto+(alto*(nCoeficiente*0.5))));
 			}
 		}
-
+	}
+	if ($("#bloque2").is(":visible") && (elscroll>initBloque2 && elscroll<=(initBloque2+recorrido))) { 
+		foco = elscroll-initBloque2;
+		coeficiente = foco/recorrido;
+		porcentajeR = coeficiente*100;
+		mensaje = "Porecentaje: " + porcentajeR;
 	}
 	$("#debugger").html(mensaje);
 }

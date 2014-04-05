@@ -24,6 +24,9 @@ body, html {
 	display: block;
 	margin:0 auto;
 }
+.bloquesOcultos {
+	display: none;
+}
 .contFoto {
 	width: 1720px;
 	height: 968px;
@@ -98,6 +101,37 @@ body, html {
 }
 .respuestaErronea span a {
 	color:white;
+}
+/* TEXTO DESBLOQUEADO */
+.textoDesbloqueado {
+	background-color:#f16f6e;
+}
+.conTextoDesbloqueado {
+	width:1000px; 
+	margin: 0 auto;
+}
+.tdColIzq {
+	width:133px; 
+	float: left; 
+	background:url(../imgs/comunes/textoDesLB.png) bottom right no-repeat;
+}
+.tdColDer{
+	width:136px; 
+	float: left; 
+	background:url(../imgs/comunes/textoDesRB.png) bottom right no-repeat;
+}
+.tdCentral {
+	width:700px; 
+	background-color: white; 
+	float: left; 
+	padding: 15px; 
+	font-family: 'Open Sans', sans-serif; 
+	line-height: 1.6em; 
+	text-align:justify; 
+	font-weight: 400;  
+}
+.tdCentral strong {
+	font-weight: 700;
 }
 /*PRIMER FOTOGRAMA*/
 #fotograma1 {
@@ -343,6 +377,75 @@ body, html {
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena2/respB/heroe-en-balsa.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta1B .capa29 {
+	z-index: 10;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena2/respB/balsa-sola.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta1B .capa30 {
+	z-index: 11;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena2/respB/heroe-salta-al-otro-lado.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+/* TERCER FOTOGRAMA */
+.capa30 {
+	z-index: 1;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena2/5_Dentro-MuroLARGA.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa31 {
+	z-index: 2;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena2/4_Enredaderas-Datos2.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa32 {
+	z-index: 3;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena2/3_Enredaderas-Datos1.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa33 {
+	z-index: 4;
+	width: 1720px;
+	height: 968px;
+	margin-top: -752px;
+}
+.capa34 {
+	z-index: 5;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena2/1_heroe1.png) no-repeat; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
