@@ -79,6 +79,26 @@ body, html {
 	float:left;
 	width: 75%;
 }
+.respuestaErronea {
+	border-radius:8px; 
+	background-color: #f16f6e; 
+	margin:20px 50px; 
+	padding: 100px;
+}
+.respuestaErronea div {
+	margin: 0 auto; 
+	text-align:center;
+	font-size: 1.5em;
+}
+.respuestaErronea img {
+	margin: 0 auto;
+}
+.respuestaErronea span {
+	font-size: 1.8em;
+}
+.respuestaErronea span a {
+	color:white;
+}
 /*PRIMER FOTOGRAMA*/
 #fotograma1 {
 	background-color:#f16f6e;
@@ -275,8 +295,16 @@ body, html {
 	-o-background-size: cover;
 	background-size: cover;
 }
+/* RESPUESTAS */
+#contRespuesta1 {display: none};
+#contRespuesta2 {display: none};
+#contRespuesta3 {display: none};
+#contRespuesta4 {display: none};
 /* RESPUESTAS 1 */
-#respuesta1A {
+#contRespuesta1A {
+	display: none;
+}
+#contRespuesta1B {
 	display: none;
 }
 #respuesta1A .capa20 {
@@ -310,6 +338,13 @@ body, html {
 	background-size: cover;
 	margin-top: 0px;
 }
-#respuesta1B {
-	display: none;
+#respuesta1B .capa28 {
+	z-index: 9;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena2/respB/heroe-en-balsa.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }

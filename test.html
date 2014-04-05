@@ -37,7 +37,7 @@
         <div class="capa25 extendido"></div>
         <div class="capa26 extendido"></div>
     </div>
-    <div id="primeraOpcion" class="textos">
+    <div id="opcion1" class="textos">
          <div class="container">	
             <p><img src="imgs/letras/P.png" />rotegiendo el castillo te encuentras un foso lleno de historias.</p>
          </div>
@@ -53,17 +53,40 @@
          </div>
          <div style="clear: both;"></div>
 	</div>
-    <div id="respuesta1A">
-        <div id="fotograma2" class="contFoto">
-        <div class="capa20"></div>
-        <div class="capa205"></div>
-        <div class="capa23"></div>
-        <div class="capa24"></div>
-        <div class="capa27"></div>
+    <div id="contRespuesta1">
+        <div id="contRespuesta1A">
+            <div id="respuesta1A">
+                <div class="contFoto">
+                    <div class="capa20"></div>
+                    <div class="capa205"></div>
+                    <div class="capa23"></div>
+                    <div class="capa24"></div>
+                    <div class="capa27"></div>
+                </div>
+             </div>
+            <div class="respuestaErronea">
+                <div>
+                    <img src="imgs/comunes/demonio-final-sin-solucion.png" />
+                    <br />Vuelve a intentarlo<br><span>pulsando <a href="javascript:volver(1);void(0)">aquí</a></span>
+                </div>
+            </div>
+        </div>
+        <div id="contRespuesta1B">
+            <div id="respuesta1B">
+                <div class="contFoto">
+                    <div class="capa20"></div>
+                     <div class="capa205"></div>
+                    <div class="capa23"></div>
+                    <div class="capa24"></div>
+                    <div class="capa27"></div>
+                    <div class="capa28"></div>
+                </div>
+             </div>
+        </div>
     </div>
 </div>
 <div style="height:2000px;" id="resto"></div>
-<div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:100; top: 0; left: 0; color: orange;">Scroll</div>
+<div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:100; top: 0; left: 0; color: orange;"></div>
 </body>
  <script src="js/jquery-1.10.2.js"></script>
  <script type="text/javascript">
@@ -75,19 +98,30 @@ if(isChromium !== null && vendorName === "Google Inc.") {
    // is Google chrome 
    esChrome = true;
 }
- var porcentaje = 1;
- var altoInicial = 968;
- var anchoInicial = 1720;
- var extendidoInicial = 2019;
- var alto;
- var ancho;
- var extendido;
- var initF1;
- var initF2;
- var recorrido = 2000;
- var altoVentana;
- var anchoVentana;
- var remanente = 0;
+var porcentaje = 1;
+var altoInicial = 968;
+var anchoInicial = 1720;
+var extendidoInicial = 2019;
+var alto;
+var ancho;
+var extendido;
+var initF1;
+var initF2;
+var recorrido = 4000;
+var altoVentana;
+var anchoVentana;
+var remanente = 0;
+var initRespuesta1;
+var initRespuesta2;
+var initRespuesta3;
+var initRespuesta4;
+var initRespuesta5;
+var finRespuesta1;
+var finRespuesta2;
+var finRespuesta3;
+var finRespuesta4;
+var finRespuesta5;
+	 
  $(function() {
     $(document).on("mousewheel", function() {
         gestionaAnimacion($(document).scrollTop());
@@ -137,18 +171,29 @@ if(isChromium !== null && vendorName === "Google Inc.") {
 	$(".doslineas").css("margin-top",$(".letra").width()*0.20);
 	
 	// click de los textos
-	$("#primeraOpcion .respuestaA").click(function() {
-		$("#respuesta1A").show();
+	$("#opcion1 .respuestaA").click(function() {
+		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
+		finRespuesta1 = initRespuesta1+recorrido;
+		$("#contRespuesta1").show();
+		$("#contRespuesta1A").show();
 		$("#respuesta1A .capa27").css("margin-top",0);
 	})
-	$("#primeraOpcion .respuestaB").click(function() {
-		$("#respuesta1B").show();
+	$("#opcion1 .respuestaB").click(function() {
+		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
+		finRespuesta1 = initRespuesta1+recorrido;
+		$("#contRespuesta1").show();
+		$("#contRespuesta1B").show();
+		$("#respuesta1B .capa28").css("opacity",0);
 	})	
 	
 /// control de los offsets inciales
 	initF1 = $("#fotograma1").offset().top;
 	initF2 = initF1+recorrido+$("#primerTexto").height();
 	
+	///escondemos 
+	$("#contRespuesta1A").hide();
+	$("#contRespuesta1B").hide();
+	$(window).scrollTop(0); /// ponemos el scroll arriba;
 });
 function gestionaAnimacion (elscroll) {
 	$("#debugger").css("top",$( window ).height()-25+elscroll);
@@ -158,9 +203,6 @@ function gestionaAnimacion (elscroll) {
 	F1Offset = $("#fotograma1").offset().top;
 	initF2 = F1Offset+$("#fotograma1").height()+$("#primerTexto").height();
 	mensaje += " | InitF2: " + initF2;
-	if ($("#respuesta1A").is(":visible")) {
-		initRespuesta1 = $("#primeraOpcion").offset().top + $("#primeraOpcion").height() + (remanente*2);
-	}
  	//mensaje += " | F1Offset: " + F1Offset + " | Recorrido " + recorrido + " | Texto Height:" + +$("#primerTexto").height() +  " |initF2: " + initF2;
 	if (elscroll<=340) {
 		$("#fotograma1").css("margin-top",0);
@@ -190,26 +232,61 @@ function gestionaAnimacion (elscroll) {
 		$("#fotograma2 .capa25").css("margin-top",0-(alto+(alto*0.05)));
 		$("#fotograma2 .capa26").css("margin-top",0-(alto+(alto*0.05)));
 	}
-	if ($("#respuesta1A").is(":visible") && (elscroll>initRespuesta1 && elscroll<=(initRespuesta1+recorrido))) {
-		zambullida = (initRespuesta1+recorrido)-initRespuesta1;
+	if ($("#contRespuesta1A").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
 		indice = elscroll % 2;
-		mensaje = "Entrameos en la respuesta 1";
-		mensaje += " | El Scroll: " + elscroll;
-		mensaje += " | Inicio: " + initRespuesta1;
-		mensaje += " | Fin: " + (initRespuesta1+recorrido);
+		zambullida = (initRespuesta1+recorrido)-initRespuesta1;
 		foco = elscroll-initRespuesta1;
+		coeficiente = foco/recorrido;
+		porcentajeR = coeficiente*100;
+		mensaje = "Porecentaje: " + porcentajeR;
 		valorHundimiento = Math.round(foco/3);
 		mensaje += " | Foco: " + foco;
-		mensaje += " | Hundimiento: " + (valorHundimiento);
-		mensaje += " | Margen-top: " + (0-((alto*0.85)+valorHundimiento));
 		$("#respuesta1A").css("margin-top",elscroll-(initRespuesta1));
 		$("#respuesta1A .capa23").css("margin-top",0-((alto+valorHundimiento)+(indice*3)));
 		$("#respuesta1A .capa24").css("margin-top",0-(alto)+(indice*7));
 		$("#respuesta1A .capa205").css("margin-left",0-(valorHundimiento));
 		$("#respuesta1A .capa205").css("margin-top",0-(alto-(valorHundimiento)));
-		$("#respuesta1A .capa27").css("margin-top",0-((alto*0.30)+valorHundimiento));
+		$("#respuesta1A .capa27").css("margin-top",0-(alto*coeficiente));
 	}
-		$("#debugger").html(mensaje);
+	if ($("#contRespuesta1B").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
+		indice = elscroll % 2;
+		foco = elscroll-initRespuesta1;
+		coeficiente = foco/recorrido;
+		porcentajeR = coeficiente*100;
+		mensaje = "Porecentaje: " + porcentajeR;
+		$("#respuesta1B").css("margin-top",elscroll-(initRespuesta1));
+		$("#respuesta1B .capa23").css("margin-top",0-(alto)+(indice*9));
+		$("#respuesta1B .capa24").css("margin-top",0-(alto)+(indice*7));
+		if (porcentajeR>0 && porcentajeR<=20) {
+			nCoeficiente = porcentajeR/20;
+			$("#respuesta1B .capa205").css("opacity",1-nCoeficiente);
+			$("#respuesta1B .capa28").css("opacity",nCoeficiente);
+			mensaje = "| Coeficiente: " + nCoeficiente;
+		}
+		if (porcentajeR>40) {
+			nCoeficiente = (porcentajeR-40)/60;
+			$("#respuesta1B .capa28").css("margin-left",0-(ancho*nCoeficiente));
+			mensaje = "| Coeficiente: " + nCoeficiente + ' |Mover: ' + (0-(ancho*nCoeficiente)) ;
+			if (porcentajeR>80) {
+				sCoeficiente = (porcentajeR-80)/10;
+				$("#respuesta1B .capa28").css("opacity",1-sCoeficiente);
+				mensaje = "Hacemos el fade | Coeficiente: " + sCoeficiente + ' |Mover: ' + (0-(ancho*nCoeficiente)) ;
+			}
+		}
+
+	}
+	$("#debugger").html(mensaje);
+}
+function volver (lugar) {
+	total =  $("#opcion" + lugar).offset().top-($(window).height()-$("#opcion" + lugar).height());
+	//alert('Lugar ' +$("#opcion" + lugar).offset().top + '\n' + 'Altura ventana: ' + $(window).height() + '\nAluta cinta' + $("#opcion" + lugar).height() + '\nTotal:' + total); 
+	  $('html, body').animate({
+        scrollTop: $("#opcion" + lugar).offset().top-(($(window).height()-$("#opcion" + lugar).height())/2)
+    }, 2000, function () {
+		$("#contRespuesta"+lugar).hide();
+		$("#contRespuesta"+lugar+'A').hide();
+		$("#contRespuesta"+lugar+'B').hide();
+		});
 }
  </script>
 </html>
