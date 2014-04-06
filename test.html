@@ -113,7 +113,7 @@
         <div class="capa33"></div>
         <div class="capa34"></div>
     </div>
-    <div id="opcion3" class="textos">
+    <div id="opcion2" class="textos">
          <div class="container">	
             <p><img src="imgs/letras/N.png" />ada más entrar por el arco principal te corta el paso una espesa vegetación de datos que te impide observar lo que se oculta detrás.</p>
          </div>
@@ -128,10 +128,62 @@
             <div style="clear: both;"></div>
          </div>
          <div style="clear: both;"></div>
-	</div>   	
+	</div> 
+  <div id="contRespuesta2">
+        <div id="contRespuesta2A">
+            <div id="respuesta2A">
+                <div class="contFoto">
+                    <div class="capa30"></div>
+                    <div class="capa31"></div>
+                    <div class="capa32"></div>
+                    <div class="capa33"></div>
+                    <div class="capa35"></div>
+                </div>
+             </div>
+    <div class="textoDesbloqueado" id="td2">
+             	<div class="conTextoDesbloqueado">
+                	<div><img src="imgs/comunes/textoDesBRow1.png" /></div>
+                    <div>
+                    <div class="tdColIzq">
+                    	<img src="imgs/comunes/textoDesLT.png">
+                    </div>
+                    <div class="tdCentral"><p style="font-size:1.8em">La reputación emocional<br /><br /></p>
+<p>Cuando un buen día las marcas descubrieron que podían contar historias más allá de aquellas que configuraban un argumentario para la venta de sus productos, nació todo un coro de potenciales <strong>nuevos narradores</strong>. En la era de la polución de contenidos, las marcas han intentado hacerse un hueco como generadores de narrativas que pudieran ayudar a establecer una <strong>relación duradera con los consumidores</strong>. Y lo han hecho porque han descubierto que, cuando se produce esa anhelada conexión con el consumidor su impacto en la reputación emocional es impagable. A esa conexión es a lo que llamamos <em><strong>engagement</strong></em>. Pero, la gran cuestión es, ¿cómo se produce? ¿Cuál es su algoritmo?  En esa búsqueda del <em>engagement</em> a través del contenido, a menudo las marcas se han infravalorado a sí mismas, sumidas en un síndrome de inferioridad que nacía de sus fines comerciales. Como lo expresa Cindy Gallop: “Mientras los anunciantes sigan invitando a ‘Saltar el anuncio’ están reforzando el pensamiento de que la publicidad y, por lo tanto el contenido que viene de marcas, es malo”*. Ha llegado el momento en el que las marcas tienen que sorprenderse a sí mismas levantando la vista y descubriendo con estupor cómo sus competidores ya no son quienes pensaban que eran; cómo, en el camino del contenido la <strong>industria del entretenimiento</strong> se ha convertido en su mayor competencia y, al mismo tiempo, en el espejo en que mirarse. 
+<br><br>*Cindy Gallop en The Guardian Changing Advertising Summit 2012 </p>
+</div>
+                    <div class="tdColDer">
+                    	<img src="imgs/comunes/textoDesRT.png">
+                    </div>
+                    <div style="clear:both"></div>
+                    </div>
+                    <div><img src="imgs/comunes/textoDesBRow2.png" /></div>
+                </div>
+             </div>        
+        </div>
+        <div id="contRespuesta2B">
+            <div id="respuesta2B">
+                <div class="contFoto">
+                    <div class="capa30"></div>
+                    <div class="capa31"></div>
+                    <div class="capa32"></div>
+                    <div class="capa325"></div>
+                    <div class="capa33"></div>
+                    <div class="capa34"></div>
+                    <div class="capa36"></div>
+                    <div class="capa37"></div>
+                </div>
+             </div>
+             <div class="respuestaErronea">
+                <div>
+                    <img src="imgs/comunes/demonio-final-sin-solucion.png" />
+                    <br />Vuelve a intentarlo<br><span>pulsando <a href="javascript:volver(2);void(0)">aquí</a></span>
+                </div>
+            </div>
+        </div>
+    </div>  	
     </div>
 </div>
-<div style="height:2000px;" id="resto"></div>
+<div style="height:2000px; background-color: white;" id="resto"></div>
 <div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:100; top: 0; left: 0; color: orange;"></div>
 </body>
  <script src="js/jquery-1.10.2.js"></script>
@@ -242,6 +294,24 @@ var initBloque2;
 
 	})	
 	
+	$("#opcion2 .respuestaA").click(function() {
+		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
+		finRespuesta2 = initRespuesta2+recorrido;
+		$("#contRespuesta2").show();
+		$("#contRespuesta2A").show();
+		$("#contRespuesta2B").hide();
+	})
+	$("#opcion2 .respuestaB").click(function() {
+		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
+		finRespuesta2 = initRespuesta2+recorrido;
+		$("#contRespuesta2").show();
+		$("#contRespuesta2B").show();
+		$("#contRespuesta2A").hide();
+		$("#contRespuesta2B .capa325").css("opacity",0);
+		$("#contRespuesta2B .capa36").css("opacity",0);	
+		$("#contRespuesta2B .capa37").css("opacity",0);		
+	})
+	
 /// control de los offsets inciales
 	initF1 = $("#fotograma1").offset().top;
 	initF2 = initF1+recorrido+$("#primerTexto").height();
@@ -249,6 +319,8 @@ var initBloque2;
 	///inicialicimos 
 	$("#contRespuesta1A").hide();
 	$("#contRespuesta1B").hide();
+	$("#contRespuesta2A").hide();
+	$("#contRespuesta2B").hide();	
 	// fotograma 3
 	$(".capa33").height(ancho);
 	$(".capa33").css("margin-top",0-ancho);
@@ -266,9 +338,13 @@ function gestionaAnimacion (elscroll) {
 	}
 	if (elscroll>(initF1+remanente) && elscroll<=initF1+recorrido) {
 		mensaje = "Porcentaje " + porcentaje + " | Ancho: " + ancho;
+		foco = elscroll-(initF1+remanente);
+		coeficiente = foco/recorrido;
+		porcentajeR = coeficiente*100;
 		$("#fotograma1").css("margin-top",elscroll-(initF1+remanente));
-		$("#capa17").css("width",ancho+(elscroll/25))
-		$("#capa17").css("height",alto+(elscroll/35))
+		$("#capa17").css("width",ancho+(ancho*(coeficiente/4)))
+		$("#capa17").css("height",alto+(alto*(coeficiente/4)))
+		$("#capa17").css("margin-top",0-(alto+(alto*(coeficiente/8))))
 		$("#capa18").css("margin-top",0-($("#capa17").height()-3))
 		$("#capa17").css("margin-left",0-(elscroll/50))
 		$("#capa13").css("margin-left",0-(elscroll/5))
@@ -382,6 +458,57 @@ function gestionaAnimacion (elscroll) {
 		$("#fotograma3 .capa34").css("margin-left",0+Math.round(cambioLeft));
 		//$("#fotograma3 .capa33").css("margin-top",correcionMargen+porcentajeR);
 		
+	}
+	if ($("#contRespuesta2A").is(":visible") && (elscroll>initRespuesta2 && elscroll<=finRespuesta2)) { 
+		indice = elscroll % 2;
+		foco = elscroll-initRespuesta2;
+		coeficiente = foco/recorrido;
+		porcentajeR = coeficiente*100;
+		porcentajeR = Math.round(porcentajeR);
+		mensaje = "Porecentaje: " + porcentajeR;
+		distanciaRecorrer = ancho-alto;
+		$("#respuesta2A").css("margin-top",elscroll-(initRespuesta2));
+		if (porcentajeR>0 && porcentajeR<=50) {
+			nCoeficiente = porcentajeR/50;
+			$("#respuesta2A .capa33").css("margin-top",0-(ancho-(Math.round(distanciaRecorrer*nCoeficiente))));
+			$("#respuesta2A .capa35").css("margin-top",0-(alto+(Math.round(distanciaRecorrer*nCoeficiente))));
+		}
+		if (porcentajeR>65) {
+			nCoeficiente = (porcentajeR-65)/35;
+			cambioAncho = Math.round(ancho * (1+(nCoeficiente*0.6)))
+			aumento = cambioAncho-ancho;
+			$("#respuesta2A .capa33").width(cambioAncho);
+			$("#respuesta2A .capa33").height(cambioAncho);
+			$("#respuesta2A .capa33").css("margin-left",0-Math.round(aumento/2));
+			$("#respuesta2A .capa35").css("margin-top",0-(ancho+aumento));
+			mensaje = "Margen top = " + String(parseInt($("#respuesta2A .capa35").css("margin-top").replace("px",""))-(aumento/2));
+
+		}
+	}
+	if ($("#contRespuesta2B").is(":visible") && (elscroll>initRespuesta2 && elscroll<=finRespuesta2)) { 
+		indice = elscroll % 2;
+		foco = elscroll-initRespuesta2;
+		coeficiente = foco/recorrido;
+		porcentajeR = coeficiente*100;
+		porcentajeR = Math.round(porcentajeR);
+		mensaje = "Porecentaje: " + porcentajeR;
+		distanciaRecorrer = ancho-alto;
+		$("#respuesta2B").css("margin-top",elscroll-(initRespuesta2));
+		if (porcentajeR>0 && porcentajeR<=30) {
+			nCoeficiente = porcentajeR/30;
+			$("#respuesta2B .capa34").css("opacity",1-nCoeficiente);
+			$("#respuesta2B .capa36").css("opacity",nCoeficiente);
+		}
+		if (porcentajeR>50 && porcentajeR<=80) {
+			nCoeficiente = (porcentajeR-50)/30;
+			$("#respuesta2B .capa36").css("opacity",1-nCoeficiente);
+			$("#respuesta2B .capa325").css("opacity",nCoeficiente);
+			$("#respuesta2B .capa37").css("opacity",nCoeficiente);
+		}
+		if (porcentajeR>80) {
+			nCoeficiente = (porcentajeR-80)/20;
+			$("#respuesta2B .capa37").css("margin-top",(0-alto)+(coeficiente*alto));
+		}
 	}
 	$("#debugger").html(mensaje);
 }

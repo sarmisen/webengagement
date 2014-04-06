@@ -435,8 +435,19 @@ body, html {
 	-o-background-size: cover;
 	background-size: cover;
 }
-.capa33 {
+.capa325 {
 	z-index: 4;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena3/solucion2/3_Heroe2.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa33 {
+	z-index: 5;
 	width: 1720px;
 	height:1720px;
 	background: url(../imgs/escena3/2_Entrada-muroLARGA.png) no-repeat; 
@@ -446,11 +457,44 @@ body, html {
 	background-size: cover;
 }
 .capa34 {
-	z-index: 5;
+	z-index: 6;
 	margin-top:-968px;
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena3/1_heroe1.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa35 {
+	z-index: 7;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena3/solucion1/1_Heroe1-escalando.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa36 {
+	z-index: 8;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena3/solucion2/1_Heroe1.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa37 {
+	z-index: 9;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena3/solucion2/2_complementos-Heroe2.png) no-repeat; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
