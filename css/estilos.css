@@ -500,3 +500,124 @@ body, html {
 	-o-background-size: cover;
 	background-size: cover;
 }
+/* CUARTO FOTOGRAMA */
+.capa40 {
+	z-index: 10;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/Fondo-sala-LARGA.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa41 {
+	z-index: 20;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/Sombra-LARGA.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa42 {
+	z-index: 30;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/Guardian.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa43 {
+	z-index: 40;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/Heroe1.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa405 {
+	z-index: 15;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/respuesta1/Puerta-Abierta-LARGA.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa425 {
+	z-index: 35;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/respuesta1/guardian-se-da-la-vuelta.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa44 {
+	z-index: 50;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/respuesta1/Heroe-Hablando.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa45 {
+	z-index: 50;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/respuesta1/Heroe-entra-por-la-puerta.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa415 {
+	z-index: 25;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/respuesta2/guardian-desaparece-LARGA.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa46 {
+	z-index: 60;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/respuesta2/Heroe-ataca.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa47 {
+	z-index: 70;
+	margin-top:-968px;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena4/respuesta2/heroe-sorprendido-guardian-desaparece.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
