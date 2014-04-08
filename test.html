@@ -260,481 +260,95 @@
     </div>  	
     </div>
     <!--FIN BLOQUE TRES-->
+ 	<!--BLOQUE CUATRO-->
+    <div id="bloque4" class="bloquesOcultos">
+     <div id="fotograma5" class="contFoto">
+        <div class="capa50"></div>
+        <div class="capa51"></div>
+        <div class="capa52"></div>
+        <div class="capa53"></div>
+        <div class="capa54"></div>
+    </div>
+    <div id="opcion4" class="textos">
+         <div class="container">	
+            <p><img src="imgs/letras/L.png" />legas a la sala del cofre, pero un enorme dragón azul lo protege.  </p>
+         </div>
+         <div class="respuestaA">
+            <div class="letra"><img src="imgs/letras/botonA.png"></div>
+            <div class="textos doslineas">Decides enfrentarte a la bestia<br> e intentar cortarle la cabeza</div>
+            <div style="clear: both;"></div>
+         </div>
+         <div class="respuestaB">
+            <div class="letra"><img src="imgs/letras/botonB.png"></div>
+            <div class="textos doslineas">Empiezas a cantar una canción. </div>
+            <div style="clear: both;"></div>
+         </div>
+         <div style="clear: both;"></div>
+	</div> 
+  <div id="contRespuesta4">
+        <div id="contRespuesta4A">
+            <div id="respuesta4A">
+                <div class="contFoto">
+                    <div class="capa50"></div>
+                    <div class="capa51"></div>
+                    <div class="capa52"></div>
+                    <div class="capa521"></div>
+                    <div class="capa522"></div>
+                    <div class="capa523"></div>
+                    <div class="capa524"></div>
+                    <div class="capa525"></div>
+                    <div class="capa526"></div>
+                    <div class="capa54"></div>
+                </div>
+             </div>
+  <div class="respuestaErronea">
+                <div>
+                    <img src="imgs/comunes/demonio-final-sin-solucion.png" />
+                    <br />Vuelve a intentarlo<br><span>pulsando <a href="javascript:volver(4);void(0)">aquí</a></span>
+                </div>
+            </div>          
+        </div>
+        <div id="contRespuesta4B">
+            <div id="respuesta4B">
+                <div class="contFoto">
+                    <div class="capa50"></div>
+                    <div class="capa501"></div>
+                    <div class="capa51"></div>
+                    <div class="capa52"></div>
+                    <div class="capa53"></div>
+                    <div class="capa532"></div>
+                    <div class="capa533"></div>
+                    <div class="capa534"></div>
+                    <div class="capa535"></div>
+                    <div class="capa54"></div>
+                </div>
+             </div>
+<div class="textoDesbloqueado" id="td4">
+             	<div class="conTextoDesbloqueado">
+                	<div><img src="imgs/comunes/textoDesBRow1.png" /></div>
+                    <div>
+                    <div class="tdColIzq">
+                    	<img src="imgs/comunes/textoDesLT.png">
+                    </div>
+                    <div class="tdCentral"><p style="font-size:1.8em">Branded entertainment, la última frontera.  <br /><br /></p>
+<p>Conversar implica entender al otro como un interlocutor válido, olvidar por un momento nuestros intereses a corto plazo para establecer una relación en la que, al mismo tiempo que se produce una pérdida del control de nuestro discurso, se abre una nueva oportunidad: la de la <strong>empatía</strong>. Las <strong>audiencias activas</strong> desconfían de los discursos cerrados, especialmente si nacen en una estrategia de marca, y no dudarán en ignorarlos o criticarlos si nos empeñamos en exponerlos a ellos. El entretenimiento de marca tiene que nacer siempre de la comprensión de que las reglas del consumo de contenidos han cambiado  y construirse idealmente en diferentes niveles, algunos de ellos impulsados directamente por la marca, otros sólo sugeridos y muchos más construidos de manera directa por su audiencia. Una estrategia de <strong>storytelling interactivo</strong> no lo será si no genera conversaciones y, en un segundo lugar, no conseguirá triunfar si no genera empatía. Con twitter como máximo impulsor del fenómeno, la industria del entretenimiento ya ha empezado a comprender que no sobrevivirá, si no es apoyada en las conversaciones y en el <em>on-demand</em>. En el terreno de las marcas aún quedan muchos prejuicios que vencer, pero el <em>engagement</em> no podrá desarrollarse si las historias no encuentran un espacio en el que respirar. Las narrativas del entretenimiento se complican cada día, a medida que los <strong>puntos de impacto</strong> en la audiencia se multiplican. Es básico que el entretenimiento de marca se construya sobre <strong>arquitecturas de niveles narrativos interrelacionados</strong>, cada uno con su propia personalidad, pero todos compartiendo una misma misión: la de generar <em>engagement</em> con los consumidores entreteniéndoles. Por todo ello, ha llegado el momento de que las marcas den, en el terreno de su relación con los consumidores, el salto definitivo del <em>branded content</em> al <strong><em>branded entertainment</em></strong>. </p>
+</div>
+                    <div class="tdColDer">
+                    	<img src="imgs/comunes/textoDesRT.png">
+                    </div>
+                    <div style="clear:both"></div>
+                    </div>
+                    <div><img src="imgs/comunes/textoDesBRow2.png" /></div>
+                </div>
+             </div>
+        </div>
+    </div>  	
+    </div>
+    <!--FIN BLOQUE CUATRO-->
 </div>
 <div style="height:2000px; background-color: white;" id="resto"></div>
 <div id="debugger" style="position: absolute; width: 90%; height: 25px; background-color: black; padding: 5px; z-index:100; top: 0; left: 0; color: orange;"></div>
 </body>
  <script src="js/jquery-1.10.2.js"></script>
- <script type="text/javascript">
- var esChrome = false;
- // please note, that IE11 now returns true for window.chrome
-var isChromium = window.chrome,
-    vendorName = window.navigator.vendor;
-if(isChromium !== null && vendorName === "Google Inc.") {
-   // is Google chrome 
-   esChrome = true;
-}
-var porcentaje = 1;
-var altoInicial = 968;
-var anchoInicial = 1720;
-var extendidoInicial = 2019;
-var alto;
-var ancho;
-var extendido;
-var initF1;
-var initF2;
-var recorrido = 10000;
-var altoVentana;
-var anchoVentana;
-var remanente = 0;
-var initRespuesta1;
-var initRespuesta2;
-var initRespuesta3;
-var initRespuesta4;
-var initRespuesta5;
-var finRespuesta1;
-var finRespuesta2;
-var finRespuesta3;
-var finRespuesta4;
-var finRespuesta5;
-var initBloque2; 
- $(function() {
-    $(document).on("mousewheel", function() {
-        gestionaAnimacion($(document).scrollTop());
-    });
-	    $(document).on("scroll", function() {
-        gestionaAnimacion($(document).scrollTop());
-    });
-	$("#debugger").css("top",$( window ).height()-$("#debugger").height());
-	/// calculamos el alto de la pagina
-	altoVentana = $(window).height();
-	anchoVentana = $(window).width(); 
-	porcentaje = $(window).width()/anchoInicial;
-	//porcentaje = $(window).height()/altoInicial;
-	porcentaje = porcentaje.toFixed(2);
-	if (esChrome) {
-		//porcentaje = 1;
-	}
-	alto = Math.round(altoInicial * porcentaje);
-	ancho = Math.round(anchoInicial * porcentaje);
-	if (alto>altoVentana) {
-		remanente = (alto-altoVentana)/2;
-	}
-	extendido = Math.round(extendidoInicial * porcentaje);
-	recorrido = Math.round(recorrido * porcentaje);
-	$("#resto").height(recorrido);
-	///definimos los tamaños inciales: contenedores. imágenes,márgenes
-	mensaje = "Porcentaje: " + porcentaje + " | Alto: " + alto + " |Ancho: " + ancho;
-	$("#contenedor").css("width",ancho+"px");
-	$("#cabecera").css("width",ancho+"px");
-	$(".contFoto").css("width",ancho+"px");
-	$(".contFoto").css("height",alto+"px");
-	$("#debugger").html(mensaje);
-	$(".contFoto div").css("width",ancho+"px");
-	$(".contFoto div").css("height",alto+"px");
-	$(".extendido").css("width",extendido+"px");
-	$(".extendido").css("margin-left",0-((extendido-ancho)/2)+"px");
-	$(".contFoto div:not(:first-child)").css("margin-top",0-(alto)+'px');
-	
-	/// contenedroes de textos	
-	$(".textos .container").css("font-size",(porcentaje*1.2)+"em");
-	$(".respuestaA").css("font-size",(porcentaje*1.2)+"em");
-	$(".respuestaB").css("font-size",(porcentaje*1.2)+"em");
-	$(".respuestaA").css("width",$(".textos").width()*0.22);
-	$(".respuestaB").css("margin-left",$(".textos").width()*0.22);
-	$(".respuestaA").css("margin-left",$(".textos").width()*0.25);
-	$(".respuestaB").css("margin-left",$(".textos").width()*0.03);
-	$(".doslineas").css("margin-top",$(".letra").width()*0.20);
-	
-	// click de los textos
-	// *****************************************
-	// *****************************************
-	$("#opcion1 .respuestaA").click(function() {
-		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
-		finRespuesta1 = initRespuesta1+recorrido;
-		$("#contRespuesta1").show();
-		$("#contRespuesta1A").show();
-		$("#contRespuesta1B").hide();
-		$("#respuesta1A .capa27").css("margin-top",0);
-	})
-	$("#opcion1 .respuestaB").click(function() {
-		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
-		finRespuesta1 = initRespuesta1+recorrido;
-		$("#contRespuesta1").show();
-		$("#contRespuesta1B").show();
-		$("#contRespuesta1A").hide();
-		$("#respuesta1B .capa28").css("opacity",0);
-		$("#respuesta1B .capa29").css("opacity",0);
-		$("#respuesta1B .capa30").css("opacity",0);
-			///RESPUESTAS DESBLOQUEADS
-		$("#contRespuesta1B .tdColIzq").height($("#contRespuesta1B .tdCentral").height()+30);
-		$("#contRespuesta1B .tdColDer").height($("#contRespuesta1B .tdCentral").height()+30);
-		$("#bloque2").show();
-		initBloque2 = $("#bloque2").offset().top;
-
-	})	
-	
-	$("#opcion2 .respuestaA").click(function() {
-		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
-		finRespuesta2 = initRespuesta2+recorrido;
-		$("#contRespuesta2").show();
-		$("#contRespuesta2A").show();
-		$("#contRespuesta2B").hide();
-		/* incializamos bloque3 */
-		$("#bloque3").show();
-		initBloque3 = $("#bloque3").offset().top;
-		$(".capa41").css("margin-top",0-(alto*2)); // sombre
-		$(".capa42").css("margin-top",alto); // gigante
-		$(".capa43").css("margin-left",0+(ancho*0.3));
-	})
-	$("#opcion2 .respuestaB").click(function() {
-		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
-		finRespuesta2 = initRespuesta2+recorrido;
-		$("#contRespuesta2").show();
-		$("#contRespuesta2B").show();
-		$("#contRespuesta2A").hide();
-		$("#contRespuesta2B .capa325").css("opacity",0);
-		$("#contRespuesta2B .capa36").css("opacity",0);	
-		$("#contRespuesta2B .capa37").css("opacity",0);		
-	})
-	
-	$("#opcion3 .respuestaA").click(function() {
-		initRespuesta3 = $("#opcion3").offset().top + $("#opcion3").height() + (remanente*2);
-		finRespuesta3 = initRespuesta3+recorrido;
-		$("#contRespuesta3").show();
-		$("#contRespuesta3A").show();
-		$("#contRespuesta3B").hide();
-		$("#respuesta3A .capa405").css("opacity",0);
-		$("#respuesta3A .capa425").css("opacity",0);
-		$("#respuesta3A .capa44").css("opacity",0);
-		$("#respuesta3A .capa45").css("opacity",0);
-		$("#contRespuesta3A .capa41").css("margin-top",0-alto); // sombre
-		$("#contRespuesta3A .capa42").css("margin-top",0-alto); // gigante
-		$("#contRespuesta3A .capa43").css("margin-left",0);
-
-	})
-	$("#opcion3 .respuestaB").click(function() {
-		initRespuesta3 = $("#opcion3").offset().top + $("#opcion3").height() + (remanente*2);
-		finRespuesta3 = initRespuesta3+recorrido;
-		$("#contRespuesta3").show();
-		$("#contRespuesta3A").hide();
-		$("#contRespuesta3B").show();	
-		$("#contRespuesta3B .capa41").css("margin-top",0-alto); // sombre
-		$("#contRespuesta3B .capa42").css("margin-top",0-alto); // gigante
-		$("#contRespuesta3B .capa415").css("opacity",0);
-		$("#contRespuesta3B .capa47").css("opacity",0);
-
-
-	})
-/// control de los offsets inciales
-	initF1 = $("#fotograma1").offset().top;
-	initF2 = initF1+recorrido+$("#primerTexto").height();
-	
-	///inicialicimos 
-	$("#contRespuesta1A").hide();
-	$("#contRespuesta1B").hide();
-	$("#contRespuesta2A").hide();
-	$("#contRespuesta2B").hide();	
-	$("#contRespuesta3A").hide();
-	$("#contRespuesta3B").hide();
-	$("#contRespuesta4A").hide();
-	$("#contRespuesta4B").hide();		
-	// fotograma 3
-	$(".capa33").height(ancho);
-	$(".capa33").css("margin-top",0-ancho);
-	$(window).scrollTop(0); /// ponemos el scroll arriba;
-});
-function gestionaAnimacion (elscroll) {
-	$("#debugger").css("top",$( window ).height()-25+elscroll);
-	F1Offset = $("#fotograma1").offset().top;
-	initF2 = F1Offset+$("#fotograma1").height()+$("#primerTexto").height();
-			mensaje = "El Scroll: " + elscroll;
-		mensaje += ' | Init Bloque 3: ' + initBloque2;
- 	//mensaje += " | F1Offset: " + F1Offset + " | Recorrido " + recorrido + " | Texto Height:" + +$("#primerTexto").height() +  " |initF2: " + initF2;
-	if (elscroll<=340) {
-		$("#fotograma1").css("margin-top",0);
-	}
-	if (elscroll>(initF1+remanente) && elscroll<=initF1+recorrido) {
-		mensaje = "Porcentaje " + porcentaje + " | Ancho: " + ancho;
-		foco = elscroll-(initF1+remanente);
-		coeficiente = foco/recorrido;
-		porcentajeR = coeficiente*100;
-		$("#fotograma1").css("margin-top",elscroll-(initF1+remanente));
-		$("#capa17").css("width",ancho+(ancho*(coeficiente/4)))
-		$("#capa17").css("height",alto+(alto*(coeficiente/4)))
-		$("#capa17").css("margin-top",0-(alto+(alto*(coeficiente/8))))
-		$("#capa18").css("margin-top",0-($("#capa17").height()-3))
-		$("#capa17").css("margin-left",0-(elscroll/50))
-		$("#capa13").css("margin-left",0-(elscroll/5))
-		$("#capa11").css("margin-left",(0-((extendido-ancho)/2)*porcentaje)+(elscroll/20))
-		$("#capa15").css("margin-left",(0-((extendido-ancho)/2)*porcentaje)+(elscroll/25))
-		//$("#capa17").css("opacity",1-(elscroll/2000));
-		$("#fotograma2").css("margin-top",0);
-		
-	}
-	if (elscroll>(initF2+(remanente*2)) && elscroll<=initF2+(remanente*2)+recorrido) {
-		indice = elscroll % 2;
-		mensaje += "Entramos en el frame 2";
-		$("#fotograma2").css("margin-top",elscroll-(initF2+(remanente*2)));
-		$("#fotograma2 .capa23").css("margin-top",0-(alto)+(indice*9));
-		$("#fotograma2 .capa24").css("margin-top",0-(alto)+(indice*7));
-		$("#fotograma2 .capa25").css("margin-left",(0-((extendido-ancho)/2))+((elscroll-(initF2+(remanente*2)+recorrido))/5))
-		$("#fotograma2 .capa26").css("margin-left",(0-((extendido-ancho)/2))-((elscroll-(initF2+(remanente*2)+recorrido))/5))
-		$("#fotograma2 .capa25").css("margin-top",0-(alto+(alto*0.05)));
-		$("#fotograma2 .capa26").css("margin-top",0-(alto+(alto*0.05)));
-	}
-	if ($("#contRespuesta1A").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
-		indice = elscroll % 2;
-		zambullida = (initRespuesta1+recorrido)-initRespuesta1;
-		foco = elscroll-initRespuesta1;
-		coeficiente = foco/recorrido;
-		porcentajeR = coeficiente*100;
-		mensaje = "Porecentaje: " + porcentajeR;
-		valorHundimiento = Math.round(foco/3);
-		mensaje += " | Foco: " + foco;
-		$("#respuesta1A").css("margin-top",elscroll-(initRespuesta1));
-		$("#respuesta1A .capa23").css("margin-top",0-((alto+valorHundimiento)+(indice*3)));
-		$("#respuesta1A .capa24").css("margin-top",0-(alto)+(indice*7));
-		$("#respuesta1A .capa205").css("margin-left",0-(valorHundimiento));
-		$("#respuesta1A .capa205").css("margin-top",0-(alto-(valorHundimiento)));
-		$("#respuesta1A .capa27").css("margin-top",0-(alto*coeficiente));
-	}
-	if ($("#contRespuesta1B").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
-		$("#bloque2").css("margin-top",0);
-		indice = elscroll % 2;
-		foco = elscroll-initRespuesta1;
-		coeficiente = foco/(recorrido-$(window).height());
-		porcentajeR = coeficiente*100;
-		porcentajeR = Math.round(porcentajeR)
-		mensaje = 'Porcentaje: ' + porcentajeR;
-		$("#respuesta1B").css("margin-top",elscroll-(initRespuesta1));
-		$("#respuesta1B .capa23").css("margin-top",0-(alto)+(indice*9));
-		$("#respuesta1B .capa24").css("margin-top",0-(alto)+(indice*7));
-		if (porcentajeR>0 && porcentajeR<=20) {
-			nCoeficiente = porcentajeR/20;
-			$("#respuesta1B .capa205").css("opacity",1-nCoeficiente);
-			$("#respuesta1B .capa28").css("opacity",nCoeficiente);
-			$("#respuesta1B .capa29").css("opacity",0);
-			$("#respuesta1B .capa30").css("opacity",0)
-		}
-		if (porcentajeR>40 && porcentajeR<=80) {
-			nCoeficiente = (porcentajeR-40)/40;
-			$("#respuesta1B .capa205").css("opacity",0);
-			$("#respuesta1B .capa28").css("margin-left",0-((ancho*0.5)*nCoeficiente));
-			$("#respuesta1B .capa28").css("opacity",1);
-			$("#respuesta1B .capa29").css("opacity",0);
-			$("#respuesta1B .capa30").css("opacity",0);
-		}
-		if (porcentajeR>80) {
-			nCoeficiente = (porcentajeR-80)/20;
-			$("#respuesta1B .capa28").css("opacity",0);
-			$("#respuesta1B .capa29").css("opacity",1);
-			$("#respuesta1B .capa30").css("opacity",1);
-			$("#respuesta1B .capa30").css("margin-left",0);
-			$("#respuesta1B .capa30").css("margin-top",0-alto);
-			if (porcentajeR>90) {
-				nCoeficiente = (porcentajeR-90)/10;
-			$("#respuesta1B .capa30").css("margin-left",0-((ancho*0.75)*nCoeficiente));
-			$("#respuesta1B .capa30").css("margin-top",0-(alto+(alto*(nCoeficiente*0.5))));
-			}
-		}
-		initBloque2 =$("#td1").offset().top+$("#td1").height()+remanente;
-		initBloque2 = Math.round(initBloque2);
-		mensaje = "El Scroll: " + elscroll;
-		mensaje += ' | Init Bloque 3: ' + initBloque2;
-	}
-	
-	/// TERCERAIMAGEN
-	if ($("#bloque2").is(":visible") && (elscroll>initBloque2 && elscroll<=(initBloque2+recorrido))) { 
-		foco = elscroll-initBloque2;
-		coeficiente = foco/recorrido;
-		porcentajeR = coeficiente*100;
-		mensaje = "Porecentaje: " + porcentajeR;
-		$("#bloque2").css("margin-top",elscroll-initBloque2);
-		foco = elscroll-initBloque2;
-		coeficiente = foco/(recorrido-$(window).height());
-		porcentajeR = coeficiente*100;
-		porcentajeR = Math.round(porcentajeR)
-		cambioAncho = Math.round(ancho * (1+(coeficiente*0.25)))
-		cambioAlto = Math.round(alto * (1+(coeficiente*0.25)))
-		peqAncho = Math.round(ancho * (1-(coeficiente*0.25)))
-		peqAlto = Math.round(alto * (1-(coeficiente*0.25)))
-		cambioTop = cambioAlto-alto;
-		cambioLeft = cambioAncho-ancho;
-		peqTop = alto-peqAlto;
-		correcionMargen = 0-ancho;
-		mensaje += "correcionMargen: " + correcionMargen;
-		$("#fotograma3 .capa30").width(cambioAncho);
-		$("#fotograma3 .capa30").height(cambioAlto);
-		$("#fotograma3 .capa30").css("margin-top",0-cambioTop);
-		$("#fotograma3 .capa30").css("margin-left",0-Math.round(cambioLeft/2));
-		$("#fotograma3 .capa31").css("margin-left",0-porcentajeR);
-		$("#fotograma3 .capa32").css("margin-left",0+porcentajeR);
-		$("#fotograma3 .capa34").width(peqAncho);
-		$("#fotograma3 .capa34").height(peqAlto);
-		$("#fotograma3 .capa34").css("margin-top",0-(alto-cambioTop));
-		$("#fotograma3 .capa34").css("margin-left",0+Math.round(cambioLeft));
-		//$("#fotograma3 .capa33").css("margin-top",correcionMargen+porcentajeR);
-		
-	}
-	if ($("#contRespuesta2A").is(":visible") && (elscroll>initRespuesta2 && elscroll<=finRespuesta2)) { 
-		indice = elscroll % 2;
-		foco = elscroll-initRespuesta2;
-		coeficiente = foco/recorrido;
-		porcentajeR = coeficiente*100;
-		porcentajeR = Math.round(porcentajeR);
-		mensaje = "Porecentaje: " + porcentajeR;
-		distanciaRecorrer = ancho-alto;
-		$("#respuesta2A").css("margin-top",elscroll-(initRespuesta2));
-		if (porcentajeR>0 && porcentajeR<=50) {
-			nCoeficiente = porcentajeR/50;
-			$("#respuesta2A .capa33").css("margin-top",0-(ancho-(Math.round(distanciaRecorrer*nCoeficiente))));
-			$("#respuesta2A .capa35").css("margin-top",0-(alto+(Math.round(distanciaRecorrer*nCoeficiente))));
-		}
-		if (porcentajeR>65) {
-			nCoeficiente = (porcentajeR-65)/35;
-			cambioAncho = Math.round(ancho * (1+(nCoeficiente*0.6)))
-			aumento = cambioAncho-ancho;
-			$("#respuesta2A .capa33").width(cambioAncho);
-			$("#respuesta2A .capa33").height(cambioAncho);
-			$("#respuesta2A .capa33").css("margin-left",0-Math.round(aumento/2));
-			$("#respuesta2A .capa35").css("margin-top",0-(ancho+aumento));
-			mensaje = "Margen top = " + String(parseInt($("#respuesta2A .capa35").css("margin-top").replace("px",""))-(aumento/2));
-
-		}
-				initBloque3 =$("#td2").offset().top+$("#td2").height()+remanente;
-		initBloque3 = Math.round(initBloque3);
-		mensaje = "El Scroll: " + elscroll;
-		mensaje += ' | Init Bloque 3: ' + initBloque3;
-	}
-	if ($("#contRespuesta2B").is(":visible") && (elscroll>initRespuesta2 && elscroll<=finRespuesta2)) { 
-		indice = elscroll % 2;
-		foco = elscroll-initRespuesta2;
-		coeficiente = foco/recorrido;
-		porcentajeR = coeficiente*100;
-		porcentajeR = Math.round(porcentajeR);
-		mensaje = "Porecentaje: " + porcentajeR;
-		distanciaRecorrer = ancho-alto;
-		$("#respuesta2B").css("margin-top",elscroll-(initRespuesta2));
-		if (porcentajeR>0 && porcentajeR<=30) {
-			nCoeficiente = porcentajeR/30;
-			$("#respuesta2B .capa34").css("opacity",1-nCoeficiente);
-			$("#respuesta2B .capa36").css("opacity",nCoeficiente);
-		}
-		if (porcentajeR>50 && porcentajeR<=80) {
-			nCoeficiente = (porcentajeR-50)/30;
-			$("#respuesta2B .capa36").css("opacity",1-nCoeficiente);
-			$("#respuesta2B .capa325").css("opacity",nCoeficiente);
-			$("#respuesta2B .capa37").css("opacity",nCoeficiente);
-		}
-		if (porcentajeR>80) {
-			nCoeficiente = (porcentajeR-80)/20;
-			$("#respuesta2B .capa37").css("margin-top",(0-alto)+(coeficiente*alto));
-		}
-	}
-	///FIN TERCERA IMAGEN
-	///CUARTA IMAGEN
-	if ($("#bloque3").is(":visible") && (elscroll>initBloque3 && elscroll<=(initBloque3+recorrido))) { 
-		foco = elscroll-initBloque3;
-		coeficiente = foco/recorrido;
-		porcentajeR = coeficiente*100;
-		porcentajeR = Math.round(porcentajeR)
-		$("#bloque3").css("margin-top",elscroll-initBloque3);
-		$(".capa41").css("margin-top",0-((alto*2)-Math.round((alto*coeficiente))))
-		$(".capa42").css("margin-top",alto-(Math.round(((alto*2)*coeficiente))))
-		$(".capa43").css("margin-left",(ancho*0.3)-((ancho*0.3)*coeficiente));
-		mensaje = "Frame 4  coeficiente: " + coeficiente;
-		
-	}
-	if ($("#contRespuesta3A").is(":visible") && (elscroll>initRespuesta3 && elscroll<=finRespuesta3)) { 
-		foco = elscroll-initRespuesta3;
-		coeficiente = foco/recorrido;
-		porcentajeR = coeficiente*100;
-		porcentajeR = Math.round(porcentajeR);
-		mensaje = "Porecentaje: " + porcentajeR;
-		distanciaRecorrer = ancho-alto;
-		$("#respuesta3A").css("margin-top",elscroll-(initRespuesta3));
-		if (porcentajeR>0 && porcentajeR<=25) {
-			nCoeficiente = porcentajeR/25;
-			$("#respuesta3A .capa44").css("opacity",nCoeficiente);
-			$("#respuesta3A .capa43").css("opacity",1-nCoeficiente);
-			$("#respuesta3A .capa45").css("opacity",0);
-			$("#respuesta3A .capa425").css("opacity",0);
-			$("#respuesta3A .capa42").css("opacity",1);
-		}
-		if (porcentajeR>25 && porcentajeR<=50) {
-			nCoeficiente = (porcentajeR-25)/25;
-			$("#respuesta3A .capa425").css("opacity",1);
-			$("#respuesta3A .capa42").css("opacity",0);
-			$("#respuesta3A .capa45").css("opacity",0);
-		}
-		if (porcentajeR>50 && porcentajeR<=75) {
-			nCoeficiente = (porcentajeR-50)/25;
-			$("#respuesta3A .capa425").css("opacity",0);
-			$("#respuesta3A .capa44").css("opacity",0);
-			$("#respuesta3A .capa405").css("opacity",nCoeficiente);
-			$("#respuesta3A .capa45").css("opacity",0);
-		}
-		if (porcentajeR>50 && porcentajeR<=75) {
-			$("#respuesta3A .capa45").css("opacity",1);
-		}
-	}
-	if ($("#contRespuesta3B").is(":visible") && (elscroll>initRespuesta3 && elscroll<=finRespuesta3)) { 
-		foco = elscroll-initRespuesta3;
-		coeficiente = foco/recorrido;
-		porcentajeR = coeficiente*100;
-		porcentajeR = Math.round(porcentajeR);
-		mensaje = "Porecentaje: " + porcentajeR;
-		distanciaRecorrer = ancho-alto;
-		$("#respuesta3B").css("margin-top",elscroll-(initRespuesta3));
-		if (porcentajeR>0 && porcentajeR<=25) {
-			nCoeficiente = porcentajeR/25;
-			$("#respuesta3B .capa47").css("opacity",0);
-			$("#respuesta3B .capa42").css("opacity",1);
-			$("#respuesta3B .capa415").css("opacity",0);
-			$("#respuesta3B .capa46").css("margin-left",0-((ancho*0.3)*coeficiente));
-		}
-		if (porcentajeR>25 && porcentajeR<=40) {
-			nCoeficiente = (porcentajeR-25)/15;
-			$("#respuesta3B .capa47").css("opacity",0);
-			$("#respuesta3B .capa42").css("opacity",0);
-			$("#respuesta3B .capa46").css("opacity",1);
-			$("#respuesta3B .capa415").css("opacity",0);
-		}
-		if (porcentajeR>40 && porcentajeR<=55) {
-			nCoeficiente = (porcentajeR-50)/15;
-			$("#respuesta3B .capa46").css("opacity",0);
-			$("#respuesta3B .capa47").css("opacity",1);
-			$("#respuesta3B .capa415").css("opacity",1);
-		}
-		if (porcentajeR>55 && porcentajeR<=100) {
-			nCoeficiente = (porcentajeR-55)/45;
-			sAncho = ancho-((ancho/4)*nCoeficiente);
-			sAlto = alto-((alto/4)*nCoeficiente);
-			bAncho = ancho+((ancho/2)*nCoeficiente);
-			bAlto = alto+((alto/2)*nCoeficiente);
-			$("#respuesta3B .capa47").width(sAncho);
-			$("#respuesta3B .capa47").height(sAlto);
-			$("#respuesta3B .capa415").width(bAncho);
-			$("#respuesta3B .capa415").height(bAlto);
-			$("#respuesta3B .capa415").css("margin-top",0-(alto+((bAlto-alto)/2)));
-			$("#respuesta3B .capa415").css("margin-left",0-(((bAncho-ancho)/2)));
-			$("#respuesta3B .capa47").css("margin-left",0+(((ancho-sAncho)/2)));
-			mensaje = "Ancho guerrero " + sAncho + "| Alto guerrero " + sAlto +  "| Ancho pared " + bAncho + "| Alto pared " + balto;
-		}
-	}	
-	$("#debugger").html(mensaje);
-}
-function volver (lugar) {
-	total =  $("#opcion" + lugar).offset().top-($(window).height()-$("#opcion" + lugar).height());
-	//alert('Lugar ' +$("#opcion" + lugar).offset().top + '\n' + 'Altura ventana: ' + $(window).height() + '\nAluta cinta' + $("#opcion" + lugar).height() + '\nTotal:' + total); 
-	  $('html, body').animate({
-        scrollTop: $("#opcion" + lugar).offset().top-(($(window).height()-$("#opcion" + lugar).height())/2)
-    }, 2000, function () {
-		$("#contRespuesta"+lugar).hide();
-		$("#contRespuesta"+lugar+'A').hide();
-		$("#contRespuesta"+lugar+'B').hide();
-		});
-}
- </script>
+<script src="js/programacion.js"></script>
 </html>

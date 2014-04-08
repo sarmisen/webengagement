@@ -620,4 +620,165 @@ body, html {
 	-o-background-size: cover;
 	background-size: cover;
 }
+/* QUINTO FOTOGRAMA */
+.capa50 {
+	z-index: 10;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/SalaLARGA.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa51 {
+	z-index: 20;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/Brillo-ventanucoLARGA.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa52 {
+	z-index: 30;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/dragon.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa53 {
+	z-index: 40;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/heroe-1.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa54 {
+	z-index: 50;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/huesos-1er-planoLARGA.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa521 {
+	z-index: 31;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion1/dragon-sin-cabeza.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa522 {
+	z-index: 32;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion1/cabeza-cortada.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa523 {
+	z-index: 33;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion1/dragon-2-cabezas.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa524 {
+	z-index: 34;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion1/dragon-devora-al-heroe.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa525 {
+	z-index: 35;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion1/Heroe1.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa526 {
+	z-index: 36;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion1/Heroe2.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa501 {
+	z-index: 11;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion2/cofre-abierto-LARGA.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa532 {
+	z-index: 42;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion2/Dragon-Baila.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa533 {
+	z-index: 43;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion2/Heroe-cantando.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa534 {
+	z-index: 44;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion2/heroe-llave-cofre.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa535 {
+	z-index: 45;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion2/heroe-con-engagement.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 
