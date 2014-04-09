@@ -5,9 +5,36 @@ html {
 	-webkit-transform: translate3d(0,0,0);
 }
 body, html {
-	background-color: black;
+	background-color: white;
+}
+#preloader {
+		position:absolute;
+	left:0;
+	top:0;
+	z-index:1000;
+	background-color: #f16f6e;
+}
+#dentroPreloader {
+	background-color: white;
+	width: 250px;
+	height: 140px;
+	border-radius: 8px;
+	border: 2px solid  black;
+	padding: 15px;
+	font-size: 1em;
+	font-family:"Courier New", Courier, monospace;
+}
+#dentroPreloader strong {
+	font-weight: bold;
+}
+#dentroPreloader a {
+	color: #f16f6e;
+	font-weight: bold;
 }
 #contenedor {
+	position:absolute;
+	left:0;
+	top:0;
 	width: 1720px;
 	margin: 0 auto;
 	background-image:url(../imgs/comunes/fondo_friso.png);;
@@ -16,8 +43,6 @@ body, html {
 	background-color: white;
 }
 #cabecera {
-	height: 340px;
-	overflow: hidden;
 	background-color:#f16f6e;
 }
 #cabecera img {
@@ -132,6 +157,37 @@ body, html {
 }
 .tdCentral strong {
 	font-weight: 700;
+}
+/* TITULOS */
+#capa0 {
+	z-index: 10;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/titulo/Thats.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa1 {
+	z-index: 20;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/titulo/Entertainment.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#capa2 {
+	z-index: 30;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/titulo/o-la-aventura-del-consumer-engagement.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 /*PRIMER FOTOGRAMA*/
 #fotograma1 {

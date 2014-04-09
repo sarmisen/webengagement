@@ -40,6 +40,12 @@ var initBloque4;
 	    $(document).on("scroll", function() {
         gestionaAnimacion($(document).scrollTop());
     });
+	// PRELOADER
+	$("#preloader").height($(window).height());
+	$("#preloader").width($(window).width());
+	$("#dentroPreloader").css("margin-left",($(window).width()-$("#dentroPreloader").width())/2);
+	$("#dentroPreloader").css("margin-top",($(window).height()-$("#dentroPreloader").height())/2);
+	
 	$("#debugger").css("top",$( window ).height()-$("#debugger").height());
 	/// calculamos el alto de la pagina
 	altoVentana = $(window).height();
@@ -206,7 +212,10 @@ var initBloque4;
 	$("#contRespuesta3A").hide();
 	$("#contRespuesta3B").hide();
 	$("#contRespuesta4A").hide();
-	$("#contRespuesta4B").hide();		
+	$("#contRespuesta4B").hide();	
+			$("#capa0").css("opacity",0);
+		$("#capa1").css("opacity",0);
+		$("#capa2").css("opacity",0);	
 	// fotograma 3
 	$(".capa33").height(ancho);
 	$(".capa33").css("margin-top",0-ancho);
@@ -219,8 +228,26 @@ function gestionaAnimacion (elscroll) {
 			mensaje = "El Scroll: " + elscroll;
 		mensaje += ' | Init Bloque 3: ' + initBloque2;
  	//mensaje += " | F1Offset: " + F1Offset + " | Recorrido " + recorrido + " | Texto Height:" + +$("#primerTexto").height() +  " |initF2: " + initF2;
-	if (elscroll<=340) {
-		$("#fotograma1").css("margin-top",0);
+	if (elscroll>0 && !$("#preloader").is(":hidden")) {
+		$("#preloader").hide();
+	};
+	if (elscroll<=alto) {
+		foco = elscroll;
+		coeficiente  = elscroll/alto;
+		porcentaje = coeficiente*100;
+		porcentaje = Math.round(porcentaje)
+		if (porcentaje>0 && porcentaje<=10) {
+			coeficienteN = porcentaje/10;
+			$("#capa0").css("opacity",coeficienteN);
+		}
+		if (porcentaje>10 && porcentaje<=20) {
+			coeficienteN = (porcentaje-10)/10;
+			$("#capa1").css("opacity",coeficienteN);
+		}
+		if (porcentaje>20 && porcentaje<=30) {
+			coeficienteN = (porcentaje-20)/10;
+			$("#capa2").css("opacity",coeficienteN);
+		}
 	}
 	if (elscroll>(initF1+remanente) && elscroll<=initF1+recorrido) {
 		mensaje = "Porcentaje " + porcentaje + " | Ancho: " + ancho;
@@ -673,6 +700,12 @@ function gestionaAnimacion (elscroll) {
 	}
 	///FIN QUINTA IMAGEN
 	$("#debugger").html(mensaje);
+}
+$(window).load(function() {
+    $("#preloader").hide();
+});
+function cerrarPreloader () {
+	$("#preloader").hide();
 }
 function volver (lugar) {
 	total =  $("#opcion" + lugar).offset().top-($(window).height()-$("#opcion" + lugar).height());
