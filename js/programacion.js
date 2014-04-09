@@ -77,10 +77,15 @@ var initBloque4;
 	$(".extendido").css("margin-left",0-((extendido-ancho)/2)+"px");
 	$(".contFoto div:not(:first-child)").css("margin-top",0-(alto)+'px');
 	
-	/// contenedroes de textos	
-	$(".textos .container").css("font-size",(porcentaje*1.2)+"em");
-	$(".respuestaA").css("font-size",(porcentaje*1.2)+"em");
-	$(".respuestaB").css("font-size",(porcentaje*1.2)+"em");
+	/// contenedroes de textos
+	if (porcentaje*1.25>1) {
+		tamTexto = porcentaje*1.25;
+	} else {
+		tamTexto = 1.25;
+	}
+	$(".textos .container").css("font-size",tamTexto+"em");
+	$(".respuestaA").css("font-size",tamTexto+"em");
+	$(".respuestaB").css("font-size",tamTexto+"em");
 	$(".respuestaA").css("width",$(".textos").width()*0.22);
 	$(".respuestaB").css("margin-left",$(".textos").width()*0.22);
 	$(".respuestaA").css("margin-left",$(".textos").width()*0.25);
@@ -236,18 +241,35 @@ function gestionaAnimacion (elscroll) {
 		coeficiente  = elscroll/alto;
 		porcentaje = coeficiente*100;
 		porcentaje = Math.round(porcentaje)
-		if (porcentaje>0 && porcentaje<=10) {
-			coeficienteN = porcentaje/10;
+		if (porcentaje<=50) {
+			$("#capa2").css("opacity",0);
+			$("#capa0").css("opacity",0);
+			$("#capa1").css("opacity",0);
+		}
+		if (porcentaje>10 && porcentaje<=30) {
+			coeficienteN =(porcentaje-10)/20;
 			$("#capa0").css("opacity",coeficienteN);
+			$("#capa1").css("opacity",0);
+			$("#capa2").css("opacity",0);
 		}
-		if (porcentaje>10 && porcentaje<=20) {
-			coeficienteN = (porcentaje-10)/10;
+		if (porcentaje>20 && porcentaje<=40) {
+			coeficienteN = (porcentaje-20)/20;
 			$("#capa1").css("opacity",coeficienteN);
+			$("#capa0").css("opacity",1);
+			$("#capa2").css("opacity",0);
 		}
-		if (porcentaje>20 && porcentaje<=30) {
-			coeficienteN = (porcentaje-20)/10;
+		if (porcentaje>30 && porcentaje<=50) {
+			coeficienteN = (porcentaje-20)/30;
 			$("#capa2").css("opacity",coeficienteN);
+			$("#capa0").css("opacity",1);
+			$("#capa1").css("opacity",1);
 		}
+		if (porcentaje>50) {
+			$("#capa2").css("opacity",1);
+			$("#capa0").css("opacity",1);
+			$("#capa1").css("opacity",1);
+		}
+		$("#fotograma1").css("margin-top",0);
 	}
 	if (elscroll>(initF1+remanente) && elscroll<=initF1+recorrido) {
 		mensaje = "Porcentaje " + porcentaje + " | Ancho: " + ancho;
@@ -277,6 +299,9 @@ function gestionaAnimacion (elscroll) {
 		$("#fotograma2 .capa26").css("margin-left",(0-((extendido-ancho)/2))-((elscroll-(initF2+(remanente*2)+recorrido))/5))
 		$("#fotograma2 .capa25").css("margin-top",0-(alto+(alto*0.05)));
 		$("#fotograma2 .capa26").css("margin-top",0-(alto+(alto*0.05)));
+		$("#contRespuesta1").css("margin-top",0);
+		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
+		finRespuesta1 = initRespuesta1+recorrido;
 	}
 	if ($("#contRespuesta1A").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
 		indice = elscroll % 2;
@@ -287,7 +312,7 @@ function gestionaAnimacion (elscroll) {
 		mensaje = "Porecentaje: " + porcentajeR;
 		valorHundimiento = Math.round(foco/3);
 		mensaje += " | Foco: " + foco;
-		$("#respuesta1A").css("margin-top",elscroll-(initRespuesta1));
+		$("#contRespuesta1").css("margin-top",elscroll-(initRespuesta1));
 		$("#respuesta1A .capa23").css("margin-top",0-((alto+valorHundimiento)+(indice*3)));
 		$("#respuesta1A .capa24").css("margin-top",0-(alto)+(indice*7));
 		$("#respuesta1A .capa205").css("margin-left",0-(valorHundimiento));
@@ -302,7 +327,7 @@ function gestionaAnimacion (elscroll) {
 		porcentajeR = coeficiente*100;
 		porcentajeR = Math.round(porcentajeR)
 		mensaje = 'Porcentaje: ' + porcentajeR;
-		$("#respuesta1B").css("margin-top",elscroll-(initRespuesta1));
+		$("#contRespuesta1").css("margin-top",elscroll-(initRespuesta1));
 		$("#respuesta1B .capa23").css("margin-top",0-(alto)+(indice*9));
 		$("#respuesta1B .capa24").css("margin-top",0-(alto)+(indice*7));
 		if (porcentajeR>0 && porcentajeR<=20) {

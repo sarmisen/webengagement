@@ -32,9 +32,6 @@ body, html {
 	font-weight: bold;
 }
 #contenedor {
-	position:absolute;
-	left:0;
-	top:0;
 	width: 1720px;
 	margin: 0 auto;
 	background-image:url(../imgs/comunes/fondo_friso.png);;
