@@ -1,0 +1,288 @@
+@charset "utf-8";
+/* CSS Document */
+/* GENERALES */
+html {
+	-webkit-transform: translate3d(0,0,0);
+}
+body, html {
+	background-color: white;
+}
+#preloader {
+		position:absolute;
+	left:0;
+	top:0;
+	z-index:1000;
+	background-color: #f16f6e;
+}
+#dentroPreloader {
+	background-color: white;
+	width: 250px;
+	height: 140px;
+	border-radius: 8px;
+	border: 2px solid  black;
+	padding: 15px;
+	font-size: 1em;
+	font-family:"Courier New", Courier, monospace;
+}
+#dentroPreloader strong {
+	font-weight: bold;
+}
+#dentroPreloader a {
+	color: #f16f6e;
+	font-weight: bold;
+}
+#contenedor {
+	width: 960px;
+	margin: 0 auto;
+	background-image:url(../imgs/comunes/fondo_friso.png);;
+	background-repeat:repeat-y;
+	background-size:100% auto;
+	background-color: white;
+}
+#cabecera {
+	background-color:#f16f6e;
+}
+#cabecera img {
+	display: block;
+	margin:0 auto;
+}
+.bloquesOcultos {
+	display: none;
+}
+.contFoto {
+	width: 960px;
+	height: 768px;
+	overflow: hidden;
+}
+.contFoto div {
+	position: relative;
+	/*border: 1px solid red;*/
+	padding:0px;
+	margin:0px;
+	display: block;
+}
+.textos {
+	width:100%; 
+	font-family: 'Arapey', serif;
+	font-size: 1em;
+	margin: 0px;
+}
+.textos .container {
+	padding: 10px 50px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.textos div p img {
+	margin-top: 5px;
+}
+.textos .respuestaA {
+	float: left;
+	width: 22%;
+	color: #ab3130;
+	font-size: 1em;
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+.textos .respuestaB {
+	float: left;
+	width: 22%;
+	color: #ab3130;
+	font-size: 1em;
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+.respuestaA .letra, .respuestaB .letra {
+	float:left;
+	width: 25%;
+}
+.respuestaA .letra img, .respuestaB .letra img {
+	width: 100%;
+}
+.respuestaA .textos, .respuestaB .textos {
+	float:left;
+	width: 75%;
+}
+.respuestaErronea {
+	border-radius:8px; 
+	background-color: #f16f6e; 
+	margin:20px 50px; 
+	padding: 100px;
+}
+.respuestaErronea div {
+	margin: 0 auto; 
+	text-align:center;
+	font-size: 1.5em;
+}
+.respuestaErronea img {
+	margin: 0 auto;
+}
+.respuestaErronea span {
+	font-size: 1.8em;
+}
+.respuestaErronea span a {
+	color:white;
+}
+/* TEXTO DESBLOQUEADO */
+.textoDesbloqueado {
+	background-color:#f16f6e;
+}
+.conTextoDesbloqueado {
+	width:1000px; 
+	margin: 0 auto;
+}
+.tdColIzq {
+	width:133px; 
+	float: left; 
+	background:url(../imgs/comunes/textoDesLB.png) bottom right no-repeat;
+}
+.tdColDer{
+	width:136px; 
+	float: left; 
+	background:url(../imgs/comunes/textoDesRB.png) bottom right no-repeat;
+}
+.tdCentral {
+	width:700px; 
+	background-color: white; 
+	float: left; 
+	padding: 15px; 
+	font-family: 'Open Sans', sans-serif; 
+	line-height: 1.6em; 
+	text-align:justify; 
+	font-weight: 400;  
+}
+.tdCentral strong {
+	font-weight: 700;
+}
+/* RESPUESTAS */
+#contRespuesta1 {display: none};
+#contRespuesta2 {display: none};
+#contRespuesta3 {display: none};
+#contRespuesta4 {display: none};
+/*PRIMER FOTOGRAMA*/
+#fotograma1 {
+	background-color:#f16f6e;
+}
+#capa10 {	
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen1.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#primerTexto {
+	height: 200px; 
+}
+/* SEGUNDO FOTOGRAMA */
+.capa20 {	
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen2.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta1A .capa20 {	
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen-2-Se-Tira.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta1B .capa20 {	
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen-2-Balsa.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa30 {	
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen3.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta2A .capa30 {
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen3-Escala.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta2B .capa30 {
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen3-Atrapado.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa40 {	
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen4.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta3A .capa40 {
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen4-entra-por-la-PUERTA.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta3B .capa40 {
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen4-No-puede-Pasar.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa50 {	
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen5.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta4A .capa50 {
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen5-muere-el-Heroe.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#respuesta4B .capa50 {
+	width: 960px;
+	height: 768px;
+	background: url(../imgs/resp/Imagen5-con-Engagement.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
