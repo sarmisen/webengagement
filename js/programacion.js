@@ -63,6 +63,7 @@ var initBloque4;
 	}
 	extendido = Math.round(extendidoInicial * porcentaje);
 	recorrido = Math.round(recorrido * porcentaje);
+	//recorrido = $(window).height();
 	$("#resto").height(recorrido);
 	///definimos los tamaños inciales: contenedores. imágenes,márgenes
 	mensaje = "Porcentaje: " + porcentaje + " | Alto: " + alto + " |Ancho: " + ancho;
@@ -102,8 +103,11 @@ var initBloque4;
 		$("#contRespuesta1A").show();
 		$("#contRespuesta1B").hide();
 		$("#respuesta1A .capa27").css("margin-top",0);
+		$("#resto").show();
+		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
 	})
 	$("#opcion1 .respuestaB").click(function() {
+		$("#resto").show();
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
 		finRespuesta1 = initRespuesta1+recorrido;
 		$("#contRespuesta1").show();
@@ -115,12 +119,14 @@ var initBloque4;
 			///RESPUESTAS DESBLOQUEADS
 		$("#contRespuesta1B .tdColIzq").height($("#contRespuesta1B .tdCentral").height()+30);
 		$("#contRespuesta1B .tdColDer").height($("#contRespuesta1B .tdCentral").height()+30);
+		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
 		$("#bloque2").show();
 		initBloque2 = $("#bloque2").offset().top;
 
 	})	
 	
 	$("#opcion2 .respuestaA").click(function() {
+				$("#resto").show();
 		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
 		finRespuesta2 = initRespuesta2+recorrido;
 		$("#contRespuesta2").show();
@@ -132,8 +138,10 @@ var initBloque4;
 		$(".capa41").css("margin-top",0-(alto*2)); // sombre
 		$(".capa42").css("margin-top",alto); // gigante
 		$(".capa43").css("margin-left",0+(ancho*0.3));
+		$('html, body').animate({scrollTop:initRespuesta2}, 2000);
 	})
 	$("#opcion2 .respuestaB").click(function() {
+				$("#resto").show();
 		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
 		finRespuesta2 = initRespuesta2+recorrido;
 		$("#contRespuesta2").show();
@@ -141,10 +149,12 @@ var initBloque4;
 		$("#contRespuesta2A").hide();
 		$("#contRespuesta2B .capa325").css("opacity",0);
 		$("#contRespuesta2B .capa36").css("opacity",0);	
-		$("#contRespuesta2B .capa37").css("opacity",0);		
+		$("#contRespuesta2B .capa37").css("opacity",0);	
+		$('html, body').animate({scrollTop:initRespuesta2}, 2000);	
 	})
 	
 	$("#opcion3 .respuestaA").click(function() {
+				$("#resto").show();
 		initRespuesta3 = $("#opcion3").offset().top + $("#opcion3").height() + (remanente*2);
 		finRespuesta3 = initRespuesta3+recorrido;
 		$("#contRespuesta3").show();
@@ -165,9 +175,11 @@ var initBloque4;
 		$(".capa52").css("margin-left",0-(ancho*0.5)); // Dragón izquierda
 		$(".capa53").css("margin-left",ancho*0.5); // Heroe derecha
 		$(".capa54").css("margin-top",(0-(alto))+(alto*0.25)); // huesos abajo
+		$('html, body').animate({scrollTop:initRespuesta3}, 2000);
 
 	})
 	$("#opcion3 .respuestaB").click(function() {
+				$("#resto").show();
 		initRespuesta3 = $("#opcion3").offset().top + $("#opcion3").height() + (remanente*2);
 		finRespuesta3 = initRespuesta3+recorrido;
 		$("#contRespuesta3").show();
@@ -177,10 +189,12 @@ var initBloque4;
 		$("#contRespuesta3B .capa42").css("margin-top",0-alto); // gigante
 		$("#contRespuesta3B .capa415").css("opacity",0);
 		$("#contRespuesta3B .capa47").css("opacity",0);
+		$('html, body').animate({scrollTop:initRespuesta3}, 2000);
 
 
 	})
 	$("#opcion4 .respuestaA").click(function() {
+				$("#resto").show();
 		initRespuesta4 = $("#opcion4").offset().top + $("#opcion4").height() + (remanente*2);
 		finRespuesta4 = initRespuesta4+recorrido;	
 		$("#contRespuesta4").show();
@@ -192,8 +206,10 @@ var initBloque4;
 		$("#contRespuesta4A .capa524").css("opacity",0); //Dragon devora 5
 		$("#contRespuesta4A .capa525").css("opacity",0); //Heroe ataca 1
 		$("#contRespuesta4A .capa526").css("opacity",0);//Heroe sorprendido 4
+		$('html, body').animate({scrollTop:initRespuesta4}, 2000);
 	})
 	$("#opcion4 .respuestaB").click(function() {
+				$("#resto").show();
 		initRespuesta4 = $("#opcion4").offset().top + $("#opcion4").height() + (remanente*2);
 		finRespuesta4 = initRespuesta4+recorrido;
 		$("#contRespuesta4").show();
@@ -204,6 +220,7 @@ var initBloque4;
 		$("#contRespuesta4B .capa533").css("opacity",0); //Heroe canta 1
 		$("#contRespuesta4B .capa534").css("opacity",0); //Heroe llave 3
 		$("#contRespuesta4B .capa535").css("opacity",0);//Heroe egagemente
+		$('html, body').animate({scrollTop:initRespuesta4}, 2000);
 	})
 /// control de los offsets inciales
 	initF1 = $("#fotograma1").offset().top;
@@ -230,8 +247,8 @@ function gestionaAnimacion (elscroll) {
 	$("#debugger").css("top",$( window ).height()-25+elscroll);
 	F1Offset = $("#fotograma1").offset().top;
 	initF2 = F1Offset+$("#fotograma1").height()+$("#primerTexto").height();
-			mensaje = "El Scroll: " + elscroll;
-		mensaje += ' | Init Bloque 3: ' + initBloque2;
+	mensaje = "El Scroll: " + elscroll;
+	mensaje += ' | Init Bloque 3: ' + initBloque2;
  	//mensaje += " | F1Offset: " + F1Offset + " | Recorrido " + recorrido + " | Texto Height:" + +$("#primerTexto").height() +  " |initF2: " + initF2;
 	if (elscroll>0 && !$("#preloader").is(":hidden")) {
 		$("#preloader").hide();
@@ -271,11 +288,11 @@ function gestionaAnimacion (elscroll) {
 		}
 		$("#fotograma1").css("margin-top",0);
 	}
-	if (elscroll>(initF1+remanente) && elscroll<=initF1+recorrido) {
-		mensaje = "Porcentaje " + porcentaje + " | Ancho: " + ancho;
+	if (elscroll>(initF1+remanente) && elscroll<=initF1+remanente+recorrido) {
 		foco = elscroll-(initF1+remanente);
 		coeficiente = foco/recorrido;
 		porcentajeR = coeficiente*100;
+		porcentajeR = Math.round(porcentajeR)
 		$("#fotograma1").css("margin-top",elscroll-(initF1+remanente));
 		$("#capa17").css("width",ancho+(ancho*(coeficiente/4)))
 		$("#capa17").css("height",alto+(alto*(coeficiente/4)))
@@ -291,17 +308,38 @@ function gestionaAnimacion (elscroll) {
 	}
 	if (elscroll>(initF2+(remanente*2)) && elscroll<=initF2+(remanente*2)+recorrido) {
 		indice = elscroll % 2;
-		mensaje += "Entramos en el frame 2";
+		foco = elscroll-(initF2+(remanente*2));
+		coeficiente = foco/recorrido;
+		porcentajeR = coeficiente*100;
+		porcentajeR = Math.round(porcentajeR)
 		$("#fotograma2").css("margin-top",elscroll-(initF2+(remanente*2)));
-		$("#fotograma2 .capa23").css("margin-top",0-(alto)+(indice*9));
-		$("#fotograma2 .capa24").css("margin-top",0-(alto)+(indice*7));
 		$("#fotograma2 .capa25").css("margin-left",(0-((extendido-ancho)/2))+((elscroll-(initF2+(remanente*2)+recorrido))/5))
 		$("#fotograma2 .capa26").css("margin-left",(0-((extendido-ancho)/2))-((elscroll-(initF2+(remanente*2)+recorrido))/5))
 		$("#fotograma2 .capa25").css("margin-top",0-(alto+(alto*0.05)));
 		$("#fotograma2 .capa26").css("margin-top",0-(alto+(alto*0.05)));
 		$("#contRespuesta1").css("margin-top",0);
+		if (porcentajeR>=0 && porcentajeR<25) {
+			$("#fotograma2 .capa23").css("margin-top",0-(alto)+(porcentajeR));
+			$("#fotograma2 .capa24").css("margin-top",0-(alto)+(porcentajeR/2));
+		}
+		if (porcentajeR>=25 && porcentajeR<50) {
+			$("#fotograma2 .capa23").css("margin-top",0-(alto)-((porcentajeR-25)/10));
+			$("#fotograma2 .capa24").css("margin-top",0-(alto)-((porcentajeR-25)/10));
+		}
+		if (porcentajeR>=50 && porcentajeR<75) {
+			$("#fotograma2 .capa23").css("margin-top",0-(alto)+((porcentajeR-50)));
+			$("#fotograma2 .capa24").css("margin-top",0-(alto)+((porcentajeR-50)/2));
+		}
+		if (porcentajeR>=75) {
+			$("#fotograma2 .capa23").css("margin-top",0-(alto)+((porcentajeR-75)/10));
+			$("#fotograma2 .capa24").css("margin-top",0-(alto)+((porcentajeR-75)/10));
+		}
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
 		finRespuesta1 = initRespuesta1+recorrido;
+	}
+		if ($("#contRespuesta1A").is(":hidden") && $("#contRespuesta1B").is(":hidden")) {
+			$("#preloader").show();
+			
 	}
 	if ($("#contRespuesta1A").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
 		indice = elscroll % 2;
@@ -360,8 +398,7 @@ function gestionaAnimacion (elscroll) {
 		}
 		initBloque2 =$("#td1").offset().top+$("#td1").height()+remanente;
 		initBloque2 = Math.round(initBloque2);
-		mensaje = "El Scroll: " + elscroll;
-		mensaje += ' | Init Bloque 3: ' + initBloque2;
+		$("#resto").show();
 	}
 	
 	/// TERCERAIMAGEN
@@ -369,12 +406,11 @@ function gestionaAnimacion (elscroll) {
 		foco = elscroll-initBloque2;
 		coeficiente = foco/recorrido;
 		porcentajeR = coeficiente*100;
-		mensaje = "Porecentaje: " + porcentajeR;
 		$("#bloque2").css("margin-top",elscroll-initBloque2);
-		foco = elscroll-initBloque2;
+		/*foco = elscroll-initBloque2;
 		coeficiente = foco/(recorrido-$(window).height());
 		porcentajeR = coeficiente*100;
-		porcentajeR = Math.round(porcentajeR)
+		porcentajeR = Math.round(porcentajeR)*/
 		cambioAncho = Math.round(ancho * (1+(coeficiente*0.25)))
 		cambioAlto = Math.round(alto * (1+(coeficiente*0.25)))
 		peqAncho = Math.round(ancho * (1-(coeficiente*0.25)))
@@ -424,8 +460,6 @@ function gestionaAnimacion (elscroll) {
 		}
 				initBloque3 =$("#td2").offset().top+$("#td2").height()+remanente;
 		initBloque3 = Math.round(initBloque3);
-		mensaje = "El Scroll: " + elscroll;
-		mensaje += ' | Init Bloque 3: ' + initBloque3;
 	}
 	if ($("#contRespuesta2B").is(":visible") && (elscroll>initRespuesta2 && elscroll<=finRespuesta2)) { 
 		indice = elscroll % 2;
@@ -734,12 +768,20 @@ function cerrarPreloader () {
 }
 function volver (lugar) {
 	total =  $("#opcion" + lugar).offset().top-($(window).height()-$("#opcion" + lugar).height());
-	//alert('Lugar ' +$("#opcion" + lugar).offset().top + '\n' + 'Altura ventana: ' + $(window).height() + '\nAluta cinta' + $("#opcion" + lugar).height() + '\nTotal:' + total); 
-	  $('html, body').animate({
-        scrollTop: $("#opcion" + lugar).offset().top-(($(window).height()-$("#opcion" + lugar).height())/2)
-    }, 2000, function () {
 		$("#contRespuesta"+lugar).hide();
 		$("#contRespuesta"+lugar+'A').hide();
 		$("#contRespuesta"+lugar+'B').hide();
-		});
+	//alert('Lugar ' +$("#opcion" + lugar).offset().top + '\n' + 'Altura ventana: ' + $(window).height() + '\nAluta cinta' + $("#opcion" + lugar).height() + '\nTotal:' + total); 
+	  $('html, body').animate({
+        scrollTop: $("#opcion" + lugar).offset().top-(($(window).height()-$("#opcion" + lugar).height()))
+    },0);
+}
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
