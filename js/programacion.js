@@ -99,17 +99,17 @@ var initBloque4;
 	$("#opcion1 .respuestaA").click(function() {
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
 		finRespuesta1 = initRespuesta1+recorrido;
+		$("#contRespuesta1").css("margin-top",0);
 		$("#contRespuesta1").show();
 		$("#contRespuesta1A").show();
 		$("#contRespuesta1B").hide();
 		$("#respuesta1A .capa27").css("margin-top",0);
-		$("#resto").show();
 		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
 	})
 	$("#opcion1 .respuestaB").click(function() {
-		$("#resto").show();
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
 		finRespuesta1 = initRespuesta1+recorrido;
+		$("#contRespuesta1").css("margin-top",0);
 		$("#contRespuesta1").show();
 		$("#contRespuesta1B").show();
 		$("#contRespuesta1A").hide();
@@ -119,16 +119,16 @@ var initBloque4;
 			///RESPUESTAS DESBLOQUEADS
 		$("#contRespuesta1B .tdColIzq").height($("#contRespuesta1B .tdCentral").height()+30);
 		$("#contRespuesta1B .tdColDer").height($("#contRespuesta1B .tdCentral").height()+30);
-		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
 		$("#bloque2").show();
 		initBloque2 = $("#bloque2").offset().top;
+		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
 
 	})	
 	
 	$("#opcion2 .respuestaA").click(function() {
-				$("#resto").show();
 		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
 		finRespuesta2 = initRespuesta2+recorrido;
+		$("#contRespuesta2").css("margin-top",0);
 		$("#contRespuesta2").show();
 		$("#contRespuesta2A").show();
 		$("#contRespuesta2B").hide();
@@ -141,9 +141,9 @@ var initBloque4;
 		$('html, body').animate({scrollTop:initRespuesta2}, 2000);
 	})
 	$("#opcion2 .respuestaB").click(function() {
-				$("#resto").show();
 		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
 		finRespuesta2 = initRespuesta2+recorrido;
+		$("#contRespuesta2").css("margin-top",0);
 		$("#contRespuesta2").show();
 		$("#contRespuesta2B").show();
 		$("#contRespuesta2A").hide();
@@ -154,9 +154,9 @@ var initBloque4;
 	})
 	
 	$("#opcion3 .respuestaA").click(function() {
-				$("#resto").show();
 		initRespuesta3 = $("#opcion3").offset().top + $("#opcion3").height() + (remanente*2);
 		finRespuesta3 = initRespuesta3+recorrido;
+		$("#contRespuesta3").css("margin-top",0);
 		$("#contRespuesta3").show();
 		$("#contRespuesta3A").show();
 		$("#contRespuesta3B").hide();
@@ -179,9 +179,9 @@ var initBloque4;
 
 	})
 	$("#opcion3 .respuestaB").click(function() {
-				$("#resto").show();
 		initRespuesta3 = $("#opcion3").offset().top + $("#opcion3").height() + (remanente*2);
 		finRespuesta3 = initRespuesta3+recorrido;
+		$("#contRespuesta3").css("margin-top",0);
 		$("#contRespuesta3").show();
 		$("#contRespuesta3A").hide();
 		$("#contRespuesta3B").show();	
@@ -194,9 +194,9 @@ var initBloque4;
 
 	})
 	$("#opcion4 .respuestaA").click(function() {
-				$("#resto").show();
 		initRespuesta4 = $("#opcion4").offset().top + $("#opcion4").height() + (remanente*2);
-		finRespuesta4 = initRespuesta4+recorrido;	
+		finRespuesta4 = initRespuesta4+recorrido;
+		$("#contRespuesta4").css("margin-top",0);	
 		$("#contRespuesta4").show();
 		$("#contRespuesta4A").show();
 		$("#contRespuesta4B").hide();	
@@ -209,9 +209,9 @@ var initBloque4;
 		$('html, body').animate({scrollTop:initRespuesta4}, 2000);
 	})
 	$("#opcion4 .respuestaB").click(function() {
-				$("#resto").show();
 		initRespuesta4 = $("#opcion4").offset().top + $("#opcion4").height() + (remanente*2);
 		finRespuesta4 = initRespuesta4+recorrido;
+		$("#contRespuesta4").css("margin-top",0);
 		$("#contRespuesta4").show();
 		$("#contRespuesta4B").show();
 		$("#contRespuesta4A").hide();
@@ -235,9 +235,12 @@ var initBloque4;
 	$("#contRespuesta3B").hide();
 	$("#contRespuesta4A").hide();
 	$("#contRespuesta4B").hide();	
-			$("#capa0").css("opacity",0);
-		$("#capa1").css("opacity",0);
-		$("#capa2").css("opacity",0);	
+	$("#capa0").css("opacity",0);
+	$("#capa1").css("opacity",0);
+	$("#capa2").css("opacity",0);	
+	$("#fotograma2 .capa23").css("opacity",0);
+	$("#fotograma2 .capa24").css("opacity",0);
+	$("#fotograma2 .capa205").css("margin-left",0+(ancho*0.25));
 	// fotograma 3
 	$(".capa33").height(ancho);
 	$(".capa33").css("margin-top",0-ancho);
@@ -307,7 +310,7 @@ function gestionaAnimacion (elscroll) {
 		
 	}
 	if (elscroll>(initF2+(remanente*2)) && elscroll<=initF2+(remanente*2)+recorrido) {
-		indice = elscroll % 2;
+		indice = Math.floor((Math.random()*10)+1) % 3;
 		foco = elscroll-(initF2+(remanente*2));
 		coeficiente = foco/recorrido;
 		porcentajeR = coeficiente*100;
@@ -315,24 +318,18 @@ function gestionaAnimacion (elscroll) {
 		$("#fotograma2").css("margin-top",elscroll-(initF2+(remanente*2)));
 		$("#fotograma2 .capa25").css("margin-left",(0-((extendido-ancho)/2))+((elscroll-(initF2+(remanente*2)+recorrido))/5))
 		$("#fotograma2 .capa26").css("margin-left",(0-((extendido-ancho)/2))-((elscroll-(initF2+(remanente*2)+recorrido))/5))
-		$("#fotograma2 .capa25").css("margin-top",0-(alto+(alto*0.05)));
-		$("#fotograma2 .capa26").css("margin-top",0-(alto+(alto*0.05)));
 		$("#contRespuesta1").css("margin-top",0);
 		if (porcentajeR>=0 && porcentajeR<25) {
-			$("#fotograma2 .capa23").css("margin-top",0-(alto)+(porcentajeR));
-			$("#fotograma2 .capa24").css("margin-top",0-(alto)+(porcentajeR/2));
+			coeficienteN = porcentajeR/25;
+			$("#fotograma2 .capa23").css("opacity",0);
+			$("#fotograma2 .capa24").css("opacity",0);
+			$("#fotograma2 .capa205").css("margin-left",0+((ancho*0.25)*(1-coeficienteN)))
 		}
-		if (porcentajeR>=25 && porcentajeR<50) {
-			$("#fotograma2 .capa23").css("margin-top",0-(alto)-((porcentajeR-25)/10));
-			$("#fotograma2 .capa24").css("margin-top",0-(alto)-((porcentajeR-25)/10));
-		}
-		if (porcentajeR>=50 && porcentajeR<75) {
-			$("#fotograma2 .capa23").css("margin-top",0-(alto)+((porcentajeR-50)));
-			$("#fotograma2 .capa24").css("margin-top",0-(alto)+((porcentajeR-50)/2));
-		}
-		if (porcentajeR>=75) {
-			$("#fotograma2 .capa23").css("margin-top",0-(alto)+((porcentajeR-75)/10));
-			$("#fotograma2 .capa24").css("margin-top",0-(alto)+((porcentajeR-75)/10));
+		if (porcentajeR>=25) {
+			$("#fotograma2 .capa23").css("opacity",1);
+			$("#fotograma2 .capa24").css("opacity",1);
+			$("#fotograma2 .capa23").css("margin-top",0-(alto+(indice*10)));
+			$("#fotograma2 .capa24").css("margin-top",0-(alto)+(indice*20));
 		}
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
 		finRespuesta1 = initRespuesta1+recorrido;
@@ -342,20 +339,22 @@ function gestionaAnimacion (elscroll) {
 			
 	}
 	if ($("#contRespuesta1A").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
-		indice = elscroll % 2;
+		indice = Math.floor((Math.random()*10)+1) % 3;
 		zambullida = (initRespuesta1+recorrido)-initRespuesta1;
 		foco = elscroll-initRespuesta1;
 		coeficiente = foco/recorrido;
 		porcentajeR = coeficiente*100;
+		porcentajeR = Math.round(porcentajeR)
 		mensaje = "Porecentaje: " + porcentajeR;
 		valorHundimiento = Math.round(foco/3);
 		mensaje += " | Foco: " + foco;
 		$("#contRespuesta1").css("margin-top",elscroll-(initRespuesta1));
-		$("#respuesta1A .capa23").css("margin-top",0-((alto+valorHundimiento)+(indice*3)));
-		$("#respuesta1A .capa24").css("margin-top",0-(alto)+(indice*7));
+		$("#respuesta1A .capa23").css("margin-top",0-((alto+valorHundimiento)+(indice*10)));
+		$("#respuesta1A .capa24").css("margin-top",0-(alto)+(indice*20));
 		$("#respuesta1A .capa205").css("margin-left",0-(valorHundimiento));
 		$("#respuesta1A .capa205").css("margin-top",0-(alto-(valorHundimiento)));
 		$("#respuesta1A .capa27").css("margin-top",0-(alto*coeficiente));
+		//$("#respuesta1A .capa271").css("margin-top",0-(alto*coeficiente));
 	}
 	if ($("#contRespuesta1B").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
 		$("#bloque2").css("margin-top",0);
@@ -388,17 +387,13 @@ function gestionaAnimacion (elscroll) {
 			$("#respuesta1B .capa28").css("opacity",0);
 			$("#respuesta1B .capa29").css("opacity",1);
 			$("#respuesta1B .capa30").css("opacity",1);
-			$("#respuesta1B .capa30").css("margin-left",0);
+			$("#respuesta1B .capa30").css("margin-left",(ancho*0.1));
 			$("#respuesta1B .capa30").css("margin-top",0-alto);
-			if (porcentajeR>90) {
-				nCoeficiente = (porcentajeR-90)/10;
-			$("#respuesta1B .capa30").css("margin-left",0-((ancho*0.75)*nCoeficiente));
-			$("#respuesta1B .capa30").css("margin-top",0-(alto+(alto*(nCoeficiente*0.5))));
-			}
+	
 		}
 		initBloque2 =$("#td1").offset().top+$("#td1").height()+remanente;
 		initBloque2 = Math.round(initBloque2);
-		$("#resto").show();
+		//$("#resto").show();
 	}
 	
 	/// TERCERAIMAGEN
@@ -450,18 +445,20 @@ function gestionaAnimacion (elscroll) {
 		if (porcentajeR>65) {
 			nCoeficiente = (porcentajeR-65)/35;
 			cambioAncho = Math.round(ancho * (1+(nCoeficiente*0.6)))
+			cambioAlto = Math.round(alto * (1+(nCoeficiente*0.6)))
 			aumento = cambioAncho-ancho;
+			aumentoA = cambioAlto-alto;
 			$("#respuesta2A .capa33").width(cambioAncho);
-			$("#respuesta2A .capa33").height(cambioAncho);
 			$("#respuesta2A .capa33").css("margin-left",0-Math.round(aumento/2));
-			$("#respuesta2A .capa35").css("margin-top",0-(ancho+aumento));
-			mensaje = "Margen top = " + String(parseInt($("#respuesta2A .capa35").css("margin-top").replace("px",""))-(aumento/2));
+			$("#respuesta2A .capa35").css("margin-top",0-parseInt($("#respuesta2A .capa33").css("height").replace("px",""))+(aumento/4));
+			$("#respuesta2A .capa351").css("margin-top",0-(alto+(aumento/4)));
 
 		}
 				initBloque3 =$("#td2").offset().top+$("#td2").height()+remanente;
 		initBloque3 = Math.round(initBloque3);
 	}
 	if ($("#contRespuesta2B").is(":visible") && (elscroll>initRespuesta2 && elscroll<=finRespuesta2)) { 
+	
 		indice = elscroll % 2;
 		foco = elscroll-initRespuesta2;
 		coeficiente = foco/recorrido;
@@ -477,13 +474,18 @@ function gestionaAnimacion (elscroll) {
 		}
 		if (porcentajeR>50 && porcentajeR<=80) {
 			nCoeficiente = (porcentajeR-50)/30;
+			$("#respuesta2B .capa34").css("opacity",0);
 			$("#respuesta2B .capa36").css("opacity",1-nCoeficiente);
 			$("#respuesta2B .capa325").css("opacity",nCoeficiente);
 			$("#respuesta2B .capa37").css("opacity",nCoeficiente);
 		}
 		if (porcentajeR>80) {
+						$("#respuesta2B .capa34").css("opacity",0);
+			$("#respuesta2B .capa36").css("opacity",0);
+						$("#respuesta2B .capa325").css("opacity",1);
+			$("#respuesta2B .capa37").css("opacity",1);
 			nCoeficiente = (porcentajeR-80)/20;
-			$("#respuesta2B .capa37").css("margin-top",(0-alto)+(coeficiente*alto));
+			$("#respuesta2B .capa37").css("margin-top",(0-alto)+(nCoeficiente*alto));
 		}
 	}
 	///FIN TERCERA IMAGEN
@@ -494,8 +496,8 @@ function gestionaAnimacion (elscroll) {
 		porcentajeR = coeficiente*100;
 		porcentajeR = Math.round(porcentajeR)
 		$("#bloque3").css("margin-top",elscroll-initBloque3);
-		$(".capa41").css("margin-top",0-((alto*2)-Math.round((alto*coeficiente))))
-		$(".capa42").css("margin-top",alto-(Math.round(((alto*2)*coeficiente))))
+		//$(".capa41").css("margin-top",0-((alto*2)-Math.round((alto*coeficiente))))
+		$(".capa42").css("margin-top",alto-(Math.round(((alto)*coeficiente))))
 		$(".capa43").css("margin-left",(ancho*0.3)-((ancho*0.3)*coeficiente));
 		mensaje = "Frame 4  coeficiente: " + coeficiente;
 		
@@ -516,20 +518,24 @@ function gestionaAnimacion (elscroll) {
 			$("#respuesta3A .capa425").css("opacity",0);
 			$("#respuesta3A .capa42").css("opacity",1);
 		}
-		if (porcentajeR>25 && porcentajeR<=50) {
-			nCoeficiente = (porcentajeR-25)/25;
+		if (porcentajeR>25 && porcentajeR<=60) {
+			nCoeficiente = (porcentajeR-25)/35;
+			$("#respuesta3A .capa44").css("opacity",1);
+			$("#respuesta3A .capa43").css("opacity",0);
 			$("#respuesta3A .capa425").css("opacity",1);
+			$("#respuesta3A .capa425").css("margin-left",0-(ancho*nCoeficiente));
 			$("#respuesta3A .capa42").css("opacity",0);
 			$("#respuesta3A .capa45").css("opacity",0);
 		}
-		if (porcentajeR>50 && porcentajeR<=75) {
-			nCoeficiente = (porcentajeR-50)/25;
+		if (porcentajeR>60 && porcentajeR<=85) {
+			nCoeficiente = (porcentajeR-60)/25;
+			$("#respuesta3A .capa43").css("opacity",0);
 			$("#respuesta3A .capa425").css("opacity",0);
 			$("#respuesta3A .capa44").css("opacity",0);
 			$("#respuesta3A .capa405").css("opacity",nCoeficiente);
 			$("#respuesta3A .capa45").css("opacity",0);
 		}
-		if (porcentajeR>50 && porcentajeR<=75) {
+		if (porcentajeR>85) {
 			$("#respuesta3A .capa45").css("opacity",1);
 		}
 						initBloque4 =$("#td3").offset().top+$("#td3").height()+remanente;

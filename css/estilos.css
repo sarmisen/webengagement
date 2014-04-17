@@ -345,7 +345,7 @@ body, html {
 	background-size: cover;
 }
 .capa23 {
-	z-index: 5;
+	z-index: 7;
 	margin-top:-968px;
 	width: 1720px;
 	height: 968px;
@@ -356,7 +356,7 @@ body, html {
 	background-size: cover;
 }
 .capa24 {
-	z-index: 6;
+	z-index: 8;
 	margin-top:-968px;
 	width: 1720px;
 	height: 968px;
@@ -367,7 +367,7 @@ body, html {
 	background-size: cover;
 }
 .capa25 {
-	z-index: 7;
+	z-index: 5;
 	margin-top:-968px;
 	width: 2019px;
 	height: 968px;
@@ -379,7 +379,7 @@ body, html {
 	background-size: cover;
 }
 .capa26 {
-	z-index: 8;
+	z-index: 6;
 	margin-top:-968px;
 	width: 2019px;
 	height: 968px;
@@ -435,10 +435,11 @@ body, html {
 	margin-top: 0px;
 }
 #respuesta1A .capa271 {
-	z-index: 10;
+	z-index: 1;
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena2/respA/textoSolucion.png) no-repeat; 
+	/*background-color: red;*/
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -476,7 +477,7 @@ body, html {
 	background-size: cover;
 }
 #respuesta1B .capa301 {
-	z-index: 12;
+	z-index: 1;
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena2/respB/textoSolucion.png) no-repeat; 
@@ -562,7 +563,7 @@ body, html {
 	background-size: cover;
 }
 .capa351 {
-	z-index: 8;
+	z-index: 5;
 	margin-top:-968px;
 	width: 1720px;
 	height: 968px;
@@ -595,7 +596,7 @@ body, html {
 	background-size: cover;
 }
 .capa371 {
-	z-index: 10;
+	z-index: 5;
 	margin-top:-968px;
 	width: 1720px;
 	height: 968px;
@@ -620,7 +621,7 @@ body, html {
 	z-index: 20;
 	width: 1720px;
 	height: 968px;
-	background: url(../imgs/escena4/Sombra-LARGA.png) no-repeat; 
+	/*background: url(../imgs/escena4/Sombra-LARGA.png) no-repeat; */
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
