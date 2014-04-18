@@ -15,6 +15,16 @@ body, html {
 	background-size:100% auto;
 	background-color: white;
 }
+#resto {
+	background-color: black;
+		/*background-image:url(../imgs/comunes/fondo_friso_negro.png);*/
+	background-repeat:repeat-y;
+	background-size:100% auto;
+}
+#resto img {
+	width: 100%;
+	margin-top: 50px;
+}
 #preloader {
 		position:absolute;
 	left:0;
@@ -52,6 +62,7 @@ body, html {
 }
 #cabecera img {
 	display: block;
+	width: 100%;
 	margin:0 auto;
 }
 .bloquesOcultos {

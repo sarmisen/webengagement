@@ -105,6 +105,7 @@ var initBloque4;
 		$("#contRespuesta1B").hide();
 		$("#respuesta1A .capa27").css("margin-top",0);
 		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
+		$('body').removeClass('stop-scrolling');
 	})
 	$("#opcion1 .respuestaB").click(function() {
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
@@ -122,6 +123,7 @@ var initBloque4;
 		$("#bloque2").show();
 		initBloque2 = $("#bloque2").offset().top;
 		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
+		$('body').removeClass('stop-scrolling');
 
 	})	
 	
@@ -139,6 +141,7 @@ var initBloque4;
 		$(".capa42").css("margin-top",alto); // gigante
 		$(".capa43").css("margin-left",0+(ancho*0.3));
 		$('html, body').animate({scrollTop:initRespuesta2}, 2000);
+		$('body').removeClass('stop-scrolling');
 	})
 	$("#opcion2 .respuestaB").click(function() {
 		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
@@ -151,6 +154,7 @@ var initBloque4;
 		$("#contRespuesta2B .capa36").css("opacity",0);	
 		$("#contRespuesta2B .capa37").css("opacity",0);	
 		$('html, body').animate({scrollTop:initRespuesta2}, 2000);	
+		$('body').removeClass('stop-scrolling');
 	})
 	
 	$("#opcion3 .respuestaA").click(function() {
@@ -176,6 +180,7 @@ var initBloque4;
 		$(".capa53").css("margin-left",ancho*0.5); // Heroe derecha
 		$(".capa54").css("margin-top",(0-(alto))+(alto*0.25)); // huesos abajo
 		$('html, body').animate({scrollTop:initRespuesta3}, 2000);
+		$('body').removeClass('stop-scrolling');
 
 	})
 	$("#opcion3 .respuestaB").click(function() {
@@ -190,6 +195,7 @@ var initBloque4;
 		$("#contRespuesta3B .capa415").css("opacity",0);
 		$("#contRespuesta3B .capa47").css("opacity",0);
 		$('html, body').animate({scrollTop:initRespuesta3}, 2000);
+		$('body').removeClass('stop-scrolling');
 
 
 	})
@@ -207,6 +213,7 @@ var initBloque4;
 		$("#contRespuesta4A .capa525").css("opacity",0); //Heroe ataca 1
 		$("#contRespuesta4A .capa526").css("opacity",0);//Heroe sorprendido 4
 		$('html, body').animate({scrollTop:initRespuesta4}, 2000);
+		$('body').removeClass('stop-scrolling');
 	})
 	$("#opcion4 .respuestaB").click(function() {
 		initRespuesta4 = $("#opcion4").offset().top + $("#opcion4").height() + (remanente*2);
@@ -221,6 +228,7 @@ var initBloque4;
 		$("#contRespuesta4B .capa534").css("opacity",0); //Heroe llave 3
 		$("#contRespuesta4B .capa535").css("opacity",0);//Heroe egagemente
 		$('html, body').animate({scrollTop:initRespuesta4}, 2000);
+		$('body').removeClass('stop-scrolling');
 	})
 /// control de los offsets inciales
 	initF1 = $("#fotograma1").offset().top;
@@ -256,41 +264,9 @@ function gestionaAnimacion (elscroll) {
 	if (elscroll>0 && !$("#preloader").is(":hidden")) {
 		$("#preloader").hide();
 	};
-	if (elscroll<=alto) {
-		foco = elscroll;
-		coeficiente  = elscroll/alto;
-		porcentaje = coeficiente*100;
-		porcentaje = Math.round(porcentaje)
-		if (porcentaje<=50) {
-			$("#capa2").css("opacity",0);
-			$("#capa0").css("opacity",0);
-			$("#capa1").css("opacity",0);
-		}
-		if (porcentaje>10 && porcentaje<=30) {
-			coeficienteN =(porcentaje-10)/20;
-			$("#capa0").css("opacity",coeficienteN);
-			$("#capa1").css("opacity",0);
-			$("#capa2").css("opacity",0);
-		}
-		if (porcentaje>20 && porcentaje<=40) {
-			coeficienteN = (porcentaje-20)/20;
-			$("#capa1").css("opacity",coeficienteN);
-			$("#capa0").css("opacity",1);
-			$("#capa2").css("opacity",0);
-		}
-		if (porcentaje>30 && porcentaje<=50) {
-			coeficienteN = (porcentaje-20)/30;
-			$("#capa2").css("opacity",coeficienteN);
-			$("#capa0").css("opacity",1);
-			$("#capa1").css("opacity",1);
-		}
-		if (porcentaje>50) {
-			$("#capa2").css("opacity",1);
-			$("#capa0").css("opacity",1);
-			$("#capa1").css("opacity",1);
-		}
+	if (elscroll>0 && elscroll<(initF1+remanente)) {
 		$("#fotograma1").css("margin-top",0);
-	}
+	};
 	if (elscroll>(initF1+remanente) && elscroll<=initF1+remanente+recorrido) {
 		foco = elscroll-(initF1+remanente);
 		coeficiente = foco/recorrido;
@@ -334,10 +310,18 @@ function gestionaAnimacion (elscroll) {
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
 		finRespuesta1 = initRespuesta1+recorrido;
 	}
-		if ($("#contRespuesta1A").is(":hidden") && $("#contRespuesta1B").is(":hidden")) {
-			$("#preloader").show();
-			
-	}
+		/*if ($("#contRespuesta1A").is(":hidden") && $("#contRespuesta1B").is(":hidden") && isScrolledIntoView($("#opcion1")) && initF2!='undefined' && elscroll>initF2+(remanente*2)+recorrido) {
+			$('body').addClass('stop-scrolling');
+		}
+		if ($("#contRespuesta2A").is(":hidden") && $("#contRespuesta2B").is(":hidden") && isScrolledIntoView($("#opcion2")) && finRespuesta2!='undefined' && elscroll>finRespuesta2) {
+			$('body').addClass('stop-scrolling');
+		}
+		if ($("#contRespuesta3A").is(":hidden") && $("#contRespuesta3B").is(":hidden") && isScrolledIntoView($("#opcion3")) && finRespuesta3!='undefined' && elscroll>finRespuesta3) {
+			$('body').addClass('stop-scrolling');
+		}
+		if ($("#contRespuesta4A").is(":hidden") && $("#contRespuesta4B").is(":hidden") && isScrolledIntoView($("#opcion4")) && finRespuesta4!='undefined' && elscroll>finRespuesta4) {
+			$('body').addClass('stop-scrolling');
+		}*/
 	if ($("#contRespuesta1A").is(":visible") && (elscroll>initRespuesta1 && elscroll<=finRespuesta1)) { 
 		indice = Math.floor((Math.random()*10)+1) % 3;
 		zambullida = (initRespuesta1+recorrido)-initRespuesta1;
