@@ -1,12 +1,4 @@
 
- var esChrome = false;
- // please note, that IE11 now returns true for window.chrome
-var isChromium = window.chrome,
-    vendorName = window.navigator.vendor;
-if(isChromium !== null && vendorName === "Google Inc.") {
-   // is Google chrome 
-   esChrome = true;
-}
 var porcentaje = 1;
 var altoInicial = 968;
 var anchoInicial = 1720;
@@ -33,7 +25,16 @@ var finRespuesta5;
 var initBloque2;
 var initBloque3;
 var initBloque4; 
+var navegadorBueno = true;
  $(function() {
+	 if (get_browser()=='MSIE') {
+		 if (parseInt(get_browser_version())<10) {
+			 navegadorBueno = false
+		 }
+	 }
+	 if (get_browser()=='Safari') {
+		  navegadorBueno = false
+	 }
     $(document).on("mousewheel", function() {
         gestionaAnimacion($(document).scrollTop());
     });
@@ -46,16 +47,12 @@ var initBloque4;
 	$("#dentroPreloader").css("margin-left",($(window).width()-$("#dentroPreloader").width())/2);
 	$("#dentroPreloader").css("margin-top",($(window).height()-$("#dentroPreloader").height())/2);
 	
-	$("#debugger").css("top",$( window ).height()-$("#debugger").height());
 	/// calculamos el alto de la pagina
 	altoVentana = $(window).height();
 	anchoVentana = $(window).width(); 
 	porcentaje = $(window).width()/anchoInicial;
 	//porcentaje = $(window).height()/altoInicial;
 	porcentaje = porcentaje.toFixed(2);
-	if (esChrome) {
-		//porcentaje = 1;
-	}
 	alto = Math.round(altoInicial * porcentaje);
 	ancho = Math.round(anchoInicial * porcentaje);
 	if (alto>altoVentana) {
@@ -63,6 +60,9 @@ var initBloque4;
 	}
 	extendido = Math.round(extendidoInicial * porcentaje);
 	recorrido = Math.round(recorrido * porcentaje);
+	if (!navegadorBueno) {
+			recorrido = altoVentana;
+	}
 	//recorrido = $(window).height();
 	$("#resto").height(recorrido);
 	///definimos los tamaños inciales: contenedores. imágenes,márgenes
@@ -229,6 +229,7 @@ var initBloque4;
 		$("#contRespuesta4B .capa535").css("opacity",0);//Heroe egagemente
 		$('html, body').animate({scrollTop:initRespuesta4}, 2000);
 		$('body').removeClass('stop-scrolling');
+		$("#imgChoose").attr("src","imgs/comunes/ESCOGEOPCIONFIN.png");
 	})
 /// control de los offsets inciales
 	initF1 = $("#fotograma1").offset().top;
@@ -272,11 +273,13 @@ function gestionaAnimacion (elscroll) {
 		coeficiente = foco/recorrido;
 		porcentajeR = coeficiente*100;
 		porcentajeR = Math.round(porcentajeR)
-		$("#fotograma1").css("margin-top",elscroll-(initF1+remanente));
+		if (navegadorBueno) {
+			$("#fotograma1").css("margin-top",elscroll-(initF1+remanente));
+		}
 		$("#capa17").css("width",ancho+(ancho*(coeficiente/4)))
 		$("#capa17").css("height",alto+(alto*(coeficiente/4)))
 		$("#capa17").css("margin-top",0-(alto+(alto*(coeficiente/8))))
-		$("#capa18").css("margin-top",0-($("#capa17").height()-3))
+		$("#capa18").css("margin-top",0-($("#capa17").height())+(alto*(coeficiente/8))+3)
 		$("#capa17").css("margin-left",0-(elscroll/50))
 		$("#capa13").css("margin-left",0-(elscroll/5))
 		$("#capa11").css("margin-left",(0-((extendido-ancho)/2)*porcentaje)+(elscroll/20))
@@ -291,7 +294,9 @@ function gestionaAnimacion (elscroll) {
 		coeficiente = foco/recorrido;
 		porcentajeR = coeficiente*100;
 		porcentajeR = Math.round(porcentajeR)
-		$("#fotograma2").css("margin-top",elscroll-(initF2+(remanente*2)));
+		if (navegadorBueno) {
+			$("#fotograma2").css("margin-top",elscroll-(initF2+(remanente*2)));
+		}
 		$("#fotograma2 .capa25").css("margin-left",(0-((extendido-ancho)/2))+((elscroll-(initF2+(remanente*2)+recorrido))/5))
 		$("#fotograma2 .capa26").css("margin-left",(0-((extendido-ancho)/2))-((elscroll-(initF2+(remanente*2)+recorrido))/5))
 		$("#contRespuesta1").css("margin-top",0);
@@ -332,7 +337,9 @@ function gestionaAnimacion (elscroll) {
 		mensaje = "Porecentaje: " + porcentajeR;
 		valorHundimiento = Math.round(foco/3);
 		mensaje += " | Foco: " + foco;
-		$("#contRespuesta1").css("margin-top",elscroll-(initRespuesta1));
+		if (navegadorBueno) {
+			$("#contRespuesta1").css("margin-top",elscroll-(initRespuesta1));
+		}
 		$("#respuesta1A .capa23").css("margin-top",0-((alto+valorHundimiento)+(indice*10)));
 		$("#respuesta1A .capa24").css("margin-top",0-(alto)+(indice*20));
 		$("#respuesta1A .capa205").css("margin-left",0-(valorHundimiento));
@@ -348,7 +355,9 @@ function gestionaAnimacion (elscroll) {
 		porcentajeR = coeficiente*100;
 		porcentajeR = Math.round(porcentajeR)
 		mensaje = 'Porcentaje: ' + porcentajeR;
-		$("#contRespuesta1").css("margin-top",elscroll-(initRespuesta1));
+		if (navegadorBueno) {
+			$("#contRespuesta1").css("margin-top",elscroll-(initRespuesta1));
+		}
 		$("#respuesta1B .capa23").css("margin-top",0-(alto)+(indice*9));
 		$("#respuesta1B .capa24").css("margin-top",0-(alto)+(indice*7));
 		if (porcentajeR>0 && porcentajeR<=20) {
@@ -385,7 +394,9 @@ function gestionaAnimacion (elscroll) {
 		foco = elscroll-initBloque2;
 		coeficiente = foco/recorrido;
 		porcentajeR = coeficiente*100;
-		$("#bloque2").css("margin-top",elscroll-initBloque2);
+		if (navegadorBueno) {
+			$("#bloque2").css("margin-top",elscroll-initBloque2);
+		}
 		/*foco = elscroll-initBloque2;
 		coeficiente = foco/(recorrido-$(window).height());
 		porcentajeR = coeficiente*100;
@@ -420,7 +431,9 @@ function gestionaAnimacion (elscroll) {
 		porcentajeR = Math.round(porcentajeR);
 		mensaje = "Porecentaje: " + porcentajeR;
 		distanciaRecorrer = ancho-alto;
-		$("#respuesta2A").css("margin-top",elscroll-(initRespuesta2));
+		if (navegadorBueno) {
+			$("#respuesta2A").css("margin-top",elscroll-(initRespuesta2));
+		}
 		if (porcentajeR>0 && porcentajeR<=50) {
 			nCoeficiente = porcentajeR/50;
 			$("#respuesta2A .capa33").css("margin-top",0-(ancho-(Math.round(distanciaRecorrer*nCoeficiente))));
@@ -450,7 +463,9 @@ function gestionaAnimacion (elscroll) {
 		porcentajeR = Math.round(porcentajeR);
 		mensaje = "Porecentaje: " + porcentajeR;
 		distanciaRecorrer = ancho-alto;
-		$("#respuesta2B").css("margin-top",elscroll-(initRespuesta2));
+		if (navegadorBueno) {
+			$("#respuesta2B").css("margin-top",elscroll-(initRespuesta2));
+		}
 		if (porcentajeR>0 && porcentajeR<=30) {
 			nCoeficiente = porcentajeR/30;
 			$("#respuesta2B .capa34").css("opacity",1-nCoeficiente);
@@ -493,7 +508,9 @@ function gestionaAnimacion (elscroll) {
 		porcentajeR = Math.round(porcentajeR);
 		mensaje = "Porecentaje: " + porcentajeR;
 		distanciaRecorrer = ancho-alto;
-		$("#respuesta3A").css("margin-top",elscroll-(initRespuesta3));
+		if (navegadorBueno) {
+			$("#respuesta3A").css("margin-top",elscroll-(initRespuesta3));
+		}
 		if (porcentajeR>0 && porcentajeR<=25) {
 			nCoeficiente = porcentajeR/25;
 			$("#respuesta3A .capa44").css("opacity",nCoeficiente);
@@ -532,7 +549,9 @@ function gestionaAnimacion (elscroll) {
 		porcentajeR = Math.round(porcentajeR);
 		mensaje = "Porecentaje: " + porcentajeR;
 		distanciaRecorrer = ancho-alto;
-		$("#respuesta3B").css("margin-top",elscroll-(initRespuesta3));
+		if (navegadorBueno) {
+			$("#respuesta3B").css("margin-top",elscroll-(initRespuesta3));
+		}
 		if (porcentajeR>0 && porcentajeR<=25) {
 			nCoeficiente = porcentajeR/25;
 			$("#respuesta3B .capa47").css("opacity",0);
@@ -576,7 +595,9 @@ function gestionaAnimacion (elscroll) {
 		coeficiente = foco/recorrido;
 		porcentajeR = coeficiente*100;
 		porcentajeR = Math.round(porcentajeR)
-		$("#bloque4").css("margin-top",elscroll-initBloque4);
+		if (navegadorBueno) {
+			$("#bloque4").css("margin-top",elscroll-initBloque4);
+		}
 		if (porcentajeR>0 && porcentajeR<=25) {
 			nCoeficiente = porcentajeR/25;
 			$(".capa54").css("margin-top",(0-alto)+(alto*0.3)*(1-nCoeficiente))
@@ -601,7 +622,9 @@ function gestionaAnimacion (elscroll) {
 		porcentajeR = Math.round(porcentajeR);
 		mensaje = "Porecentaje: " + porcentajeR;
 		distanciaRecorrer = ancho-alto;
-		$("#respuesta4A").css("margin-top",elscroll-(initRespuesta4));
+		if (navegadorBueno) {
+			$("#respuesta4A").css("margin-top",elscroll-(initRespuesta4));
+		}
 		if (porcentajeR>0 && porcentajeR<=20) {
 			nCoeficiente = porcentajeR/20;
 			$("#contRespuesta4A .capa52").css("opacity",1);  //Dragon Normal
@@ -661,7 +684,9 @@ function gestionaAnimacion (elscroll) {
 		porcentajeR = Math.round(porcentajeR);
 		mensaje = "Porecentaje: " + porcentajeR;
 		distanciaRecorrer = ancho-alto;
-		$("#respuesta4B").css("margin-top",elscroll-(initRespuesta4));
+		if (navegadorBueno) {
+			$("#respuesta4B").css("margin-top",elscroll-(initRespuesta4));
+		}
 		if (porcentajeR>0 && porcentajeR<=5) {
 			nCoeficiente = porcentajeR/5;
 			$("#contRespuesta4B .capa52").css("opacity",1);  //Dragon Normal
@@ -775,3 +800,17 @@ function isScrolledIntoView(elem)
     var elemBottom = elemTop + $(elem).height();
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
+function get_browser(){
+    var N=navigator.appName, ua=navigator.userAgent, tem;
+    var M=ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+    if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+    M=M? [M[1], M[2]]: [N, navigator.appVersion, '-?'];
+    return M[0];
+    }
+function get_browser_version(){
+    var N=navigator.appName, ua=navigator.userAgent, tem;
+    var M=ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+    if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+    M=M? [M[1], M[2]]: [N, navigator.appVersion, '-?'];
+    return M[1];
+    }
