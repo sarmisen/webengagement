@@ -91,7 +91,12 @@ body, html {
 	text-align: center;
 	margin-bottom: 20px;
 }
-.textos div p img {
+.textos .container span {
+	margin:0 auto;
+	text-align:justify;
+	display:inline-block;
+}
+.textos div span img {
 	margin-top: 5px;
 }
 .textos .respuestaA {
@@ -976,6 +981,8 @@ body, html {
 	line-height: 2em; 
 	font-size: 0.875em;
 	color: black;
+	text-align: justify;
+	text-justify:newspaper;
 	
 }
 .dmasi a {
@@ -988,7 +995,7 @@ body, html {
 }
 .tirallyc {
 	width:100%; 
-	background: black url(imgs/comunes/tiraArriba.png) no-repeat left top; 
+	background: black url(../imgs/comunes/tiraArriba.png) no-repeat left top; 
 	height:50px;
 }
 /****
