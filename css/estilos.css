@@ -49,6 +49,12 @@ body, html {
 	color: #f16f6e;
 	font-weight: bold;
 }
+.botSocial {
+	position: absolute; 
+	z-index:10; 
+	top: 50px; 
+	left: 2px;
+}
 #contenedor {
 	width: 1720px;
 	margin: 0 auto;
@@ -153,8 +159,10 @@ body, html {
 	background-color:#f16f6e;
 }
 .conTextoDesbloqueado {
-	width:1000px; 
+	/* [disabled]width:1000px; */
 	margin: 0 auto;
+	max-width: 1000px;
+	background:url(../imgs/comunes/fondoDesb.png) center repeat-y;
 }
 .tdColIzq {
 	width:133px; 
@@ -167,14 +175,34 @@ body, html {
 	background:url(../imgs/comunes/textoDesRB.png) bottom right no-repeat;
 }
 .tdCentral {
-	width:700px; 
+	max-width:700px; 
 	background-color: white; 
-	float: left; 
 	padding: 15px; 
 	font-family: 'Open Sans', sans-serif; 
 	line-height: 1.6em; 
 	text-align:justify; 
 	font-weight: 400;  
+	margin: 0 auto;
+}
+.tdTopRow1 {
+		background:url(../imgs/comunes/fondoTopDes1.png) center no-repeat;
+		height: 200px;
+}
+.tdTopRow2 {
+		background:url(../imgs/comunes/fondoTopDes2.png) center no-repeat;
+		height: 200px;
+}
+.tdTopRow3 {
+		background:url(../imgs/comunes/fondoTopDes3.png) center no-repeat;
+		height: 200px;
+}
+.tdTopRow4 {
+		background:url(../imgs/comunes/fondoTopDes4.png) center no-repeat;
+		height: 200px;
+}
+.tdBottomRow {
+		background:url(../imgs/comunes/fondoDesAbajo.png) center no-repeat;
+		height: 95px;
 }
 .tdCentral strong {
 	font-weight: 700;
@@ -825,8 +853,18 @@ body, html {
 	-o-background-size: cover;
 	background-size: cover;
 }
-.capa522 {
+.capa5221 {
 	z-index: 32;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion1/dragon_sin_cabeza_ni-nada.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa522 {
+	z-index: 33;
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena5/solucion1/cabeza-cortada.png) no-repeat; 
@@ -836,7 +874,7 @@ body, html {
 	background-size: cover;
 }
 .capa523 {
-	z-index: 33;
+	z-index: 34;
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena5/solucion1/dragon-2-cabezas.png) no-repeat; 
@@ -846,7 +884,7 @@ body, html {
 	background-size: cover;
 }
 .capa524 {
-	z-index: 34;
+	z-index: 35;
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena5/solucion1/dragon-devora-al-heroe.png) no-repeat; 
@@ -856,7 +894,7 @@ body, html {
 	background-size: cover;
 }
 .capa525 {
-	z-index: 35;
+	z-index: 36;
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena5/solucion1/Heroe1.png) no-repeat; 
@@ -866,7 +904,7 @@ body, html {
 	background-size: cover;
 }
 .capa526 {
-	z-index: 36;
+	z-index: 37;
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena5/solucion1/Heroe2.png) no-repeat; 
@@ -875,8 +913,28 @@ body, html {
 	-o-background-size: cover;
 	background-size: cover;
 }
-.capa501 {
+.capa500 {
+	z-index: 10;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion2/SalaLARGASin.jpg) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa502 {
 	z-index: 11;
+	width: 1720px;
+	height: 968px;
+	background: url(../imgs/escena5/solucion2/cofre-cerrado-LARGA.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.capa501 {
+	z-index: 12;
 	width: 1720px;
 	height: 968px;
 	background: url(../imgs/escena5/solucion2/cofre-abierto-LARGA.png) no-repeat; 
@@ -1005,4 +1063,3 @@ PARA LLEGAR A LAS
 1000 LINEAS DE CÓDIGO
 (ME HACÍA ILUSIÓN)
 ******/
-

@@ -28,7 +28,7 @@ var initBloque4;
 var navegadorBueno = true;
  $(function() {
 	 if (get_browser()=='MSIE') {
-		 if (parseInt(get_browser_version())<10) {
+		 if (parseInt(get_browser_version())<11) {
 			 navegadorBueno = false
 		 }
 	 }
@@ -46,6 +46,7 @@ var navegadorBueno = true;
 	$("#preloader").width($(window).width());
 	$("#dentroPreloader").css("margin-left",($(window).width()-$("#dentroPreloader").width())/2);
 	$("#dentroPreloader").css("margin-top",($(window).height()-$("#dentroPreloader").height())/2);
+	$("#botTodaLaHistoria").hide();
 	
 	/// calculamos el alto de la pagina
 	altoVentana = $(window).height();
@@ -106,6 +107,7 @@ var navegadorBueno = true;
 		$("#respuesta1A .capa27").css("margin-top",0);
 		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
 		$('body').removeClass('stop-scrolling');
+		$("#imgChoose").hide();
 	})
 	$("#opcion1 .respuestaB").click(function() {
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
@@ -124,6 +126,7 @@ var navegadorBueno = true;
 		initBloque2 = $("#bloque2").offset().top;
 		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
 		$('body').removeClass('stop-scrolling');
+		$("#imgChoose").show();
 
 	})	
 	
@@ -142,6 +145,7 @@ var navegadorBueno = true;
 		$(".capa43").css("margin-left",0+(ancho*0.3));
 		$('html, body').animate({scrollTop:initRespuesta2}, 2000);
 		$('body').removeClass('stop-scrolling');
+		$("#imgChoose").show();
 	})
 	$("#opcion2 .respuestaB").click(function() {
 		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
@@ -155,6 +159,7 @@ var navegadorBueno = true;
 		$("#contRespuesta2B .capa37").css("opacity",0);	
 		$('html, body').animate({scrollTop:initRespuesta2}, 2000);	
 		$('body').removeClass('stop-scrolling');
+		$("#imgChoose").hide();
 	})
 	
 	$("#opcion3 .respuestaA").click(function() {
@@ -181,6 +186,7 @@ var navegadorBueno = true;
 		$(".capa54").css("margin-top",(0-(alto))+(alto*0.25)); // huesos abajo
 		$('html, body').animate({scrollTop:initRespuesta3}, 2000);
 		$('body').removeClass('stop-scrolling');
+		$("#imgChoose").show();
 
 	})
 	$("#opcion3 .respuestaB").click(function() {
@@ -196,6 +202,7 @@ var navegadorBueno = true;
 		$("#contRespuesta3B .capa47").css("opacity",0);
 		$('html, body').animate({scrollTop:initRespuesta3}, 2000);
 		$('body').removeClass('stop-scrolling');
+		$("#imgChoose").hide();
 
 
 	})
@@ -207,6 +214,7 @@ var navegadorBueno = true;
 		$("#contRespuesta4A").show();
 		$("#contRespuesta4B").hide();	
 		$("#contRespuesta4A .capa521").css("opacity",0); //Dragon sin cabeza 2
+		$("#contRespuesta4A .capa5221").css("opacity",0);  //Dragon sin cabeza ni nada 2
 		$("#contRespuesta4A .capa522").css("opacity",0);  //Cabeza cortada 3
 		$("#contRespuesta4A .capa523").css("opacity",0); //Dragon dos cabezas 4
 		$("#contRespuesta4A .capa524").css("opacity",0); //Dragon devora 5
@@ -214,6 +222,7 @@ var navegadorBueno = true;
 		$("#contRespuesta4A .capa526").css("opacity",0);//Heroe sorprendido 4
 		$('html, body').animate({scrollTop:initRespuesta4}, 2000);
 		$('body').removeClass('stop-scrolling');
+		$("#imgChoose").hide();
 	})
 	$("#opcion4 .respuestaB").click(function() {
 		initRespuesta4 = $("#opcion4").offset().top + $("#opcion4").height() + (remanente*2);
@@ -222,6 +231,7 @@ var navegadorBueno = true;
 		$("#contRespuesta4").show();
 		$("#contRespuesta4B").show();
 		$("#contRespuesta4A").hide();
+		$("#contRespuesta4B .capa502").css("opacity",1);//Cofre cerrado 4
 		$("#contRespuesta4B .capa501").css("opacity",0);  //Cofre abierto 4
 		$("#contRespuesta4B .capa532").css("opacity",0); //Dragon baila 2
 		$("#contRespuesta4B .capa533").css("opacity",0); //Heroe canta 1
@@ -230,6 +240,8 @@ var navegadorBueno = true;
 		$('html, body').animate({scrollTop:initRespuesta4}, 2000);
 		$('body').removeClass('stop-scrolling');
 		$("#imgChoose").attr("src","imgs/comunes/ESCOGEOPCIONFIN.png");
+		$("#imgChoose").show();
+		$("#botTodaLaHistoria").show();
 	})
 /// control de los offsets inciales
 	initF1 = $("#fotograma1").offset().top;
@@ -585,7 +597,6 @@ function gestionaAnimacion (elscroll) {
 			$("#respuesta3B .capa415").css("margin-top",0-(alto+((bAlto-alto)/2)));
 			$("#respuesta3B .capa415").css("margin-left",0-(((bAncho-ancho)/2)));
 			$("#respuesta3B .capa47").css("margin-left",0+(((ancho-sAncho)/2)));
-			mensaje = "Ancho guerrero " + sAncho + "| Alto guerrero " + sAlto +  "| Ancho pared " + bAncho + "| Alto pared " + balto;
 		}
 	}	
 	///FIN CUARTA IMAGEN
@@ -629,6 +640,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = porcentajeR/20;
 			$("#contRespuesta4A .capa52").css("opacity",1);  //Dragon Normal
 			$("#contRespuesta4A .capa521").css("opacity",0); //Dragon sin cabeza 2
+			$("#contRespuesta4A .capa5221").css("opacity",0);  //Dragon sin cabeza ni nada 2
 			$("#contRespuesta4A .capa522").css("opacity",0);  //Cabeza cortada 3
 			$("#contRespuesta4A .capa523").css("opacity",0); //Dragon dos cabezas 4
 			$("#contRespuesta4A .capa524").css("opacity",0); //Dragon devora 5
@@ -639,6 +651,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = (porcentajeR-20)/20;
 			$("#contRespuesta4A .capa52").css("opacity",0);  //Dragon Normal			
 			$("#contRespuesta4A .capa521").css("opacity",1); //Dragon sin cabeza 2
+			$("#contRespuesta4A .capa5221").css("opacity",0);  //Dragon sin cabeza ni nada 2
 			$("#contRespuesta4A .capa522").css("opacity",0);  //Cabeza cortada 3
 			$("#contRespuesta4A .capa523").css("opacity",0); //Dragon dos cabezas 4
 			$("#contRespuesta4A .capa524").css("opacity",0); //Dragon devora 5
@@ -648,7 +661,8 @@ function gestionaAnimacion (elscroll) {
 		if (porcentajeR>40 && porcentajeR<=60) {
 			nCoeficiente = (porcentajeR-40)/20;
 			$("#contRespuesta4A .capa52").css("opacity",0);  //Dragon Normal		
-			$("#contRespuesta4A .capa521").css("opacity",1); //Dragon sin cabeza 2
+			$("#contRespuesta4A .capa521").css("opacity",0); //Dragon sin cabeza 2
+			$("#contRespuesta4A .capa5221").css("opacity",1);  //Dragon sin cabeza ni nada 2
 			$("#contRespuesta4A .capa522").css("opacity",1);  //Cabeza cortada 3
 			$("#contRespuesta4A .capa523").css("opacity",0); //Dragon dos cabezas 4
 			$("#contRespuesta4A .capa524").css("opacity",0); //Dragon devora 5
@@ -659,6 +673,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = (porcentajeR-60)/20;
 			$("#contRespuesta4A .capa52").css("opacity",0);  //Dragon Normal		
 			$("#contRespuesta4A .capa521").css("opacity",0); //Dragon sin cabeza 2
+			$("#contRespuesta4A .capa5221").css("opacity",0);  //Dragon sin cabeza ni nada 2
 			$("#contRespuesta4A .capa522").css("opacity",1);  //Cabeza cortada 3
 			$("#contRespuesta4A .capa523").css("opacity",1); //Dragon dos cabezas 4
 			$("#contRespuesta4A .capa524").css("opacity",0); //Dragon devora 5
@@ -669,6 +684,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = (porcentajeR-80)/20;
 			$("#contRespuesta4A .capa52").css("opacity",0);  //Dragon Normal		
 			$("#contRespuesta4A .capa521").css("opacity",0); //Dragon sin cabeza 2
+			$("#contRespuesta4A .capa5221").css("opacity",0);  //Dragon sin cabeza ni nada 2
 			$("#contRespuesta4A .capa522").css("opacity",1);  //Cabeza cortada 3
 			$("#contRespuesta4A .capa523").css("opacity",0); //Dragon dos cabezas 4
 			$("#contRespuesta4A .capa524").css("opacity",1); //Dragon devora 5
@@ -691,6 +707,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = porcentajeR/5;
 			$("#contRespuesta4B .capa52").css("opacity",1);  //Dragon Normal
 			$("#contRespuesta4B .capa53").css("opacity",1);  //Heroe Normal
+			$("#contRespuesta4B .capa502").css("opacity",1);  //Cofre cerrado 4
 			$("#contRespuesta4B .capa501").css("opacity",0);  //Cofre abierto 4
 			$("#contRespuesta4B .capa532").css("opacity",0); //Dragon baila 2
 			$("#contRespuesta4B .capa533").css("opacity",0); //Heroe canta 1
@@ -701,6 +718,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = (porcentaje-5)/5;
 			$("#contRespuesta4B .capa52").css("opacity",1);  //Dragon Normal
 			$("#contRespuesta4B .capa53").css("opacity",0);  //Heroe Normal
+			$("#contRespuesta4B .capa502").css("opacity",1);  //Cofre cerrado 4
 			$("#contRespuesta4B .capa501").css("opacity",0);  //Cofre abierto 4
 			$("#contRespuesta4B .capa532").css("opacity",0); //Dragon baila 2
 			$("#contRespuesta4B .capa533").css("opacity",1); //Heroe canta 1
@@ -711,6 +729,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = (porcentaje-10)/5;
 			$("#contRespuesta4B .capa52").css("opacity",1);  //Dragon Normal
 			$("#contRespuesta4B .capa53").css("opacity",1);  //Heroe Normal
+			$("#contRespuesta4B .capa502").css("opacity",1);  //Cofre cerrado 4
 			$("#contRespuesta4B .capa501").css("opacity",0);  //Cofre abierto 4
 			$("#contRespuesta4B .capa532").css("opacity",0); //Dragon baila 2
 			$("#contRespuesta4B .capa533").css("opacity",0); //Heroe canta 1
@@ -721,6 +740,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = (porcentaje-15)/5;
 			$("#contRespuesta4B .capa52").css("opacity",1);  //Dragon Normal
 			$("#contRespuesta4B .capa53").css("opacity",0);  //Heroe Normal
+			$("#contRespuesta4B .capa502").css("opacity",1);  //Cofre cerrado 4
 			$("#contRespuesta4B .capa501").css("opacity",0);  //Cofre abierto 4
 			$("#contRespuesta4B .capa532").css("opacity",0); //Dragon baila 2
 			$("#contRespuesta4B .capa533").css("opacity",1); //Heroe canta 1
@@ -732,6 +752,7 @@ function gestionaAnimacion (elscroll) {
 			indice = (elscroll % 3)-1;
 			$("#contRespuesta4B .capa52").css("opacity",0);  //Dragon Normal
 			$("#contRespuesta4B .capa53").css("opacity",0);  //Heroe Normal
+			$("#contRespuesta4B .capa502").css("opacity",1);  //Cofre cerrado 4
 			$("#contRespuesta4B .capa501").css("opacity",0);  //Cofre abierto 4
 			$("#contRespuesta4B .capa532").css("opacity",1); //Dragon baila 2
 			$("#contRespuesta4B .capa533").css("opacity",1); //Heroe canta 1
@@ -743,6 +764,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = (porcentajeR-40)/20;
 			$("#contRespuesta4B .capa52").css("opacity",0);  //Dragon Normal
 			$("#contRespuesta4B .capa53").css("opacity",0);  //Heroe Normal
+			$("#contRespuesta4B .capa502").css("opacity",1);  //Cofre cerrado 4
 			$("#contRespuesta4B .capa501").css("opacity",0);  //Cofre abierto 4
 			$("#contRespuesta4B .capa532").css("opacity",1); //Dragon baila 2
 			$("#contRespuesta4B .capa533").css("opacity",0); //Heroe canta 1
@@ -755,6 +777,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = (porcentajeR-60)/20;
 			$("#contRespuesta4B .capa52").css("opacity",0);  //Dragon Normal
 			$("#contRespuesta4B .capa53").css("opacity",0);  //Heroe Normal
+			$("#contRespuesta4B .capa502").css("opacity",0);  //Cofre cerrado 4
 			$("#contRespuesta4B .capa501").css("opacity",1);  //Cofre abierto 4
 			$("#contRespuesta4B .capa532").css("opacity",0); //Dragon baila 2
 			$("#contRespuesta4B .capa533").css("opacity",0); //Heroe canta 1
@@ -765,6 +788,7 @@ function gestionaAnimacion (elscroll) {
 			nCoeficiente = (porcentajeR-80)/20;
 			$("#contRespuesta4B .capa52").css("opacity",0);  //Dragon Normal
 			$("#contRespuesta4B .capa53").css("opacity",0);  //Heroe Normal
+			$("#contRespuesta4B .capa502").css("opacity",0);  //Cofre cerrado 4
 			$("#contRespuesta4B .capa501").css("opacity",1);  //Cofre abierto 4
 			$("#contRespuesta4B .capa532").css("opacity",0); //Dragon baila 2
 			$("#contRespuesta4B .capa533").css("opacity",0); //Heroe canta 1
