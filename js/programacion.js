@@ -26,6 +26,7 @@ var initBloque2;
 var initBloque3;
 var initBloque4; 
 var navegadorBueno = true;
+var urlCorta = '';
  $(function() {
 	 if (get_browser()=='MSIE') {
 		 if (parseInt(get_browser_version())<11) {
@@ -98,6 +99,7 @@ var navegadorBueno = true;
 	// *****************************************
 	// *****************************************
 	$("#opcion1 .respuestaA").click(function() {
+		// mala
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
 		finRespuesta1 = initRespuesta1+recorrido;
 		$("#contRespuesta1").css("margin-top",0);
@@ -108,8 +110,12 @@ var navegadorBueno = true;
 		$('html, body').animate({scrollTop:initRespuesta1}, 2000);
 		$('body').removeClass('stop-scrolling');
 		$("#imgChoose").hide();
+		$("#bloque2").hide();
+		$("#bloque3").hide();
+		$("#bloque4").hide();	
 	})
 	$("#opcion1 .respuestaB").click(function() {
+		// buena
 		initRespuesta1 = $("#opcion1").offset().top + $("#opcion1").height() + (remanente*2);
 		finRespuesta1 = initRespuesta1+recorrido;
 		$("#contRespuesta1").css("margin-top",0);
@@ -131,6 +137,7 @@ var navegadorBueno = true;
 	})	
 	
 	$("#opcion2 .respuestaA").click(function() {
+		// buena
 		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
 		finRespuesta2 = initRespuesta2+recorrido;
 		$("#contRespuesta2").css("margin-top",0);
@@ -148,6 +155,7 @@ var navegadorBueno = true;
 		$("#imgChoose").show();
 	})
 	$("#opcion2 .respuestaB").click(function() {
+		//mala
 		initRespuesta2 = $("#opcion2").offset().top + $("#opcion2").height() + (remanente*2);
 		finRespuesta2 = initRespuesta2+recorrido;
 		$("#contRespuesta2").css("margin-top",0);
@@ -160,9 +168,12 @@ var navegadorBueno = true;
 		$('html, body').animate({scrollTop:initRespuesta2}, 2000);	
 		$('body').removeClass('stop-scrolling');
 		$("#imgChoose").hide();
+		$("#bloque3").hide();
+		$("#bloque4").hide();	
 	})
 	
 	$("#opcion3 .respuestaA").click(function() {
+		// buena
 		initRespuesta3 = $("#opcion3").offset().top + $("#opcion3").height() + (remanente*2);
 		finRespuesta3 = initRespuesta3+recorrido;
 		$("#contRespuesta3").css("margin-top",0);
@@ -190,6 +201,7 @@ var navegadorBueno = true;
 
 	})
 	$("#opcion3 .respuestaB").click(function() {
+		// mala
 		initRespuesta3 = $("#opcion3").offset().top + $("#opcion3").height() + (remanente*2);
 		finRespuesta3 = initRespuesta3+recorrido;
 		$("#contRespuesta3").css("margin-top",0);
@@ -203,10 +215,11 @@ var navegadorBueno = true;
 		$('html, body').animate({scrollTop:initRespuesta3}, 2000);
 		$('body').removeClass('stop-scrolling');
 		$("#imgChoose").hide();
-
+		$("#bloque4").hide();	
 
 	})
 	$("#opcion4 .respuestaA").click(function() {
+		// mala
 		initRespuesta4 = $("#opcion4").offset().top + $("#opcion4").height() + (remanente*2);
 		finRespuesta4 = initRespuesta4+recorrido;
 		$("#contRespuesta4").css("margin-top",0);	
@@ -225,6 +238,7 @@ var navegadorBueno = true;
 		$("#imgChoose").hide();
 	})
 	$("#opcion4 .respuestaB").click(function() {
+		// buena
 		initRespuesta4 = $("#opcion4").offset().top + $("#opcion4").height() + (remanente*2);
 		finRespuesta4 = initRespuesta4+recorrido;
 		$("#contRespuesta4").css("margin-top",0);
@@ -838,3 +852,11 @@ function get_browser_version(){
     M=M? [M[1], M[2]]: [N, navigator.appVersion, '-?'];
     return M[1];
     }
+function comparteFB () {
+	var url='https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL)
+	window.open(url)
+}
+function comparteTW () {
+	var url='https://twitter.com/share?url=' + encodeURIComponent(document.URL) + '&text=' + encodeURIComponent('Territorio entretenimiento o la aventura del #ConsumerEngagement @LlorenteyCuenca ' + document.URL) ;
+	window.open(url)
+}

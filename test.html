@@ -3,13 +3,32 @@
 <!doctype html>
 <html>
 <head>
+<script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
+<script type="text/javascript">
+if(WURFL.is_mobile){
+	document.location.href = "resp.html";
+}
+</script>
 <meta charset="utf-8">
+
 <title>Territorio entretenimiento o la aventura del consumer engagement | Llorente & Cuenca</title>
 
 <link href='http://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 <link href="css/reset.css" rel="stylesheet" type="text/css">
 <link href="css/estilos.css" rel="stylesheet" type="text/css">
+
+<!-- for Facebook -->          
+<meta property="og:title" content="Territorio entretenimiento o la aventura del Consumer Engagement" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="imgs/comunes/FBIcon.png" />
+<meta property="og:description" content="Una aventura interactiva de Llorente & Cuenca en busca del Consumer Engagement con el Entretenimiento como valor añadido." />
+
+<!-- for Twitter -->          
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Territorio entretenimiento o la aventura del Consumer Engagement" />
+<meta name="twitter:description" content="Una aventura interactiva de Llorente & Cuenca en busca del Consumer Engagement con el Entretenimiento como valor añadido." />
+<meta name="twitter:image" content="imgs/comunes/FBIcon.png" />
 </head>
 <body>
 <div id="preloader">
@@ -18,8 +37,8 @@
     </div>
 </div>
         <div class="botSocial">
-        <img src="imgs/comunes/botTwitter.png" alt="Compartir en Twitter" /><br />
-        <img src="imgs/comunes/botFB.png" alt="Compartir en Facebook" style="margin-top:5px" />
+        <img src="imgs/comunes/botTwitter.png" alt="Compartir en Twitter" onClick="comparteTW();" /><br />
+        <img src="imgs/comunes/botFB.png" alt="Compartir en Facebook" style="margin-top:5px" onClick="comparteFB();" />
         </div>
 <div id="contenedor">
     <div id="cabecera">
@@ -106,7 +125,7 @@
                 	<div class="tdTopRow1"></div>
    
                     <div class="tdCentral"><p style="font-size:1.8em"> Todos somos historias... y somos muchos<br /><br /></p>
-<p>Millones de piezas online nos cuentan cada día la historia de una <strong>polución de contenidos</strong> que sobrevuela nuestras cabezas digitales. Todos somos parte de esa enorme máquina de fabricar vídeos, fotografías, textos, memes o audios en que se ha convertido Internet. El tiempo en el que los medios de comunicación (y las marcas que compraban su espacio) eran los únicos autorizados a contarnos las historias oficiales ha quedado atrás y ahora el contenido se ha convertido en una barra libre a la que podemos trasladar nuestra necesidad de narrarnos. Si todos somos, en mayor o menor medida, <strong>productores de contenido</strong> es porque también todos somos historias. El tan celebrado storytelling contemporáneo no es más que la aplicación a los negocios de esa necesidad que reside en nuestro adn emocional: la de perpetuarnos en narrativas más o menos complejas. Lo que ha ocurrido es que, mientras aprendíamos cómo transformarnos en productores de contenido, la propia exposición a ese huracán de historias nos ha ido perfeccionando como consumidores… de narrativas. En esa confluencia entre la sobreabundancia de contenidos y la <strong>especialización en su consumo</strong> es en la que cobra especial importancia  un término que afectará desde entonces a nuestra actitud frente a la nube de historias posibles: <strong>la economía de la atención.</strong></p>
+<p>Millones de piezas online nos cuentan cada día la historia de una <strong>polución de contenidos</strong> que sobrevuela nuestras cabezas digitales. Todos somos parte de esa enorme máquina de fabricar vídeos, fotografías, textos, memes o audios en que se ha convertido Internet. El tiempo en el que los medios de comunicación (y las marcas que compraban su espacio) eran los únicos autorizados a contarnos las historias oficiales ha quedado atrás y ahora el contenido se ha convertido en una barra libre a la que podemos trasladar nuestra necesidad de narrarnos. Si todos somos, en mayor o menor medida, <strong>productores de contenido</strong> es porque también todos somos historias.<br><br>El tan celebrado storytelling contemporáneo no es más que la aplicación a los negocios de esa necesidad que reside en nuestro adn emocional: la de perpetuarnos en narrativas más o menos complejas. Lo que ha ocurrido es que, mientras aprendíamos cómo transformarnos en productores de contenido, la propia exposición a ese huracán de historias nos ha ido perfeccionando como consumidores… de narrativas. En esa confluencia entre la sobreabundancia de contenidos y la <strong>especialización en su consumo</strong> es en la que cobra especial importancia  un término que afectará desde entonces a nuestra actitud frente a la nube de historias posibles: <strong>la economía de la atención.</strong></p>
 </div>
                     <div class="tdBottomRow"></div>
              </div>
@@ -153,7 +172,7 @@
                 	<div class="tdTopRow2"></div>
    
                     <div class="tdCentral"><p style="font-size:1.8em">La reputación emocional<br /><br /></p>
-<p>Cuando un buen día las marcas descubrieron que podían contar historias más allá de aquellas que configuraban un argumentario para la venta de sus productos, nació todo un coro de potenciales <strong>nuevos narradores</strong>. En la era de la polución de contenidos, las marcas han intentado hacerse un hueco como generadores de narrativas que pudieran ayudar a establecer una <strong>relación duradera con los consumidores</strong>. Y lo han hecho porque han descubierto que, cuando se produce esa anhelada conexión con el consumidor su impacto en la reputación emocional es impagable. A esa conexión es a lo que llamamos <em><strong>engagement</strong></em>. Pero, la gran cuestión es, ¿cómo se produce? ¿Cuál es su algoritmo?  En esa búsqueda del <em>engagement</em> a través del contenido, a menudo las marcas se han infravalorado a sí mismas, sumidas en un síndrome de inferioridad que nacía de sus fines comerciales. Como lo expresa Cindy Gallop: “Mientras los anunciantes sigan invitando a ‘Saltar el anuncio’ están reforzando el pensamiento de que la publicidad y, por lo tanto el contenido que viene de marcas, es malo”*. Ha llegado el momento en el que las marcas tienen que sorprenderse a sí mismas levantando la vista y descubriendo con estupor cómo sus competidores ya no son quienes pensaban que eran; cómo, en el camino del contenido la <strong>industria del entretenimiento</strong> se ha convertido en su mayor competencia y, al mismo tiempo, en el espejo en que mirarse. 
+<p>Cuando un buen día las marcas descubrieron que podían contar historias más allá de aquellas que configuraban un argumentario para la venta de sus productos, nació todo un coro de potenciales <strong>nuevos narradores</strong>. En la era de la polución de contenidos, las marcas han intentado hacerse un hueco como generadores de narrativas que pudieran ayudar a establecer una <strong>relación duradera con los consumidores</strong>. Y lo han hecho porque han descubierto que, cuando se produce esa anhelada conexión con el consumidor su impacto en la reputación emocional es impagable. A esa conexión es a lo que llamamos <em><strong>engagement</strong></em>. Pero, la gran cuestión es, ¿cómo se produce? ¿Cuál es su algoritmo?  En esa búsqueda del <em>engagement</em> a través del contenido, a menudo las marcas se han infravalorado a sí mismas, sumidas en un síndrome de inferioridad que nacía de sus fines comerciales.<br><br>Como lo expresa Cindy Gallop: “Mientras los anunciantes sigan invitando a ‘Saltar el anuncio’ están reforzando el pensamiento de que la publicidad y, por lo tanto el contenido que viene de marcas, es malo”*. Ha llegado el momento en el que las marcas tienen que sorprenderse a sí mismas levantando la vista y descubriendo con estupor cómo sus competidores ya no son quienes pensaban que eran; cómo, en el camino del contenido la <strong>industria del entretenimiento</strong> se ha convertido en su mayor competencia y, al mismo tiempo, en el espejo en que mirarse. 
 <br><br>*Cindy Gallop en The Guardian Changing Advertising Summit 2012 </p>
 </div>
                     <div class="tdBottomRow"></div>
@@ -329,7 +348,7 @@
    
                     <div class="tdCentral">
                     <p style="font-size:1.8em">Branded entertainment, la última frontera.  <br /><br /></p>
-<p>Conversar implica entender al otro como un interlocutor válido, olvidar por un momento nuestros intereses a corto plazo para establecer una relación en la que, al mismo tiempo que se produce una pérdida del control de nuestro discurso, se abre una nueva oportunidad: la de la <strong>empatía</strong>. Las <strong>audiencias activas</strong> desconfían de los discursos cerrados, especialmente si nacen en una estrategia de marca, y no dudarán en ignorarlos o criticarlos si nos empeñamos en exponerlos a ellos. El entretenimiento de marca tiene que nacer siempre de la comprensión de que las reglas del consumo de contenidos han cambiado  y construirse idealmente en diferentes niveles, algunos de ellos impulsados directamente por la marca, otros sólo sugeridos y muchos más construidos de manera directa por su audiencia. Una estrategia de <strong>storytelling interactivo</strong> no lo será si no genera conversaciones y, en un segundo lugar, no conseguirá triunfar si no genera empatía. Con twitter como máximo impulsor del fenómeno, la industria del entretenimiento ya ha empezado a comprender que no sobrevivirá, si no es apoyada en las conversaciones y en el <em>on-demand</em>. En el terreno de las marcas aún quedan muchos prejuicios que vencer, pero el <em>engagement</em> no podrá desarrollarse si las historias no encuentran un espacio en el que respirar. Las narrativas del entretenimiento se complican cada día, a medida que los <strong>puntos de impacto</strong> en la audiencia se multiplican. Es básico que el entretenimiento de marca se construya sobre <strong>arquitecturas de niveles narrativos interrelacionados</strong>, cada uno con su propia personalidad, pero todos compartiendo una misma misión: la de generar <em>engagement</em> con los consumidores entreteniéndoles. Por todo ello, ha llegado el momento de que las marcas den, en el terreno de su relación con los consumidores, el salto definitivo del <em>branded content</em> al <strong><em>branded entertainment</em></strong>. </p>
+<p>Conversar implica entender al otro como un interlocutor válido, olvidar por un momento nuestros intereses a corto plazo para establecer una relación en la que, al mismo tiempo que se produce una pérdida del control de nuestro discurso, se abre una nueva oportunidad: la de la <strong>empatía</strong>. Las <strong>audiencias activas</strong> desconfían de los discursos cerrados, especialmente si nacen en una estrategia de marca, y no dudarán en ignorarlos o criticarlos si nos empeñamos en exponerlos a ellos.<br><br>El entretenimiento de marca tiene que nacer siempre de la comprensión de que las reglas del consumo de contenidos han cambiado  y construirse idealmente en diferentes niveles, algunos de ellos impulsados directamente por la marca, otros sólo sugeridos y muchos más construidos de manera directa por su audiencia. Una estrategia de <strong>storytelling interactivo</strong> no lo será si no genera conversaciones y, en un segundo lugar, no conseguirá triunfar si no genera empatía. Con twitter como máximo impulsor del fenómeno, la industria del entretenimiento ya ha empezado a comprender que no sobrevivirá, si no es apoyada en las conversaciones y en el <em>on-demand</em>. En el terreno de las marcas aún quedan muchos prejuicios que vencer, pero el <em>engagement</em> no podrá desarrollarse si las historias no encuentran un espacio en el que respirar. Las narrativas del entretenimiento se complican cada día, a medida que los <strong>puntos de impacto</strong> en la audiencia se multiplican. Es básico que el entretenimiento de marca se construya sobre <strong>arquitecturas de niveles narrativos interrelacionados</strong>, cada uno con su propia personalidad, pero todos compartiendo una misma misión: la de generar <em>engagement</em> con los consumidores entreteniéndoles. Por todo ello, ha llegado el momento de que las marcas den, en el terreno de su relación con los consumidores, el salto definitivo del <em>branded content</em> al <strong><em>branded entertainment</em></strong>. </p>
 </div>
                     <div class="tdBottomRow"></div>
              </div>

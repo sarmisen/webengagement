@@ -50,7 +50,6 @@ var initBloque4;
 	}
 	alto = Math.round(altoInicial * porcentaje);
 	ancho = Math.round(anchoInicial * porcentaje);
-	alert(ancho);
 	if (alto>altoVentana) {
 		remanente = (alto-altoVentana)/2;
 	}
@@ -73,9 +72,9 @@ var initBloque4;
 	$(".textos .container").css("font-size",tamTexto+"em");
 	$(".respuestaA").css("font-size",tamTexto+"em");
 	$(".respuestaB").css("font-size",tamTexto+"em");
-	$(".respuestaA").css("width",$(".textos").width()*0.22);
-	$(".respuestaB").css("margin-left",$(".textos").width()*0.22);
-	$(".respuestaA").css("margin-left",$(".textos").width()*0.25);
+	$(".respuestaA").css("width",$(".textos").width()*0.42);
+	$(".respuestaB").css("width",$(".textos").width()*0.42);
+	$(".respuestaA").css("margin-left",$(".textos").width()*0.05);
 	$(".respuestaB").css("margin-left",$(".textos").width()*0.03);
 	$(".doslineas").css("margin-top",$(".letra").width()*0.20);
 	

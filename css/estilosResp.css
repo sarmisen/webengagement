@@ -129,8 +129,10 @@ body, html {
 	background-color:#f16f6e;
 }
 .conTextoDesbloqueado {
-	width:1000px; 
+	/* [disabled]width:1000px; */
 	margin: 0 auto;
+	max-width: 1000px;
+	background:url(../imgs/comunes/fondoDesb.png) center repeat-y;
 }
 .tdColIzq {
 	width:133px; 
@@ -143,14 +145,34 @@ body, html {
 	background:url(../imgs/comunes/textoDesRB.png) bottom right no-repeat;
 }
 .tdCentral {
-	width:700px; 
+	max-width:700px; 
 	background-color: white; 
-	float: left; 
 	padding: 15px; 
 	font-family: 'Open Sans', sans-serif; 
 	line-height: 1.6em; 
 	text-align:justify; 
 	font-weight: 400;  
+	margin: 0 auto;
+}
+.tdTopRow1 {
+		background:url(../imgs/comunes/fondoTopDes1.png) center no-repeat;
+		height: 200px;
+}
+.tdTopRow2 {
+		background:url(../imgs/comunes/fondoTopDes2.png) center no-repeat;
+		height: 200px;
+}
+.tdTopRow3 {
+		background:url(../imgs/comunes/fondoTopDes3.png) center no-repeat;
+		height: 200px;
+}
+.tdTopRow4 {
+		background:url(../imgs/comunes/fondoTopDes4.png) center no-repeat;
+		height: 200px;
+}
+.tdBottomRow {
+		background:url(../imgs/comunes/fondoDesAbajo.png) center no-repeat;
+		height: 95px;
 }
 .tdCentral strong {
 	font-weight: 700;
@@ -174,7 +196,6 @@ body, html {
 	background-size: cover;
 }
 #primerTexto {
-	height: 200px; 
 }
 /* SEGUNDO FOTOGRAMA */
 .capa20 {	
@@ -284,5 +305,10 @@ body, html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+.tirallyc {
+	width:100%; 
+	background: black url(../imgs/comunes/tiraArriba.png) no-repeat left top; 
+	height:50px;
 }
 
