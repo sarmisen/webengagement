@@ -311,4 +311,52 @@ body, html {
 	background: black url(../imgs/comunes/tiraArriba.png) no-repeat left top; 
 	height:50px;
 }
+.textoFinal {
+	background-color: white;
+	width: 100%;
+}
+.contenedorTF {
+	margin:0 auto;
+	padding: 0 50px;
+	max-width:1000px;
+}
+.imgFinal {
+	width: 150px;
+	margin-right: 10px;
+	float: left;
+}
+.txtFinal {
+	float:left;
+	font-family: 'Open Sans', sans-serif; 
+	line-height: 1.5em; 
+	font-size: 1em;
+	width: 700px;
+	font-weight: 400;
+	color: #898278;
+	text-justify:auto;
+	text-align:justify;
+}
+.txtFinal strong {
+	font-weight: 700;
+	
+}
+.dmasi {
+	width:50%; 
+	float: left;
+	font-family: 'Open Sans', sans-serif; 
+	line-height: 2em; 
+	font-size: 0.875em;
+	color: black;
+	text-align: justify;
+	text-justify:newspaper;
+	
+}
+.dmasi a {
+	text-decoration: none;
+	color: #008e3c;
+	
+}
+.aclarar {
+	clear: left;
+}
 
