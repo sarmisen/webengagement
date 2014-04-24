@@ -330,7 +330,7 @@ body, html {
 	font-family: 'Open Sans', sans-serif; 
 	line-height: 1.5em; 
 	font-size: 1em;
-	width: 700px;
+	max-width: 700px;
 	font-weight: 400;
 	color: #898278;
 	text-justify:auto;
@@ -341,8 +341,6 @@ body, html {
 	
 }
 .dmasi {
-	width:50%; 
-	float: left;
 	font-family: 'Open Sans', sans-serif; 
 	line-height: 2em; 
 	font-size: 0.875em;
