@@ -158,3 +158,11 @@ function volver (lugar) {
 		$("#contRespuesta"+lugar+'B').hide();
 		});
 }
+function comparteFB () {
+	var url='https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL)
+	window.open(url)
+}
+function comparteTW () {
+	var url='https://twitter.com/share?url=' + encodeURIComponent(document.URL) + '&text=' + encodeURIComponent('Territorio entretenimiento o la aventura del #ConsumerEngagement @LlorenteyCuenca ' + document.URL) ;
+	window.open(url)
+}
